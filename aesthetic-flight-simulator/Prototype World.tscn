@@ -1,9 +1,13 @@
-[gd_scene format=3 uid="uid://wftpdvbl6ses"]
+[gd_scene load_steps=2 format=3 uid="uid://wftpdvbl6ses"]
+
+[ext_resource type="PackedScene" uid="uid://b7u3gj4mentjd" path="res://Planes/Biplane.tscn" id="1_ccehu"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0154076, 0)
-size = Vector3(10, 1, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.315456, 0)
+size = Vector3(10, 0.399902, 10)
+
+[node name="Biplane" parent="." instance=ExtResource("1_ccehu")]

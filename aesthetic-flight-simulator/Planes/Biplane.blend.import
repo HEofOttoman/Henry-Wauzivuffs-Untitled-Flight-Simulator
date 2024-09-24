@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Biplane.blend-c2f8237d20750d5c860c7848fc58937
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="CharacterBody3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
