@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7u3gj4mentjd"]
+[gd_scene load_steps=7 format=3 uid="uid://b7u3gj4mentjd"]
 
 [ext_resource type="PackedScene" uid="uid://lffujnq4wrhc" path="res://Planes/Biplane.blend" id="1_pjaln"]
+[ext_resource type="Material" uid="uid://dp7j0lgve6sd2" path="res://Planes/Textures/BiplaneTexture.tres" id="2_3143x"]
 
 [sub_resource type="Animation" id="Animation_78a2j"]
 resource_name = "Propeller Rotate"
@@ -41,10 +42,28 @@ _data = {
 "RESET": SubResource("Animation_wdo88")
 }
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hs57s"]
+height = 3.59369
+radius = 0.931874
+
 [node name="Biplane" instance=ExtResource("1_pjaln")]
+
+[node name="biplaneBody" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_3143x")
+surface_material_override/1 = ExtResource("2_3143x")
+
+[node name="biplaneProp" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_3143x")
+
+[node name="biplaneWheel" parent="." index="2"]
+surface_material_override/1 = ExtResource("2_3143x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
 libraries = {
 "": SubResource("AnimationLibrary_3knf6")
 }
 autoplay = "Propeller Rotate"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.938633, -0.651059)
+shape = SubResource("CylinderShape3D_hs57s")
