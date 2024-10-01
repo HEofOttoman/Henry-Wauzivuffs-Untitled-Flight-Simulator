@@ -1,14 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://wftpdvbl6ses"]
+[gd_scene load_steps=12 format=3 uid="uid://wftpdvbl6ses"]
 
 [ext_resource type="PackedScene" uid="uid://cm3ch5gcdm8ja" path="res://addons/proto-csgs/proto_csg_mesh_3d.tscn" id="1_5u1pv"]
-[ext_resource type="PackedScene" uid="uid://b7u3gj4mentjd" path="res://Planes/Biplane.tscn" id="1_ccehu"]
 [ext_resource type="Texture2D" uid="uid://cd3fcinti1un5" path="res://addons/proto-csgs/textures/dark/texture_01.png" id="2_t0lnk"]
 [ext_resource type="PackedScene" uid="uid://dxw7cledbpiia" path="res://addons/proto-csgs/proto_csg_box_3d.tscn" id="3_dr0kc"]
-[ext_resource type="Texture2D" uid="uid://cej3yoosomfd2" path="res://addons/proto-csgs/textures/dark/texture_13.png" id="4_523sw"]
+[ext_resource type="Texture2D" uid="uid://dl567gulrbij6" path="res://addons/proto-csgs/textures/light/texture_09.png" id="5_hmbul"]
+[ext_resource type="PackedScene" uid="uid://w6ke5n8rleb3" path="res://Planes/Plane.tscn" id="5_m2xtd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s7u0b"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_kqnxn"]
+sky_material = SubResource("ProceduralSkyMaterial_s7u0b")
+
+[sub_resource type="Environment" id="Environment_0mh7l"]
+background_mode = 2
+sky = SubResource("Sky_kqnxn")
+tonemap_mode = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ytvq4"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_syi15"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hft2v"]
 resource_local_to_scene = true
 albedo_texture = ExtResource("2_t0lnk")
 uv1_offset = Vector3(0.5, 0.5, 0.5)
@@ -16,22 +28,28 @@ uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbmpe"]
 resource_local_to_scene = true
-albedo_texture = ExtResource("4_523sw")
+albedo_texture = ExtResource("5_hmbul")
 uv1_offset = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 
-[node name="Node3D" type="Node3D"]
+[node name="Prototype" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0mh7l")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 
 [node name="ProtoCSGMesh3D" parent="CSGCombiner3D" instance=ExtResource("1_5u1pv")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = SubResource("PlaneMesh_ytvq4")
-material = SubResource("StandardMaterial3D_syi15")
+material = SubResource("StandardMaterial3D_hft2v")
 
 [node name="ProtoCSGBox3D" parent="CSGCombiner3D" instance=ExtResource("3_dr0kc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 1.88159, 6.29258)
-size = Vector3(2, 3.76318, 1.78516)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 2.5, -6.98159)
+size = Vector3(2, 5, 2)
 material = SubResource("StandardMaterial3D_tbmpe")
 
-[node name="Biplane" parent="." instance=ExtResource("1_ccehu")]
+[node name="Plane Controller" parent="." instance=ExtResource("5_m2xtd")]
