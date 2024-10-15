@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=4 uid="uid://dyiivpfykcxm0"]
+[gd_scene load_steps=15 format=4 uid="uid://dyiivpfykcxm0"]
 
+[ext_resource type="Script" path="res://Planes/Placeholder Controller.gd" id="1_ha5r6"]
 [ext_resource type="Material" uid="uid://dp7j0lgve6sd2" path="res://Planes/Textures/BiplaneTexture.tres" id="2_f8ipk"]
 
 [sub_resource type="Animation" id="Animation_78a2j"]
@@ -206,6 +207,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_sdpng")
 
 [node name="Biplane" type="CharacterBody3D"]
+script = ExtResource("1_ha5r6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -213,7 +215,7 @@ libraries = {
 }
 autoplay = "Propeller Rotate"
 
-[node name="Camera3D2" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 3)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
