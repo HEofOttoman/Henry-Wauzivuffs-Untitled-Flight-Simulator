@@ -45,10 +45,10 @@ func _physics_process(delta):
 	transform.basis = transform.basis.rotated(Vector3.UP, turn_input * turn_speed * delta)
 	# If on the ground, don't roll the body
 	if grounded:
-		$Biplane.rotation.y = 0
+		%Biplane.rotation.y = 0
 	else:
 		# Roll the body based on the turn input
-		$Biplane.rotation.y = lerp($Biplane.rotation.y, turn_input, level_speed * delta)
+		%Biplane.rotation.y = lerp(%Biplane.rotation.y, turn_input, level_speed * delta)
 	# Accelerate/decelerate
 	forward_speed = lerp(forward_speed, target_speed, acceleration * delta)
 	# Movement is always forward
