@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="Aesthetic Flight Simulator"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/simplified_flightsim/plugin.cfg")
+
 [input]
 
 throttle_up={

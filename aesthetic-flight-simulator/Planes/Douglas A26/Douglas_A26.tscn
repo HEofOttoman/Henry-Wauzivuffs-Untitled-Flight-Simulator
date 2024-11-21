@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxuabe0q0v7ev"]
+
+[ext_resource type="PackedScene" uid="uid://dq1fjh8mft5b1" path="res://Planes/Douglas A26/Douglas A26.blend" id="1_ovy3l"]
+[ext_resource type="Material" uid="uid://cb4v6sqrgruc3" path="res://Planes/Douglas A26/douglas a26 (no shader).tres" id="2_npmmt"]
+
+[node name="Douglas A26" instance=ExtResource("1_ovy3l")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Fuselage" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_npmmt")
+
+[node name="Wings" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_npmmt")
+
+[node name="Engines" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_npmmt")
+
+[node name="Rudder" parent="." index="3"]
+surface_material_override/0 = ExtResource("2_npmmt")
+
+[node name="Propellers" parent="." index="4"]
+surface_material_override/0 = ExtResource("2_npmmt")
+
+[node name="Tail" parent="." index="5"]
+surface_material_override/0 = ExtResource("2_npmmt")
+
+[node name="Wheels" parent="." index="6"]
+surface_material_override/0 = ExtResource("2_npmmt")
