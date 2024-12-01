@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://wftpdvbl6ses"]
+[gd_scene load_steps=24 format=3 uid="uid://wftpdvbl6ses"]
 
 [ext_resource type="Texture2D" uid="uid://cej3yoosomfd2" path="res://addons/proto-csgs/textures/dark/texture_13.png" id="2_5dpwh"]
 [ext_resource type="PackedScene" uid="uid://dxw7cledbpiia" path="res://addons/proto-csgs/proto_csg_box_3d.tscn" id="3_dr0kc"]
@@ -8,8 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bxuabe0q0v7ev" path="res://Planes/Douglas A26/Douglas_A26.tscn" id="6_ugkox"]
 [ext_resource type="Script" path="res://addons/simplified_flightsim/aircraft_modules/Engine/Engine.gd" id="7_71qr6"]
 [ext_resource type="Script" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlEngine.gd" id="8_g0ygo"]
+[ext_resource type="Script" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlEnergyContainer.gd" id="9_34mm1"]
 [ext_resource type="Script" path="res://addons/simplified_flightsim/aircraft_modules/Steering/Steering.gd" id="9_v0aio"]
 [ext_resource type="Script" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlSteering.gd" id="10_wy15e"]
+[ext_resource type="Script" path="res://addons/simplified_flightsim/aircraft_modules/EnergyContainer/EnergyContainer.gd" id="11_us1wq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s7u0b"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -62,24 +64,24 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 use_collision = true
 
 [node name="tower 1" parent="CSGCombiner3D" instance=ExtResource("3_dr0kc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.22534, 4.5, -9.98159)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.22534, 4.5, -12.9816)
 size = Vector3(2, 9, 2)
 material = SubResource("StandardMaterial3D_nu1sr")
 
 [node name="tower 2" parent="CSGCombiner3D" instance=ExtResource("3_dr0kc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.34039, 5.20063, -9.98159)
-size = Vector3(2, 10, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.34039, 6.70063, -20.7851)
+size = Vector3(2, 13, 2)
 material = SubResource("StandardMaterial3D_bnmcc")
 
 [node name="ProtoCSGMesh3D" type="CSGMesh3D" parent="CSGCombiner3D"]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
 mesh = SubResource("PlaneMesh_86263")
 material = SubResource("StandardMaterial3D_4unl1")
 script = ExtResource("4_vxewq")
 block_color = 2
 
 [node name="Douglas A26" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.107165, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 27.1072, 6)
 script = ExtResource("5_fjrsm")
 
 [node name="Douglas A26" parent="Douglas A26" instance=ExtResource("6_ugkox")]
@@ -106,3 +108,9 @@ script = ExtResource("9_v0aio")
 [node name="AircraftModule_ControlSteering" type="Node" parent="Douglas A26"]
 script = ExtResource("10_wy15e")
 ReceiveInput = true
+
+[node name="AircraftModule_ControlEnergyContainer" type="Node" parent="Douglas A26"]
+script = ExtResource("9_34mm1")
+
+[node name="AircraftModule_EnergyContainer" type="Node" parent="Douglas A26"]
+script = ExtResource("11_us1wq")
