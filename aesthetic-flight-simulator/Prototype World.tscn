@@ -43,7 +43,7 @@ albedo_texture = ExtResource("3_oixej")
 uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_plrg6"]
-size = Vector3(5.9502, 1, 0.965332)
+size = Vector3(5.9502, 1, 0.954346)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jfw73"]
 radius = 0.395599
@@ -91,7 +91,7 @@ script = ExtResource("5_fjrsm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56007, 5.31418)
 
 [node name="CollisionShapeWings" type="CollisionShape3D" parent="Douglas A26"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00914764, 0.569077, 0.414786)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00914764, 0.563583, 0.414786)
 shape = SubResource("BoxShape3D_plrg6")
 
 [node name="CollisionShapeFuselage" type="CollisionShape3D" parent="Douglas A26"]
