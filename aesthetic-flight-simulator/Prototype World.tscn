@@ -25,6 +25,7 @@ sky_material = SubResource("ProceduralSkyMaterial_s7u0b")
 background_mode = 2
 sky = SubResource("Sky_kqnxn")
 tonemap_mode = 2
+fog_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nu1sr"]
 resource_local_to_scene = true

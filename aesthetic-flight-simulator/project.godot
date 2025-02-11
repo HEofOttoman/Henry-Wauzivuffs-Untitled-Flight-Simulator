@@ -8,6 +8,10 @@
 
 config_version=5
 
+[Aesthetic Flight Simulator]
+
+config/ninetailsrabbit.terrainy/update_notification_enabled=true
+
 [application]
 
 config/name="Aesthetic Flight Simulator"
@@ -21,7 +25,7 @@ project/assembly_name="Aesthetic Flight Simulator"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg", "res://addons/simplified_flightsim/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg", "res://addons/ninetailsrabbit.terrainy/plugin.cfg", "res://addons/simplified_flightsim/plugin.cfg")
 
 [input]
 
