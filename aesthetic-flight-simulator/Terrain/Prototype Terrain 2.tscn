@@ -1,0 +1,58 @@
+[gd_scene load_steps=17 format=3 uid="uid://bjouxwthwe7lh"]
+
+[ext_resource type="Script" path="res://addons/terrabrush/TerraBrush.cs" id="1_sptcq"]
+[ext_resource type="Texture2D" uid="uid://dcoh31wlxxlrj" path="res://Terrain/Heightmap_0_0.res" id="2_6gdbv"]
+[ext_resource type="Texture2D" uid="uid://clglmh8l6cr1q" path="res://images/textures/hp_02.png" id="2_37dc2"]
+[ext_resource type="Texture2D" uid="uid://8vkjet336oa0" path="res://images/textures/hp_03.png" id="2_scofr"]
+[ext_resource type="Script" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetResource.cs" id="3_qgurp"]
+[ext_resource type="Script" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="3_sx45c"]
+[ext_resource type="Script" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="4_3craj"]
+[ext_resource type="Script" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetsResource.cs" id="4_j0shh"]
+[ext_resource type="Texture2D" uid="uid://tpaxlx4gra6s" path="res://images/textures/hp_01.png" id="5_3iqef"]
+[ext_resource type="Texture2D" uid="uid://bvwbo8g7tsf6o" path="res://Terrain/Splatmap_0_0_0.res" id="6_iwt0k"]
+
+[sub_resource type="Resource" id="Resource_oimme"]
+script = ExtResource("3_qgurp")
+Name = "Grass"
+AlbedoTexture = ExtResource("2_scofr")
+TextureDetail = -1
+
+[sub_resource type="Resource" id="Resource_d20c5"]
+script = ExtResource("3_qgurp")
+Name = "Rock"
+AlbedoTexture = ExtResource("2_37dc2")
+TextureDetail = 1
+
+[sub_resource type="Resource" id="Resource_j0pdu"]
+script = ExtResource("3_qgurp")
+Name = "Rock 2"
+AlbedoTexture = ExtResource("5_3iqef")
+TextureDetail = -1
+
+[sub_resource type="Resource" id="Resource_w0b26"]
+script = ExtResource("4_j0shh")
+TextureSets = [SubResource("Resource_oimme"), SubResource("Resource_d20c5"), SubResource("Resource_j0pdu")]
+
+[sub_resource type="Resource" id="Resource_22cp0"]
+script = ExtResource("3_sx45c")
+ZonePosition = Vector2i(0, 0)
+HeightMapTexture = ExtResource("2_6gdbv")
+SplatmapsTexture = [ExtResource("6_iwt0k")]
+FoliagesTexture = []
+ObjectsTexture = []
+
+[sub_resource type="Resource" id="Resource_db5un"]
+script = ExtResource("4_3craj")
+Zones = [SubResource("Resource_22cp0")]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="TerraBrush" type="Node3D" parent="."]
+script = ExtResource("1_sptcq")
+DataPath = "res://Terrain"
+TextureSets = SubResource("Resource_w0b26")
+TerrainZones = SubResource("Resource_db5un")
+metadata/_edit_lock_ = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.5, 0, 0.5, -0.866025, -5.96046e-08, -8.9407e-08, 2.98023e-08, 1, 0, 93, 0)

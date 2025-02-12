@@ -16,7 +16,7 @@ config/ninetailsrabbit.terrainy/update_notification_enabled=true
 
 config/name="Aesthetic Flight Simulator"
 run/main_scene="res://Prototype World.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.3", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [dotnet]
@@ -25,7 +25,7 @@ project/assembly_name="Aesthetic Flight Simulator"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg", "res://addons/ninetailsrabbit.terrainy/plugin.cfg", "res://addons/simplified_flightsim/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg", "res://addons/ninetailsrabbit.terrainy/plugin.cfg", "res://addons/simplified_flightsim/plugin.cfg", "res://addons/terrabrush/plugin.cfg")
 
 [input]
 
