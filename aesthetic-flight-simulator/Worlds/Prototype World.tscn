@@ -1,0 +1,124 @@
+[gd_scene load_steps=23 format=3 uid="uid://wftpdvbl6ses"]
+
+[ext_resource type="Texture2D" uid="uid://cej3yoosomfd2" path="res://addons/proto-csgs/textures/dark/texture_13.png" id="2_5dpwh"]
+[ext_resource type="PackedScene" uid="uid://dxw7cledbpiia" path="res://addons/proto-csgs/proto_csg_box_3d.tscn" id="3_dr0kc"]
+[ext_resource type="Texture2D" uid="uid://bv0xfvixusiuf" path="res://addons/proto-csgs/textures/light/texture_07.png" id="3_oixej"]
+[ext_resource type="Script" path="res://addons/proto-csgs/scripts/proto_csg_box_3d.gd" id="4_n6vpc"]
+[ext_resource type="Script" path="res://addons/simplified_flightsim/Aircraft/Aircraft.gd" id="5_fjrsm"]
+[ext_resource type="PackedScene" uid="uid://bxuabe0q0v7ev" path="res://Planes/Douglas A26/Douglas_A26.tscn" id="6_ugkox"]
+[ext_resource type="Script" path="res://addons/simplified_flightsim/aircraft_modules/Engine/Engine.gd" id="7_71qr6"]
+[ext_resource type="AudioStream" uid="uid://gjcu3yum1dl8" path="res://Sounds/engine.ogg" id="8_7ch63"]
+[ext_resource type="Script" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlEngine.gd" id="8_g0ygo"]
+[ext_resource type="AudioStream" uid="uid://c06dd713oqubl" path="res://Sounds/engine_start.wav" id="9_uq5ns"]
+[ext_resource type="Script" path="res://addons/simplified_flightsim/aircraft_modules/Steering/Steering.gd" id="9_v0aio"]
+[ext_resource type="Script" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlSteering.gd" id="10_wy15e"]
+[ext_resource type="Script" path="res://addons/simplified_flightsim/aircraft_modules/EnergyContainer/EnergyContainer.gd" id="11_us1wq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s7u0b"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_kqnxn"]
+sky_material = SubResource("ProceduralSkyMaterial_s7u0b")
+
+[sub_resource type="Environment" id="Environment_0mh7l"]
+background_mode = 2
+sky = SubResource("Sky_kqnxn")
+tonemap_mode = 2
+fog_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nu1sr"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_5dpwh")
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bnmcc"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_5dpwh")
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_puvsn"]
+albedo_texture = ExtResource("3_oixej")
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_plrg6"]
+size = Vector3(5.9502, 1, 0.954346)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jfw73"]
+radius = 0.395599
+height = 4.61841
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6ywjw"]
+
+[node name="Prototype" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0mh7l")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 69.6294, 0)
+use_collision = true
+
+[node name="tower 1" parent="CSGCombiner3D" instance=ExtResource("3_dr0kc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72534, 6, -11.4816)
+size = Vector3(5, 12, 5)
+material = SubResource("StandardMaterial3D_nu1sr")
+
+[node name="tower 2" parent="CSGCombiner3D" instance=ExtResource("3_dr0kc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.34039, 8.20063, 17.5671)
+size = Vector3(4, 16, 4)
+material = SubResource("StandardMaterial3D_bnmcc")
+
+[node name="Testing Plane" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-4.37114e-06, 0, 100, 0, 100, 0, -100, 0, -4.37114e-06, -4.82031, -0.681637, 0)
+size = Vector3(2, 0.0146484, 1)
+material = SubResource("StandardMaterial3D_puvsn")
+script = ExtResource("4_n6vpc")
+block_color = 2
+block_style = 8
+
+[node name="Douglas A26" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 69.7009, -1)
+script = ExtResource("5_fjrsm")
+LiftFactor = 0.01
+
+[node name="Douglas A26" parent="Douglas A26" instance=ExtResource("6_ugkox")]
+
+[node name="Camera3D" type="Camera3D" parent="Douglas A26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56007, 5.31418)
+
+[node name="CollisionShapeWings" type="CollisionShape3D" parent="Douglas A26"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00914764, 0.563583, 0.414786)
+shape = SubResource("BoxShape3D_plrg6")
+
+[node name="CollisionShapeFuselage" type="CollisionShape3D" parent="Douglas A26"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0157547, 0.689438, 0.803805)
+shape = SubResource("CapsuleShape3D_jfw73")
+
+[node name="AircraftModule_Engine" type="Node3D" parent="Douglas A26"]
+script = ExtResource("7_71qr6")
+PowerFactor = 25.0
+EngineSoundLoop = ExtResource("8_7ch63")
+EngineSoundStart = ExtResource("9_uq5ns")
+EngineSoundStop = ExtResource("8_7ch63")
+
+[node name="AircraftModule_ControlEngine" type="Node" parent="Douglas A26"]
+script = ExtResource("8_g0ygo")
+
+[node name="AircraftModule_EnergyContainer" type="Node" parent="Douglas A26"]
+script = ExtResource("11_us1wq")
+
+[node name="AircraftModule_Steering" type="Node" parent="Douglas A26"]
+script = ExtResource("9_v0aio")
+
+[node name="AircraftModule_ControlSteering" type="Node" parent="Douglas A26"]
+script = ExtResource("10_wy15e")
+
+[node name="water" type="MeshInstance3D" parent="."]
+transform = Transform3D(400, 0, 0, 0, 400, 0, 0, 0, 400, 0, 0, 0)
+mesh = SubResource("PlaneMesh_6ywjw")

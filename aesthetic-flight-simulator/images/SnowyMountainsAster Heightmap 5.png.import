@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cua4u867pu0w3"
-path.s3tc="res://.godot/imported/SnowyMountainsAster Heightmap 5.png-7616a70879762b9cecbface2ba61fb94.s3tc.ctex"
+path.s3tc="res://.godot/imported/SnowyMountainsAster Heightmap 5.png-33d35be661cab0dae3dfef13d422006f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://images/SnowyMountainsAster Heightmap 5.png"
-dest_files=["res://.godot/imported/SnowyMountainsAster Heightmap 5.png-7616a70879762b9cecbface2ba61fb94.s3tc.ctex"]
+source_file="res://Images/SnowyMountainsAster Heightmap 5.png"
+dest_files=["res://.godot/imported/SnowyMountainsAster Heightmap 5.png-33d35be661cab0dae3dfef13d422006f.s3tc.ctex"]
 
 [params]
 

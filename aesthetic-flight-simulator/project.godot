@@ -8,14 +8,10 @@
 
 config_version=5
 
-[Aesthetic Flight Simulator]
-
-config/ninetailsrabbit.terrainy/update_notification_enabled=true
-
 [application]
 
 config/name="Aesthetic Flight Simulator"
-run/main_scene="res://Prototype World.tscn"
+run/main_scene="res://UI/Main Menu.tscn"
 config/features=PackedStringArray("4.3", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -25,7 +21,7 @@ project/assembly_name="Aesthetic Flight Simulator"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg", "res://addons/ninetailsrabbit.terrainy/plugin.cfg", "res://addons/simplified_flightsim/plugin.cfg", "res://addons/terrabrush/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg", "res://addons/simplified_flightsim/plugin.cfg", "res://addons/terrabrush/plugin.cfg")
 
 [input]
 
@@ -85,8 +81,3 @@ placeholder_backward={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
 ]
 }
-
-[rendering]
-
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
