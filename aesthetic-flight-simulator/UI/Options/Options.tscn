@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://pycshnhsb53w"]
+[gd_scene load_steps=4 format=3 uid="uid://pycshnhsb53w"]
 
+[ext_resource type="Script" path="res://UI/Options/options_menu.gd" id="1_oqhua"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="1_uxtlu"]
+[ext_resource type="Script" path="res://UI/Options/master_volume_slider.gd" id="2_tad5e"]
 
 [node name="Options" type="CanvasLayer"]
+script = ExtResource("1_oqhua")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -13,26 +16,140 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="Background Color" type="ColorRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.17, 0.17, 0.17, 1)
+
+[node name="Controls Section background" type="ColorRect" parent="Control"]
+layout_mode = 2
+offset_left = 126.0
+offset_right = 1026.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
 color = Color(0.156863, 0.156863, 0.156863, 1)
 
-[node name="Title" type="Label" parent="Control/ColorRect"]
+[node name="Title" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -533.0
-offset_top = 23.0
-offset_right = 359.0
-offset_bottom = 121.0
+offset_left = -390.0
+offset_right = 384.0
+offset_bottom = 98.0
 grow_horizontal = 2
 theme = ExtResource("1_uxtlu")
 theme_type_variation = &"HeaderLarge"
 text = "Options"
+horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Back Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 590.0
+offset_right = -970.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_uxtlu")
+text = "Back to Menu"
+
+[node name="Controls Section" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 51.0
+offset_top = -200.0
+offset_right = 313.0
+offset_bottom = 201.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Subtitle" type="Label" parent="Control/Controls Section"]
+layout_mode = 2
+theme = ExtResource("1_uxtlu")
+theme_type_variation = &"HeaderMedium"
+text = "Controls:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Control/Controls Section"]
+layout_mode = 2
+theme = ExtResource("1_uxtlu")
+theme_type_variation = &"GraphFrameTitleLabel"
+text = "Start Engine: P
+Stop Engine: O
+
+Throttle 1: 1
+Throttle 2: 2 
+Throttle 3: 3
+
+Throttle Up: F
+Throttle Down: V"
+
+[node name="Volume Section" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -406.0
+offset_top = -204.0
+offset_right = -18.0
+offset_bottom = 302.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="Subtitle" type="Label" parent="Control/Volume Section"]
+layout_mode = 2
+theme = ExtResource("1_uxtlu")
+theme_type_variation = &"HeaderMedium"
+text = "Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Control/Volume Section"]
+layout_mode = 2
+theme = ExtResource("1_uxtlu")
+text = "Master Volume"
+
+[node name="Master Volume Slider" type="HSlider" parent="Control/Volume Section"]
+layout_mode = 2
+theme = ExtResource("1_uxtlu")
+max_value = 1.0
+script = ExtResource("2_tad5e")
+
+[node name="Label2" type="Label" parent="Control/Volume Section"]
+layout_mode = 2
+theme = ExtResource("1_uxtlu")
+text = "Music"
+
+[node name="Music Slider" type="HSlider" parent="Control/Volume Section"]
+layout_mode = 2
+max_value = 1.0
+
+[node name="Label3" type="Label" parent="Control/Volume Section"]
+layout_mode = 2
+theme = ExtResource("1_uxtlu")
+text = "Sound Effects"
+
+[node name="SFX Slider" type="HSlider" parent="Control/Volume Section"]
+layout_mode = 2
+max_value = 1.0
+
+[connection signal="pressed" from="Control/Back Button" to="." method="_on_back_button_pressed"]

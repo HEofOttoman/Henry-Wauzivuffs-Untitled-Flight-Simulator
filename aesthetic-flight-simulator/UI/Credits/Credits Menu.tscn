@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=3 uid="uid://od8l2hlc2cyc"]
+
+[ext_resource type="Script" path="res://UI/Credits/credits_menu.gd" id="1_rjofs"]
+[ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="1_um854"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_rjofs")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[node name="Title" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 52.0
+offset_top = -313.0
+offset_right = -52.0
+offset_bottom = -215.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_um854")
+theme_type_variation = &"HeaderLarge"
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -396.0
+offset_top = -215.0
+offset_right = 396.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Made with Godot
+Main Developer - Henry Wauzivuff
+
+Terrabrush - Spimort
+Simplified FLight Simulator: FBcosentino
+BOTW Cel Shader - Nekoto Arts
+Super Godot Wakatime (remove later) - Bartosz
+"
+
+[node name="Back Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 590.0
+offset_right = -977.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_um854")
+text = "Back to Menu"
+
+[connection signal="pressed" from="Control/Back Button" to="." method="_on_back_button_pressed"]

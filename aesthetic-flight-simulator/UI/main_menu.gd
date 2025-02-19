@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+@onready var Audio := %AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,18 +11,28 @@ func _ready():
 func _process(_delta):
 	pass
 
+# My attempt to implement a clicking sound in the Game
+func playAudio():
+	Audio.play()
 
 func _on_play_button_pressed():
 	get_tree().change_scene_to_file("res://Worlds/Prototype World.tscn") # Goes to playable scene world
+	
+	playAudio()
 
 
 func _on_options_button_pressed():
-	get_tree().change_scene_to_file("") # Replace with new options scne.
-
+	get_tree().change_scene_to_file("res://UI/Options/Options.tscn") # Replace with new options scne.
+	
+	playAudio()
 
 func _on_credits_button_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://UI/Credits/Credits Menu.tscn")
+	
+	playAudio()
 
 
 func _on_quit_button_pressed():
 	get_tree().quit()
+	
+	playAudio()
