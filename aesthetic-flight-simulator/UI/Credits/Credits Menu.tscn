@@ -56,12 +56,11 @@ offset_bottom = 288.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Made with Godot
-Main Developer - Henry Wauzivuff
+Main Developer - Shafin
 
 Terrabrush - Spimort
 Simplified FLight Simulator: FBcosentino
 BOTW Cel Shader - Nekoto Arts
-Super Godot Wakatime (remove later) - Bartosz
 "
 
 [node name="Back Button" type="Button" parent="Control"]

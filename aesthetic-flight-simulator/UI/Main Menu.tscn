@@ -73,6 +73,7 @@ text = "Aesthetic Flight Simulator"
 vertical_alignment = 1
 
 [node name="Subtitle" type="Label" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
