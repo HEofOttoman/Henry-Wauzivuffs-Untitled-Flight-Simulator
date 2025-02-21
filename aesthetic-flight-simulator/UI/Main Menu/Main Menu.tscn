@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://djif2soo2slbl"]
 
-[ext_resource type="Script" path="res://UI/main_menu.gd" id="1_o0nip"]
+[ext_resource type="Script" path="res://UI/Main Menu/main_menu.gd" id="1_o0nip"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="1_vf83f"]
 [ext_resource type="AudioStream" uid="uid://drccxqvt7df1w" path="res://Sounds/click1.ogg" id="3_p06n8"]
 
@@ -26,13 +26,14 @@ color = Color(0.158472, 0.158472, 0.158472, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_left = 48.0
-offset_top = 286.0
-offset_right = 413.0
-offset_bottom = -61.0
+anchors_preset = -1
+anchor_left = 0.0416667
+anchor_top = 0.441358
+anchor_right = 0.358507
+anchor_bottom = 0.905864
+grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Play Button" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
@@ -59,34 +60,33 @@ text = "Quit"
 
 [node name="Title" type="Label" parent="Control"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -533.0
-offset_top = 39.0
-offset_right = 359.0
-offset_bottom = 137.0
+anchors_preset = -1
+anchor_left = 0.0373264
+anchor_top = 0.0601852
+anchor_right = 0.811632
+anchor_bottom = 0.21142
 grow_horizontal = 2
 theme = ExtResource("1_vf83f")
 theme_type_variation = &"HeaderLarge"
 text = "Aesthetic Flight Simulator"
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Subtitle" type="Label" parent="Control"]
-visible = false
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -518.0
-offset_top = 139.0
-offset_right = -188.0
-offset_bottom = 204.0
+anchors_preset = -1
+anchor_left = 0.0429688
+anchor_top = 0.214506
+anchor_right = 0.344184
+anchor_bottom = 0.314815
+offset_left = 8.5
+offset_right = -8.5
 grow_horizontal = 2
 theme = ExtResource("1_vf83f")
 theme_type_variation = &"HeaderMedium"
 text = "By Henry Wauzivuff"
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
 unique_name_in_owner = true

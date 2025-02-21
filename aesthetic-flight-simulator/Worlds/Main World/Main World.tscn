@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dg3vbnm2f8mef"]
+[gd_scene load_steps=39 format=3 uid="uid://dg3vbnm2f8mef"]
 
 [ext_resource type="Script" path="res://addons/terrabrush/TerraBrush.cs" id="1_d7bij"]
 [ext_resource type="Texture2D" uid="uid://8vkjet336oa0" path="res://Images/textures/hp_03.png" id="2_oxcxs"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" path="res://addons/simplified_flightsim/aircraft_modules/EnergyContainer/EnergyContainer.gd" id="21_h3o1i"]
 [ext_resource type="Script" path="res://addons/simplified_flightsim/aircraft_modules/Steering/Steering.gd" id="22_pcbf8"]
 [ext_resource type="Script" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlSteering.gd" id="23_edpxg"]
+[ext_resource type="PackedScene" uid="uid://3hhc2j6mntrp" path="res://UI/Pause Menu/Pause Menu.tscn" id="24_77xnj"]
 [ext_resource type="Script" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="134_52xcw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b3hs3"]
@@ -116,7 +117,7 @@ TerrainZones = SubResource("Resource_4moln")
 metadata/_edit_lock_ = false
 
 [node name="Douglas A26" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.7009, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.80359, -1)
 script = ExtResource("15_lh1n4")
 LiftFactor = 0.01
 
@@ -155,3 +156,7 @@ script = ExtResource("23_edpxg")
 [node name="water" type="MeshInstance3D" parent="."]
 transform = Transform3D(400, 0, 0, 0, 400, 0, 0, 0, 400, 0, -151, 0)
 mesh = SubResource("PlaneMesh_i60tf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("24_77xnj")]

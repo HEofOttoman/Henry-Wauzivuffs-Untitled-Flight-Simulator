@@ -27,54 +27,60 @@ color = Color(0.156863, 0.156863, 0.156863, 1)
 
 [node name="Title" type="Label" parent="Control"]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 52.0
-offset_top = -313.0
-offset_right = -52.0
-offset_bottom = -215.0
+anchors_preset = -1
+anchor_left = 0.0451389
+anchor_top = 0.0139752
+anchor_right = 0.954861
+anchor_bottom = 0.166149
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_um854")
 theme_type_variation = &"HeaderLarge"
 text = "Credits"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="TextEdit" type="TextEdit" parent="Control"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -396.0
-offset_top = -215.0
-offset_right = 396.0
-offset_bottom = 288.0
+anchors_preset = -1
+anchor_left = 0.15625
+anchor_top = 0.166149
+anchor_right = 0.84375
+anchor_bottom = 0.947205
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_um854")
 text = "Made with Godot
-Main Developer - Shafin
+Main Developer - Henry Wauzivuff
 
+# Plugins
 Terrabrush - Spimort
-Simplified FLight Simulator: FBcosentino
+Simplified Flight Simulator: FBcosentino
 BOTW Cel Shader - Nekoto Arts
+
+# Assets
+Kenney
+Google Fonts
+
+# Honorable Mentions
+Kobedev (For his tutorials on main menus, pause and volume) 
+Spimort (For his help in troubleshooting Terrabrush)
+
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Back Button" type="Button" parent="Control"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = 590.0
-offset_right = -977.0
-offset_bottom = -9.0
+anchors_preset = -1
+anchor_top = 0.891304
+anchor_right = 0.145833
+anchor_bottom = 0.973602
+offset_top = 2.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_um854")
 text = "Back to Menu"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Control/Back Button" to="." method="_on_back_button_pressed"]

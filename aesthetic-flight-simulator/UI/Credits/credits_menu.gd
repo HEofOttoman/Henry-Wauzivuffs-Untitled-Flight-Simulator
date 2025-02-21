@@ -10,7 +10,7 @@ func _ready():
 func _process(delta):
 	pass
 
-## Goes back to main menu
+# Back button goes back to main menu
 func _on_back_button_pressed():
-	get_tree().change_scene_to_file("res://UI/Main Menu.tscn") 
+	get_tree().change_scene_to_file("res://UI/Main Menu/Main Menu.tscn") 
 	## Returns to the Main Menu (change to go back to previous scene somehow)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://UI/Options/options_menu.gd" id="1_oqhua"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="1_uxtlu"]
-[ext_resource type="Script" path="res://UI/Options/master_volume_slider.gd" id="2_tad5e"]
+[ext_resource type="Script" path="res://UI/Options/audio_options.gd" id="3_x2vek"]
 
 [node name="Options" type="CanvasLayer"]
 script = ExtResource("1_oqhua")
@@ -27,56 +27,52 @@ color = Color(0.17, 0.17, 0.17, 1)
 
 [node name="Controls Section background" type="ColorRect" parent="Control"]
 layout_mode = 2
-offset_left = 126.0
-offset_right = 1026.0
-offset_bottom = 648.0
+anchor_left = 0.109375
+anchor_right = 0.890625
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 color = Color(0.156863, 0.156863, 0.156863, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="Label" parent="Control"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -390.0
-offset_right = 384.0
-offset_bottom = 98.0
+anchors_preset = -1
+anchor_left = 0.161458
+anchor_right = 0.833333
+anchor_bottom = 0.151235
 grow_horizontal = 2
 theme = ExtResource("1_uxtlu")
 theme_type_variation = &"HeaderLarge"
 text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Back Button" type="Button" parent="Control"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = 590.0
-offset_right = -970.0
-offset_bottom = -9.0
+anchors_preset = -1
+anchor_left = 0.00520833
+anchor_top = 0.910494
+anchor_right = 0.157986
+anchor_bottom = 0.986111
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_uxtlu")
 text = "Back to Menu"
+metadata/_edit_use_anchors_ = true
 
 [node name="Controls Section" type="VBoxContainer" parent="Control"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 51.0
-offset_top = -200.0
-offset_right = 313.0
-offset_bottom = 201.0
+anchors_preset = -1
+anchor_left = 0.544271
+anchor_top = 0.191358
+anchor_right = 0.771701
+anchor_bottom = 0.810185
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Subtitle" type="Label" parent="Control/Controls Section"]
 layout_mode = 2
@@ -100,22 +96,26 @@ Throttle 3: 3
 Throttle Up: F
 Throttle Down: V"
 
-[node name="Volume Section" type="VBoxContainer" parent="Control"]
+[node name="Audio Options" type="Control" parent="Control"]
+anchors_preset = 0
+anchor_right = 0.0347222
+anchor_bottom = 0.0617284
+script = ExtResource("3_x2vek")
+metadata/_edit_use_anchors_ = true
+
+[node name="Volume Section" type="VBoxContainer" parent="Control/Audio Options"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -406.0
-offset_top = -204.0
-offset_right = -18.0
-offset_bottom = 302.0
+anchors_preset = -1
+anchor_left = 4.25
+anchor_top = 3.0
+anchor_right = 13.95
+anchor_bottom = 15.65
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
 
-[node name="Subtitle" type="Label" parent="Control/Volume Section"]
+[node name="Subtitle" type="Label" parent="Control/Audio Options/Volume Section"]
 layout_mode = 2
 theme = ExtResource("1_uxtlu")
 theme_type_variation = &"HeaderMedium"
@@ -123,33 +123,42 @@ text = "Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="Control/Volume Section"]
+[node name="Label" type="Label" parent="Control/Audio Options/Volume Section"]
 layout_mode = 2
 theme = ExtResource("1_uxtlu")
 text = "Master Volume"
 
-[node name="Master Volume Slider" type="HSlider" parent="Control/Volume Section"]
+[node name="Master Volume Slider" type="HSlider" parent="Control/Audio Options/Volume Section"]
 layout_mode = 2
 theme = ExtResource("1_uxtlu")
 max_value = 1.0
-script = ExtResource("2_tad5e")
+step = 0.05
 
-[node name="Label2" type="Label" parent="Control/Volume Section"]
+[node name="Label2" type="Label" parent="Control/Audio Options/Volume Section"]
 layout_mode = 2
 theme = ExtResource("1_uxtlu")
 text = "Music"
 
-[node name="Music Slider" type="HSlider" parent="Control/Volume Section"]
+[node name="Music Slider" type="HSlider" parent="Control/Audio Options/Volume Section"]
 layout_mode = 2
 max_value = 1.0
+step = 0.05
 
-[node name="Label3" type="Label" parent="Control/Volume Section"]
+[node name="Label3" type="Label" parent="Control/Audio Options/Volume Section"]
 layout_mode = 2
 theme = ExtResource("1_uxtlu")
 text = "Sound Effects"
 
-[node name="SFX Slider" type="HSlider" parent="Control/Volume Section"]
+[node name="SFX Slider" type="HSlider" parent="Control/Audio Options/Volume Section"]
 layout_mode = 2
 max_value = 1.0
+step = 0.05
 
 [connection signal="pressed" from="Control/Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="mouse_exited" from="Control/Audio Options/Volume Section/Master Volume Slider" to="." method="_on_master_volume_slider_mouse_exited"]
+[connection signal="mouse_exited" from="Control/Audio Options/Volume Section/Master Volume Slider" to="Control/Audio Options" method="_on_master_volume_slider_mouse_exited"]
+[connection signal="value_changed" from="Control/Audio Options/Volume Section/Master Volume Slider" to="Control/Audio Options" method="_on_master_volume_slider_value_changed"]
+[connection signal="mouse_exited" from="Control/Audio Options/Volume Section/Music Slider" to="Control/Audio Options" method="_on_music_slider_mouse_exited"]
+[connection signal="value_changed" from="Control/Audio Options/Volume Section/Music Slider" to="Control/Audio Options" method="_on_music_slider_value_changed"]
+[connection signal="mouse_exited" from="Control/Audio Options/Volume Section/SFX Slider" to="Control/Audio Options" method="_on_sfx_slider_mouse_exited"]
+[connection signal="value_changed" from="Control/Audio Options/Volume Section/SFX Slider" to="Control/Audio Options" method="_on_sfx_slider_value_changed"]
