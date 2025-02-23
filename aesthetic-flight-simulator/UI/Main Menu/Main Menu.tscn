@@ -33,7 +33,6 @@ anchor_right = 0.358507
 anchor_bottom = 0.905864
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="Play Button" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2

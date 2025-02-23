@@ -93,7 +93,7 @@ Zones = [SubResource("Resource_jream"), SubResource("Resource_r6404"), SubResour
 size = Vector3(5.9502, 1, 0.954346)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d1jwd"]
-radius = 0.395599
+radius = 0.3
 height = 4.61841
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_i60tf"]

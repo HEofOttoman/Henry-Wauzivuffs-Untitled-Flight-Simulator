@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://3hhc2j6mntrp"]
+[gd_scene load_steps=8 format=3 uid="uid://3hhc2j6mntrp"]
 
 [ext_resource type="Script" path="res://UI/Pause Menu/pause_menu.gd" id="1_mk7rm"]
+[ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="2_omo8g"]
 
 [sub_resource type="Shader" id="Shader_l42mg"]
 code = "shader_type canvas_item;
@@ -105,34 +106,49 @@ grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-anchor_left = 0.295139
-anchor_top = 0.132716
-anchor_right = 0.747396
-anchor_bottom = 0.867284
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.368056
+anchor_top = 0.299383
+anchor_right = 0.650174
+anchor_bottom = 0.70216
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_omo8g")
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_omo8g")
 text = "Resume"
 
 [node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_omo8g")
 text = "Restart"
 
 [node name="Options" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 10
+theme = ExtResource("2_omo8g")
 text = "Options"
 
 [node name="Main Menu" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 10
+theme = ExtResource("2_omo8g")
 text = "Main Menu"
 
 [node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 10
+theme = ExtResource("2_omo8g")
 text = "Quit
 "
 
