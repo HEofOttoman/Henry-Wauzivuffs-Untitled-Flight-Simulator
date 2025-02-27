@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tpaxlx4gra6s"
-path.s3tc="res://.godot/imported/hp_01.png-35ab9fbfb3e595053a7ea9fdbf62ba76.s3tc.ctex"
+path.s3tc="res://.godot/imported/hp_01.png-ed7e65a9eab4936d3119249e7d644473.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/textures/hp_01.png"
-dest_files=["res://.godot/imported/hp_01.png-35ab9fbfb3e595053a7ea9fdbf62ba76.s3tc.ctex"]
+source_file="res://Images/textures/handpainted-style-textures-3/hp_01/hp_01.png"
+dest_files=["res://.godot/imported/hp_01.png-ed7e65a9eab4936d3119249e7d644473.s3tc.ctex"]
 
 [params]
 

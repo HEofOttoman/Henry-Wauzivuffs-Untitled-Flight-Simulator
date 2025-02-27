@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkpqmorgtugae"
-path.s3tc="res://.godot/imported/sand_04_color_1k.png-3221574839519c58d7cd16800ed982f5.s3tc.ctex"
+path.s3tc="res://.godot/imported/sand_04_color_1k.png-fd64fac229ae3b9e7e1f378ba2dc5621.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/textures/sand_04_color_1k.png"
-dest_files=["res://.godot/imported/sand_04_color_1k.png-3221574839519c58d7cd16800ed982f5.s3tc.ctex"]
+source_file="res://Images/textures/sand_04_1k/sand_04_color_1k.png"
+dest_files=["res://.godot/imported/sand_04_color_1k.png-fd64fac229ae3b9e7e1f378ba2dc5621.s3tc.ctex"]
 
 [params]
 
