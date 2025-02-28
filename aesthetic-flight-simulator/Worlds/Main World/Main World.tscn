@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dg3vbnm2f8mef"]
+[gd_scene load_steps=41 format=3 uid="uid://dg3vbnm2f8mef"]
 
 [ext_resource type="Texture2D" uid="uid://cmbxldpwu1uk3" path="res://Images/sky_23_2k.png" id="1_ce4g2"]
 [ext_resource type="Script" path="res://addons/terrabrush/TerraBrush.cs" id="1_d7bij"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://tpaxlx4gra6s" path="res://Images/textures/handpainted-style-textures-3/hp_01/hp_01.png" id="5_djem5"]
 [ext_resource type="Texture2D" uid="uid://dxb4das5l8yk" path="res://Worlds/Terrain Data/Heightmap_0_0.res" id="5_gmdld"]
 [ext_resource type="Texture2D" uid="uid://dydlf0kcx071r" path="res://Worlds/Terrain Data/Splatmap_0_0_0.res" id="6_a70g8"]
+[ext_resource type="Texture2D" uid="uid://dbmmierdtwbug" path="res://Images/textures/handpainted-style-textures-3/hp_04/hp_04.png" id="7_fofse"]
 [ext_resource type="Script" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="7_mt8ef"]
 [ext_resource type="Texture2D" uid="uid://jqquugfpq73v" path="res://Worlds/Terrain Data/Heightmap_-1_0.res" id="10_ml7nd"]
 [ext_resource type="Texture2D" uid="uid://dnbhwbqwtbt2r" path="res://Worlds/Terrain Data/Splatmap_-1_0_0.res" id="11_e4aq6"]
@@ -35,7 +36,13 @@ sky_material = SubResource("PanoramaSkyMaterial_hoawo")
 [sub_resource type="Environment" id="Environment_jgrli"]
 background_mode = 2
 sky = SubResource("Sky_ky8lf")
+ambient_light_sky_contribution = 0.2
+ambient_light_energy = 2.0
 tonemap_mode = 2
+tonemap_white = 0.76
+fog_mode = 1
+fog_density = 1.0
+fog_height_density = 0.7843
 
 [sub_resource type="Resource" id="Resource_lves4"]
 script = ExtResource("3_g6eo6")
@@ -55,9 +62,15 @@ Name = "Stone 3"
 AlbedoTexture = ExtResource("5_djem5")
 TextureDetail = 1
 
+[sub_resource type="Resource" id="Resource_qam2w"]
+script = ExtResource("3_g6eo6")
+Name = "Dirt"
+AlbedoTexture = ExtResource("7_fofse")
+TextureDetail = -1
+
 [sub_resource type="Resource" id="Resource_th7pt"]
 script = ExtResource("4_p45yv")
-TextureSets = [SubResource("Resource_lves4"), SubResource("Resource_ptadx"), SubResource("Resource_7s48p")]
+TextureSets = [SubResource("Resource_lves4"), SubResource("Resource_ptadx"), SubResource("Resource_7s48p"), SubResource("Resource_qam2w")]
 
 [sub_resource type="Resource" id="Resource_jream"]
 script = ExtResource("7_mt8ef")
@@ -96,11 +109,13 @@ height = 4.61841
 
 [node name="MainWorld" type="Node3D"]
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 116, 0)
+light_energy = 0.846
+shadow_enabled = true
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jgrli")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.015271, 0.999883, -1.52913e-08, 0.289248, 0.00441766, 0.957244, 0.957132, 0.0146181, -0.289282, 0, 0, 0)
 
 [node name="TerraBrush" type="Node3D" parent="."]
 script = ExtResource("1_d7bij")
@@ -112,14 +127,14 @@ TerrainZones = SubResource("Resource_4moln")
 metadata/_edit_lock_ = false
 
 [node name="Douglas A26" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.80359, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.40359, -1)
 script = ExtResource("15_lh1n4")
 LiftFactor = 0.01
 
 [node name="Douglas A26" parent="Douglas A26" instance=ExtResource("16_1japn")]
 
 [node name="Camera3D" type="Camera3D" parent="Douglas A26"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56007, 5.31418)
+transform = Transform3D(1, 0, 0, 0, 0.999147, 0.0413002, 0, -0.0413002, 0.999147, 0, 1.06007, 4.63623)
 
 [node name="CollisionShapeWings" type="CollisionShape3D" parent="Douglas A26"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00914764, 0.563583, 0.414786)
