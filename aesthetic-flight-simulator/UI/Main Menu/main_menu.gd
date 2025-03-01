@@ -16,23 +16,27 @@ func playAudio():
 	Audio.play()
 
 func _on_play_button_pressed():
-	get_tree().change_scene_to_file("res://Worlds/Main World/Main World.tscn") # Goes to playable scene world
-	
 	playAudio()
+	
+	get_tree().change_scene_to_file("res://Worlds/Main World/Main World.tscn") # Goes to playable scene world
+
 
 
 func _on_options_button_pressed():
-	get_tree().change_scene_to_file("res://UI/Options/Options.tscn") # Replace with new options scne.
-	
 	playAudio()
+	
+	get_tree().change_scene_to_file("res://UI/Options/Options.tscn") # Replace with new options scene.
+
+
 
 func _on_credits_button_pressed():
-	get_tree().change_scene_to_file("res://UI/Credits/Credits Menu.tscn")
-	
 	playAudio()
+	
+	get_tree().change_scene_to_file("res://UI/Credits/Credits Menu.tscn")
+
 
 
 func _on_quit_button_pressed():
-	get_tree().quit()
-	
 	playAudio()
+	
+	get_tree().quit()

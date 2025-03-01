@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djd0hqwhkltxe"
+path="res://.godot/imported/J.S. Aria_Zu Tanze, zu Sprunge so wackelt das Herz_ 4.mp3-51708c8da916065b0c4768b65353af0c.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Music/J.S. Aria_Zu Tanze, zu Sprunge so wackelt das Herz_ 4.mp3"
+dest_files=["res://.godot/imported/J.S. Aria_Zu Tanze, zu Sprunge so wackelt das Herz_ 4.mp3-51708c8da916065b0c4768b65353af0c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
