@@ -68,7 +68,7 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.544271
 anchor_top = 0.191358
-anchor_right = 0.771701
+anchor_right = 0.833333
 anchor_bottom = 0.810185
 grow_horizontal = 2
 grow_vertical = 2
@@ -82,12 +82,16 @@ text = "Controls:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="Control/Controls Section"]
+[node name="TextEdit" type="TextEdit" parent="Control/Controls Section"]
 layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("1_uxtlu")
-theme_type_variation = &"GraphFrameTitleLabel"
 text = "Start Engine: P
 Stop Engine: O
+
+Pitch: W & S
+Roll: A & D
+Yaw: Q & E
 
 Throttle 1: 1
 Throttle 2: 2 
