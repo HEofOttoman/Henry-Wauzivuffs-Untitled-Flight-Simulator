@@ -3,27 +3,32 @@ extends Node
 @export var Camera1: Camera3D # 3rd Person Camera
 @export var Camera2: Camera3D # 1st Person Camera
 
-@onready var camera2_active = false 
-## Establishes a boolean between 2 cameras to use for a camera switcher
-## Spaghetti code only usable if there are only 2 cameras
-##
+
+enum camera_state{FIRST, THIRD}
+## Establishes an enum between 2 cameras to use for a camera switcher
+
+var current_cam_state = camera_state.THIRD
+## Then puts the two states into a variable
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-## Changes the camera
+## Function that changes the camera
 func change_camera():
-	if Input.is_action_just_pressed('switch camera') and camera2_active == false:
-		Camera2.make_current() ## Currently only works to switch to first person, cannot switch back
-		var camera2_active = true
-	if Input.is_action_just_pressed('switch camera') and camera2_active == true:
-		Camera1.make_current()
-		var camera2_active = false
+	match current_cam_state:
+		camera_state.THIRD:
+			Camera1.make_current()
+			current_cam_state = camera_state.FIRST
+		camera_state.FIRST:
+			Camera2.make_current()
+			current_cam_state = camera_state.THIRD
 
-# Called on any input
-func _input(event):
-	change_camera()
+
+## Called on any input
+func _input(_event):
+	if Input.is_action_just_pressed('switch camera'):
+		change_camera()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
