@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://pycshnhsb53w"]
 
-[ext_resource type="Script" path="res://UI/Options/options_menu.gd" id="1_oqhua"]
+[ext_resource type="Script" uid="uid://cd40kewb1nd2m" path="res://UI/Options/options_menu.gd" id="1_oqhua"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="1_uxtlu"]
-[ext_resource type="Script" path="res://UI/Options/audio_options.gd" id="3_x2vek"]
+[ext_resource type="Script" uid="uid://cbkybbadvvqnh" path="res://UI/Options/audio_options.gd" id="3_x2vek"]
 
 [node name="Options" type="CanvasLayer"]
 script = ExtResource("1_oqhua")
