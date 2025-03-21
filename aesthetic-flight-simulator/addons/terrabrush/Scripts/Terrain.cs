@@ -108,7 +108,11 @@ public partial class Terrain : Node3D {
     }
 
     private void TerrainSplatmapsUpdated() {
-        Clipmap.Shader.SetShaderParameter(StringNames.Splatmaps, TerrainZones.SplatmapsTextures);
+        if (TerrainZones.SplatmapsTextures.GetLayers() == 0) {
+            Clipmap.Shader.SetShaderParameter(StringNames.Splatmaps, default);
+        } else {
+            Clipmap.Shader.SetShaderParameter(StringNames.Splatmaps, TerrainZones.SplatmapsTextures);
+        }        
     }
 
     public void TerrainWaterUpdated() {
@@ -242,6 +246,8 @@ public partial class Terrain : Node3D {
         if (this.TextureSets?.TextureSets?.Length > 0) {
             var textureArray = Utils.TexturesToTextureArray(this.TextureSets.TextureSets.Select(x => x.AlbedoTexture));
             Clipmap.Shader.SetShaderParameter(StringNames.TexturesDetail, TextureSets.TextureSets.Select(x => x.TextureDetail <= 0 ? TextureDetail : x.TextureDetail).ToArray());
+            Clipmap.Shader.SetShaderParameter(StringNames.Triplanar, TextureSets.TextureSets.Any(x => x.Triplanar));
+            Clipmap.Shader.SetShaderParameter(StringNames.TexturesTriplanar, TextureSets.TextureSets.Select(x => x.Triplanar ? 1 : 0).ToArray());
             Clipmap.Shader.SetShaderParameter($"Textures{filterParamName}", textureArray);
             Clipmap.Shader.SetShaderParameter(StringNames.NumberOfTextures, textureArray.GetLayers());
 

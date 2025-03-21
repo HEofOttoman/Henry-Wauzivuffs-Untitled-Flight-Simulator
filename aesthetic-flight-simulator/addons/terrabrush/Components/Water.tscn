@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://c1hskhrgdx6ug"]
 
-[ext_resource type="Script" uid="uid://bcyk1lqdqbx02" path="res://addons/terrabrush/Scripts/Water.cs" id="1_4nwuo"]
+[ext_resource type="Script" uid="uid://b8p1vb8d5miex" path="res://addons/terrabrush/Scripts/Water.cs" id="1_4nwuo"]
 [ext_resource type="PackedScene" uid="uid://2taw1ee4hhf2" path="res://addons/terrabrush/Components/Clipmap.tscn" id="2_002qp"]
-[ext_resource type="Shader" uid="uid://c3x3oxnsd41k" path="res://addons/terrabrush/Resources/Shaders/water_clipmap_shader.gdshader" id="3_xfn30"]
+[ext_resource type="Shader" uid="uid://d081v47dx34tf" path="res://addons/terrabrush/Resources/Shaders/water_clipmap_shader.gdshader" id="3_xfn30"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t0wqr"]
 resource_local_to_scene = true

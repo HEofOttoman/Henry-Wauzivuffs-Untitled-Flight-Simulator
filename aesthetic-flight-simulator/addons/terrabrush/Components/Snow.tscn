@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cy14sjxay4ll0"]
 
-[ext_resource type="Script" uid="uid://cm6vowqsk2gsp" path="res://addons/terrabrush/Scripts/Snow.cs" id="1_4mfhl"]
+[ext_resource type="Script" uid="uid://ch5dtrld2h5jt" path="res://addons/terrabrush/Scripts/Snow.cs" id="1_4mfhl"]
 [ext_resource type="PackedScene" uid="uid://2taw1ee4hhf2" path="res://addons/terrabrush/Components/Clipmap.tscn" id="2_6atxl"]
-[ext_resource type="Shader" uid="uid://bguwod5kom2kk" path="res://addons/terrabrush/Resources/Shaders/snow_clipmap_shader.gdshader" id="3_b4mbk"]
+[ext_resource type="Shader" uid="uid://bdxk0b3pl5vtj" path="res://addons/terrabrush/Resources/Shaders/snow_clipmap_shader.gdshader" id="3_b4mbk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fh436"]
 resource_local_to_scene = true

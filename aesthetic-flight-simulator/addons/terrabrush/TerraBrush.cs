@@ -131,7 +131,7 @@ public partial class TerraBrush : TerraBrushTool {
     public int LODLevels { get;set; } = 5;
 
     [Export]
-    public int LODRowsPerLevel { get;set; } = 101;
+    public int LODRowsPerLevel { get;set; } = 50;
 
     [Export]
     public float LODInitialCellWidth { get;set; } = 1;
@@ -628,8 +628,11 @@ public partial class TerraBrush : TerraBrushTool {
 
     public void UpdateObjectsHeight(List<ZoneResource> zones) {
         for (var i = 0; i < Objects?.Length; i++) {
-            var objectsNode = _objectsContainerNode.GetNode<IObjectsNode>($"{i}");
-            objectsNode.UpdateObjectsHeight(zones);
+            var objectItem = Objects[i];
+            if (!objectItem.Hide) {
+                var objectsNode = _objectsContainerNode.GetNode<IObjectsNode>($"{i}");
+                objectsNode.UpdateObjectsHeight(zones);
+            }
         }
     }
 
