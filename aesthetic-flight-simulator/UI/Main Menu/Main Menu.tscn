@@ -68,7 +68,7 @@ anchor_bottom = 0.21142
 grow_horizontal = 2
 theme = ExtResource("1_vf83f")
 theme_type_variation = &"HeaderLarge"
-text = "Aesthetic Flight Simulator"
+text = "Untitled Flight Simulator"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 

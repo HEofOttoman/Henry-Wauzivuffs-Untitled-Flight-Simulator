@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dg3vbnm2f8mef"]
+[gd_scene load_steps=49 format=3 uid="uid://dg3vbnm2f8mef"]
 
 [ext_resource type="Texture2D" uid="uid://cmbxldpwu1uk3" path="res://Images/sky_23_2k.png" id="1_ce4g2"]
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_d7bij"]
@@ -126,6 +126,9 @@ size = Vector3(5.9502, 1, 0.4)
 radius = 0.3
 height = 4.61841
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_y1yxn"]
+size = Vector3(0.2, 0.9, 0.3)
+
 [node name="MainWorld" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -154,15 +157,15 @@ inner_radius = 7.0
 outer_radius = 10.0
 
 [node name="Douglas A26" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.40359, -1)
+transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871557, 0, 0.0871557, 0.996195, 0, 3.40359, -1)
 script = ExtResource("15_lh1n4")
 LiftFactor = 0.01
 
 [node name="Engine Trail1" parent="Douglas A26" instance=ExtResource("20_y1yxn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.6, 0.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.65, 0.9)
 
 [node name="Engine Trail2" parent="Douglas A26" instance=ExtResource("20_y1yxn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.6, 0.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.831504, 0.65, 0.9)
 
 [node name="Douglas A26" parent="Douglas A26" instance=ExtResource("16_1japn")]
 
@@ -205,6 +208,18 @@ script = ExtResource("22_pcbf8")
 [node name="AircraftModule_ControlSteering" type="Node" parent="Douglas A26"]
 script = ExtResource("23_edpxg")
 
+[node name="CollisionShapeWheels1" type="CollisionShape3D" parent="Douglas A26"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0.251513, -0.758583)
+shape = SubResource("BoxShape3D_y1yxn")
+
+[node name="CollisionShapeWheels2" type="CollisionShape3D" parent="Douglas A26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.4, 0.25)
+shape = SubResource("BoxShape3D_y1yxn")
+
+[node name="CollisionShapeWheels3" type="CollisionShape3D" parent="Douglas A26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.4, 0.25)
+shape = SubResource("BoxShape3D_y1yxn")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("24_77xnj")]
@@ -217,3 +232,5 @@ offset_bottom = 56.0
 theme = ExtResource("28_pvlcu")
 theme_override_colors/font_color = Color(0.20871, 0.20871, 0.20871, 1)
 script = ExtResource("28_gk3pa")
+
+[connection signal="update_interface" from="Douglas A26/AircraftModule_Engine" to="Douglas A26/Engine Trail1" method="_on_aircraft_module_engine_update_interface"]

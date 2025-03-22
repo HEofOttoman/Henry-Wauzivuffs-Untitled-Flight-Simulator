@@ -14,6 +14,6 @@ is_hemisphere = true
 script = ExtResource("1_ht3td")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.27, 0, 0, 0, -4.80825e-08, -0.27, 0, 1.1, -1.18021e-08, 0, 0, 0)
+transform = Transform3D(0.27, 0, 0, 0, -2.40413e-08, -0.27, 0, 0.55, -1.18021e-08, 0, 0, 0)
 mesh = SubResource("1")
 surface_material_override/0 = ExtResource("2_neaco")

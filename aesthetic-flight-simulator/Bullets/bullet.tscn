@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cevnb6kigrbpn"]
+
+[ext_resource type="Script" uid="uid://b50kum4f4tdo1" path="res://Bullets/bullet.gd" id="1_y3hir"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_mn0d3"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mn0d3"]
+height = 1.43311
+radius = 0.378906
+
+[node name="Bullet" type="Area3D"]
+script = ExtResource("1_y3hir")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, -2.62268e-08, -0.5, 0, 0.6, -2.18557e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_mn0d3")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.4702e-11, 0.00170898)
+shape = SubResource("CylinderShape3D_mn0d3")
+
+[connection signal="body_entered" from="." to="." method="_on_bullet_body_entered"]
