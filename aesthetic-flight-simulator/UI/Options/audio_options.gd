@@ -29,8 +29,7 @@ func _on_music_slider_mouse_exited():
 func _on_music_slider_value_changed(value):
 	# My own code to save settings instead of a save button 
 	AudioServer.set_bus_volume_db(1, linear_to_db($"Volume Section/Music Slider".value))
-	
-	#pass # Replace with a save method to save the settings*
+
 
 
 # SFX Volume Slider
@@ -40,5 +39,3 @@ func _on_sfx_slider_mouse_exited():
 func _on_sfx_slider_value_changed(value):
 	# My own code to save settings instead of a save button
 	AudioServer.set_bus_volume_db(2, linear_to_db($"Volume Section/SFX Slider".value))
-	
-	#pass # Replace with a save method to save the settings*

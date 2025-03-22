@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dg3vbnm2f8mef"]
+[gd_scene load_steps=48 format=3 uid="uid://dg3vbnm2f8mef"]
 
 [ext_resource type="Texture2D" uid="uid://cmbxldpwu1uk3" path="res://Images/sky_23_2k.png" id="1_ce4g2"]
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_d7bij"]
@@ -24,6 +24,7 @@
 [ext_resource type="Script" uid="uid://dh42xfnklqtji" path="res://Worlds/Main World/camera_switcher.gd" id="19_kuydp"]
 [ext_resource type="AudioStream" uid="uid://c06dd713oqubl" path="res://Sounds/engine_start.wav" id="19_o75lj"]
 [ext_resource type="Script" uid="uid://cotp128au10av" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlEngine.gd" id="20_pb5wc"]
+[ext_resource type="PackedScene" uid="uid://bpna5btnwpvpr" path="res://Shaders/Engine Trail/Engine Trail.tscn" id="20_y1yxn"]
 [ext_resource type="Script" uid="uid://crpb2c6mbbj28" path="res://addons/simplified_flightsim/aircraft_modules/EnergyContainer/EnergyContainer.gd" id="21_h3o1i"]
 [ext_resource type="Script" uid="uid://crtdxbbwyn5w4" path="res://addons/simplified_flightsim/aircraft_modules/Steering/Steering.gd" id="22_pcbf8"]
 [ext_resource type="Script" uid="uid://cem0t5cun1vgp" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlSteering.gd" id="23_edpxg"]
@@ -76,7 +77,7 @@ script = ExtResource("3_g6eo6")
 Name = "Dirt"
 AlbedoTexture = ExtResource("7_fofse")
 TextureDetail = -1
-Triplanar = false
+Triplanar = true
 
 [sub_resource type="Resource" id="Resource_th7pt"]
 script = ExtResource("4_p45yv")
@@ -119,7 +120,7 @@ script = ExtResource("134_52xcw")
 Zones = [SubResource("Resource_jream"), SubResource("Resource_r6404"), SubResource("Resource_30st7"), SubResource("Resource_ud6gv")]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ayke5"]
-size = Vector3(5.9502, 1, 0.954346)
+size = Vector3(5.9502, 1, 0.4)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d1jwd"]
 radius = 0.3
@@ -157,6 +158,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.40359, -1)
 script = ExtResource("15_lh1n4")
 LiftFactor = 0.01
 
+[node name="Engine Trail1" parent="Douglas A26" instance=ExtResource("20_y1yxn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.6, 0.9)
+
+[node name="Engine Trail2" parent="Douglas A26" instance=ExtResource("20_y1yxn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.6, 0.9)
+
 [node name="Douglas A26" parent="Douglas A26" instance=ExtResource("16_1japn")]
 
 [node name="Camera Switcher" type="Node" parent="Douglas A26" node_paths=PackedStringArray("Camera1", "Camera2")]
@@ -172,7 +179,7 @@ transform = Transform3D(1, 0, 0, 0, 0.999147, 0.0413002, 0, -0.0413002, 0.999147
 current = true
 
 [node name="CollisionShapeWings" type="CollisionShape3D" parent="Douglas A26"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00914764, 0.563583, 0.414786)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00914764, 0.840756, 0.414786)
 shape = SubResource("BoxShape3D_ayke5")
 
 [node name="CollisionShapeFuselage" type="CollisionShape3D" parent="Douglas A26"]

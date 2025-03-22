@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bl1cfs671hhkr"]
+
+[ext_resource type="Texture2D" uid="uid://hm8n6556qc18" path="res://Shaders/Engine Trail/fire_gradient.png" id="1_wds3w"]
+
+[resource]
+blend_mode = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_wds3w")
+uv1_scale = Vector3(1, 1.033, 1)
