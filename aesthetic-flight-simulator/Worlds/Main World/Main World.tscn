@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dg3vbnm2f8mef"]
+[gd_scene load_steps=53 format=3 uid="uid://dg3vbnm2f8mef"]
 
 [ext_resource type="Texture2D" uid="uid://cmbxldpwu1uk3" path="res://Images/sky_23_2k.png" id="1_ce4g2"]
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_d7bij"]
@@ -20,17 +20,21 @@
 [ext_resource type="Texture2D" uid="uid://bqc3qfu6ke4ih" path="res://Worlds/Terrain Data/Heightmap_-1_-1.res" id="16_brt00"]
 [ext_resource type="Texture2D" uid="uid://d3j1ulp5s0m5b" path="res://Worlds/Terrain Data/Splatmap_-1_-1_0.res" id="17_dj2t6"]
 [ext_resource type="Script" uid="uid://vog6iun1du3x" path="res://addons/simplified_flightsim/aircraft_modules/Engine/Engine.gd" id="17_m0t87"]
-[ext_resource type="AudioStream" uid="uid://gjcu3yum1dl8" path="res://Sounds/engine.ogg" id="18_b0yo7"]
+[ext_resource type="AudioStream" uid="uid://gjcu3yum1dl8" path="res://Sounds/SFX/engine/engine.ogg" id="18_b0yo7"]
 [ext_resource type="Script" uid="uid://dh42xfnklqtji" path="res://Worlds/Main World/camera_switcher.gd" id="19_kuydp"]
-[ext_resource type="AudioStream" uid="uid://c06dd713oqubl" path="res://Sounds/engine_start.wav" id="19_o75lj"]
+[ext_resource type="AudioStream" uid="uid://c06dd713oqubl" path="res://Sounds/SFX/engine/engine_start.wav" id="19_o75lj"]
 [ext_resource type="Script" uid="uid://cotp128au10av" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlEngine.gd" id="20_pb5wc"]
 [ext_resource type="PackedScene" uid="uid://bpna5btnwpvpr" path="res://Shaders/Engine Trail/Engine Trail.tscn" id="20_y1yxn"]
 [ext_resource type="Script" uid="uid://crpb2c6mbbj28" path="res://addons/simplified_flightsim/aircraft_modules/EnergyContainer/EnergyContainer.gd" id="21_h3o1i"]
 [ext_resource type="Script" uid="uid://crtdxbbwyn5w4" path="res://addons/simplified_flightsim/aircraft_modules/Steering/Steering.gd" id="22_pcbf8"]
 [ext_resource type="Script" uid="uid://cem0t5cun1vgp" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlSteering.gd" id="23_edpxg"]
 [ext_resource type="PackedScene" uid="uid://3hhc2j6mntrp" path="res://UI/Pause Menu/Pause Menu.tscn" id="24_77xnj"]
+[ext_resource type="Script" uid="uid://dtt76b47ja0vv" path="res://addons/simplified_flightsim/aircraft_modules/LandingGear/LandingGear.gd" id="26_m0yag"]
+[ext_resource type="Script" uid="uid://3q8fwcw1rpff" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlLandingGear.gd" id="27_woe7w"]
 [ext_resource type="Script" uid="uid://c61fw3bxcx20j" path="res://Worlds/Main World/fps_counter.gd" id="28_gk3pa"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="28_pvlcu"]
+[ext_resource type="AudioStream" uid="uid://cvxa8h3yftguj" path="res://Sounds/SFX/landing_gear/deploy.wav" id="29_ta6me"]
+[ext_resource type="AudioStream" uid="uid://ch1k8klfyw0mq" path="res://Sounds/SFX/landing_gear/stow.wav" id="30_o8pog"]
 [ext_resource type="Script" uid="uid://nt172hqpx1j5" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="134_52xcw"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hoawo"]
@@ -178,7 +182,7 @@ Camera2 = NodePath("../1st Person Camera")
 transform = Transform3D(1, 0, 0, 0, 1, -5.96046e-08, 0, 5.96046e-08, 1, 3.55271e-15, 1.1, -0.4)
 
 [node name="3rd Person Camera" type="Camera3D" parent="Douglas A26"]
-transform = Transform3D(1, 0, 0, 0, 0.999147, 0.0413002, 0, -0.0413002, 0.999147, 0, 1.06007, 4.63623)
+transform = Transform3D(1, 0, 0, 0, 0.999146, 0.0413001, 0, -0.0413001, 0.999146, 0, 2.14342, 5.54527)
 current = true
 
 [node name="CollisionShapeWings" type="CollisionShape3D" parent="Douglas A26"]
@@ -189,6 +193,10 @@ shape = SubResource("BoxShape3D_ayke5")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0157547, 0.689438, 0.803805)
 shape = SubResource("CapsuleShape3D_d1jwd")
 
+[node name="AircraftModule_ControlEngine" type="Node" parent="Douglas A26"]
+script = ExtResource("20_pb5wc")
+ControlActive = false
+
 [node name="AircraftModule_Engine" type="Node3D" parent="Douglas A26"]
 script = ExtResource("17_m0t87")
 PowerFactor = 25.0
@@ -196,17 +204,28 @@ EngineSoundLoop = ExtResource("18_b0yo7")
 EngineSoundStart = ExtResource("19_o75lj")
 EngineSoundStop = ExtResource("18_b0yo7")
 
-[node name="AircraftModule_ControlEngine" type="Node" parent="Douglas A26"]
-script = ExtResource("20_pb5wc")
+[node name="AircraftModule_ControlLandingGear" type="Node" parent="Douglas A26"]
+script = ExtResource("27_woe7w")
+metadata/_custom_type_script = "uid://3q8fwcw1rpff"
 
-[node name="AircraftModule_EnergyContainer" type="Node" parent="Douglas A26"]
-script = ExtResource("21_h3o1i")
+[node name="AircraftModule_LandingGear" type="Node3D" parent="Douglas A26"]
+script = ExtResource("26_m0yag")
+GearCollisionShape = NodePath("../CollisionShapeWheels1")
+InitialState = 1
+DeploySound = ExtResource("29_ta6me")
+StowSound = ExtResource("30_o8pog")
+metadata/_custom_type_script = "uid://dtt76b47ja0vv"
+
+[node name="AircraftModule_ControlSteering" type="Node" parent="Douglas A26"]
+script = ExtResource("23_edpxg")
 
 [node name="AircraftModule_Steering" type="Node" parent="Douglas A26"]
 script = ExtResource("22_pcbf8")
 
-[node name="AircraftModule_ControlSteering" type="Node" parent="Douglas A26"]
-script = ExtResource("23_edpxg")
+[node name="AircraftModule_EnergyContainer" type="Node" parent="Douglas A26"]
+script = ExtResource("21_h3o1i")
+ContainerActive = false
+EnergyType = "Fuel"
 
 [node name="CollisionShapeWheels1" type="CollisionShape3D" parent="Douglas A26"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0.251513, -0.758583)

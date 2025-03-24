@@ -27,7 +27,7 @@ func testEsc(): ## Tests for escape key
 		resume()
 		hide() # Code Addition*
 
-func _input(event): # Maybe change to directly check for 'pause'? 
+func _input(_event): # Maybe change to directly check for 'pause'? 
 	testEsc() # Test for escape through this instead of _process(delta)*
  
 ## Button functions
@@ -55,6 +55,6 @@ func _on_quit_pressed(): # Quit button
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	#testEsc() ## Tests for Escape key (every fram) deprecated to avoid lag issues
+func _process(_delta):
+	#testEsc() ## Tests for Escape key (every frame) deprecated to avoid lag issues
 	pass

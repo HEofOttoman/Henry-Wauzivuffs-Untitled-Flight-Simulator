@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://c06dd713oqubl"
-path="res://.godot/imported/engine_start.wav-c7f7ac586bb902e116ad4570e1cb6381.sample"
+uid="uid://ch1k8klfyw0mq"
+path="res://.godot/imported/stow.wav-9fe93613a6737dd8d7a21f223d04ab7b.sample"
 
 [deps]
 
-source_file="res://Sounds/engine_start.wav"
-dest_files=["res://.godot/imported/engine_start.wav-c7f7ac586bb902e116ad4570e1cb6381.sample"]
+source_file="res://Sounds/SFX/landing_gear/stow.wav"
+dest_files=["res://.godot/imported/stow.wav-9fe93613a6737dd8d7a21f223d04ab7b.sample"]
 
 [params]
 
