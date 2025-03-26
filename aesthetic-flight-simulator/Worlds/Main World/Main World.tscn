@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://dg3vbnm2f8mef"]
+[gd_scene load_steps=54 format=3 uid="uid://dg3vbnm2f8mef"]
 
 [ext_resource type="Texture2D" uid="uid://cmbxldpwu1uk3" path="res://Images/sky_23_2k.png" id="1_ce4g2"]
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_d7bij"]
@@ -35,6 +35,7 @@
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="28_pvlcu"]
 [ext_resource type="AudioStream" uid="uid://cvxa8h3yftguj" path="res://Sounds/SFX/landing_gear/deploy.wav" id="29_ta6me"]
 [ext_resource type="AudioStream" uid="uid://ch1k8klfyw0mq" path="res://Sounds/SFX/landing_gear/stow.wav" id="30_o8pog"]
+[ext_resource type="Script" uid="uid://bum1xjmxkkfq7" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlEnergyContainer.gd" id="33_o8pog"]
 [ext_resource type="Script" uid="uid://nt172hqpx1j5" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="134_52xcw"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hoawo"]
@@ -185,17 +186,9 @@ transform = Transform3D(1, 0, 0, 0, 1, -5.96046e-08, 0, 5.96046e-08, 1, 3.55271e
 transform = Transform3D(1, 0, 0, 0, 0.999146, 0.0413001, 0, -0.0413001, 0.999146, 0, 2.14342, 5.54527)
 current = true
 
-[node name="CollisionShapeWings" type="CollisionShape3D" parent="Douglas A26"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00914764, 0.840756, 0.414786)
-shape = SubResource("BoxShape3D_ayke5")
-
-[node name="CollisionShapeFuselage" type="CollisionShape3D" parent="Douglas A26"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0157547, 0.689438, 0.803805)
-shape = SubResource("CapsuleShape3D_d1jwd")
-
 [node name="AircraftModule_ControlEngine" type="Node" parent="Douglas A26"]
 script = ExtResource("20_pb5wc")
-ControlActive = false
+ReceiveInput = true
 
 [node name="AircraftModule_Engine" type="Node3D" parent="Douglas A26"]
 script = ExtResource("17_m0t87")
@@ -222,10 +215,21 @@ script = ExtResource("23_edpxg")
 [node name="AircraftModule_Steering" type="Node" parent="Douglas A26"]
 script = ExtResource("22_pcbf8")
 
+[node name="AircraftModule_ControlEnergyContainer" type="Node" parent="Douglas A26"]
+script = ExtResource("33_o8pog")
+metadata/_custom_type_script = "uid://bum1xjmxkkfq7"
+
 [node name="AircraftModule_EnergyContainer" type="Node" parent="Douglas A26"]
 script = ExtResource("21_h3o1i")
 ContainerActive = false
-EnergyType = "Fuel"
+
+[node name="CollisionShapeWings" type="CollisionShape3D" parent="Douglas A26"]
+transform = Transform3D(1, 0, 0, 0, -4.47035e-08, -1, 0, 1, -4.47035e-08, 0.00914764, 0.840756, 0.414786)
+shape = SubResource("BoxShape3D_ayke5")
+
+[node name="CollisionShapeFuselage" type="CollisionShape3D" parent="Douglas A26"]
+transform = Transform3D(1, 0, 0, 0, -4.47035e-08, -1, 0, 1, -4.47035e-08, -0.0157547, 0.689438, 0.803805)
+shape = SubResource("CapsuleShape3D_d1jwd")
 
 [node name="CollisionShapeWheels1" type="CollisionShape3D" parent="Douglas A26"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0.251513, -0.758583)
