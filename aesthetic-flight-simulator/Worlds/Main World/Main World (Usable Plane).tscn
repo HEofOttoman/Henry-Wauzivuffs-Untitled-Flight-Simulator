@@ -183,7 +183,7 @@ Camera2 = NodePath("../1st Person Camera")
 transform = Transform3D(1, 0, 0, 0, 1, -5.96046e-08, 0, 5.96046e-08, 1, 3.55271e-15, 1.1, -0.4)
 
 [node name="3rd Person Camera" type="Camera3D" parent="Douglas A26"]
-transform = Transform3D(1, 0, 0, 0, 0.999147, 0.0413002, 0, -0.0413002, 0.999147, 0, 1.06007, 4.63623)
+transform = Transform3D(1, 0, 0, 0, 0.999146, 0.0413002, 0, -0.0413002, 0.999146, 0, 1.06007, 4.63623)
 current = true
 
 [node name="CollisionShapeWings" type="CollisionShape3D" parent="Douglas A26"]
@@ -193,6 +193,18 @@ shape = SubResource("BoxShape3D_ayke5")
 [node name="CollisionShapeFuselage" type="CollisionShape3D" parent="Douglas A26"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0157547, 0.689438, 0.803805)
 shape = SubResource("CapsuleShape3D_d1jwd")
+
+[node name="CollisionShapeWheels1" type="CollisionShape3D" parent="Douglas A26"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0.251513, -0.758583)
+shape = SubResource("BoxShape3D_y1yxn")
+
+[node name="CollisionShapeWheels2" type="CollisionShape3D" parent="Douglas A26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.4, 0.25)
+shape = SubResource("BoxShape3D_y1yxn")
+
+[node name="CollisionShapeWheels3" type="CollisionShape3D" parent="Douglas A26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.4, 0.25)
+shape = SubResource("BoxShape3D_y1yxn")
 
 [node name="AircraftModule_ControlEngine" type="Node" parent="Douglas A26"]
 script = ExtResource("20_pb5wc")
@@ -212,18 +224,6 @@ script = ExtResource("22_pcbf8")
 
 [node name="AircraftModule_ControlSteering" type="Node" parent="Douglas A26"]
 script = ExtResource("23_edpxg")
-
-[node name="CollisionShapeWheels1" type="CollisionShape3D" parent="Douglas A26"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0.251513, -0.758583)
-shape = SubResource("BoxShape3D_y1yxn")
-
-[node name="CollisionShapeWheels2" type="CollisionShape3D" parent="Douglas A26"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.4, 0.25)
-shape = SubResource("BoxShape3D_y1yxn")
-
-[node name="CollisionShapeWheels3" type="CollisionShape3D" parent="Douglas A26"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.4, 0.25)
-shape = SubResource("BoxShape3D_y1yxn")
 
 [node name="AircraftModule_LandingGear" type="Node3D" parent="Douglas A26"]
 script = ExtResource("30_p0hjj")
