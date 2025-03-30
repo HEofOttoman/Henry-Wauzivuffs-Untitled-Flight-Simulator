@@ -1,0 +1,259 @@
+[gd_scene load_steps=54 format=3 uid="uid://dg3vbnm2f8mef"]
+
+[ext_resource type="Texture2D" uid="uid://cmbxldpwu1uk3" path="res://Images/sky_23_2k.png" id="1_ytu47"]
+[ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="2_ypxia"]
+[ext_resource type="Texture2D" uid="uid://8vkjet336oa0" path="res://Images/textures/handpainted-style-textures-3/hp_03/hp_03.png" id="3_ax22e"]
+[ext_resource type="Script" uid="uid://c2l8t4xcdxwvu" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetResource.cs" id="4_itqvp"]
+[ext_resource type="Texture2D" uid="uid://clglmh8l6cr1q" path="res://Images/textures/handpainted-style-textures-3/hp_02/hp_02.png" id="5_wh0h6"]
+[ext_resource type="Texture2D" uid="uid://tpaxlx4gra6s" path="res://Images/textures/handpainted-style-textures-3/hp_01/hp_01.png" id="6_t6ap6"]
+[ext_resource type="Texture2D" uid="uid://dbmmierdtwbug" path="res://Images/textures/handpainted-style-textures-3/hp_04/hp_04.png" id="7_j1obu"]
+[ext_resource type="Script" uid="uid://043vjblb04jf" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetsResource.cs" id="8_l7sne"]
+[ext_resource type="Texture2D" uid="uid://dxb4das5l8yk" path="res://Worlds/Terrain Data/Heightmap_0_0.res" id="9_1xl12"]
+[ext_resource type="Texture2D" uid="uid://dydlf0kcx071r" path="res://Worlds/Terrain Data/Splatmap_0_0_0.res" id="10_qlep6"]
+[ext_resource type="Script" uid="uid://d2qebwt0ednya" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="11_vnq7e"]
+[ext_resource type="Texture2D" uid="uid://jqquugfpq73v" path="res://Worlds/Terrain Data/Heightmap_-1_0.res" id="12_fprnh"]
+[ext_resource type="Texture2D" uid="uid://dnbhwbqwtbt2r" path="res://Worlds/Terrain Data/Splatmap_-1_0_0.res" id="13_12ill"]
+[ext_resource type="Texture2D" uid="uid://dgpegykw40w31" path="res://Worlds/Terrain Data/Heightmap_0_-1.res" id="14_v64lv"]
+[ext_resource type="Texture2D" uid="uid://c8we12seo0pja" path="res://Worlds/Terrain Data/Splatmap_0_-1_0.res" id="15_sq3pa"]
+[ext_resource type="Texture2D" uid="uid://bqc3qfu6ke4ih" path="res://Worlds/Terrain Data/Heightmap_-1_-1.res" id="16_yxbh6"]
+[ext_resource type="Texture2D" uid="uid://d3j1ulp5s0m5b" path="res://Worlds/Terrain Data/Splatmap_-1_-1_0.res" id="17_kbglj"]
+[ext_resource type="Script" uid="uid://nt172hqpx1j5" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="18_8hvf6"]
+[ext_resource type="Script" uid="uid://dk5ygil2ej188" path="res://addons/simplified_flightsim/Aircraft/Aircraft.gd" id="19_80nn6"]
+[ext_resource type="PackedScene" uid="uid://bpna5btnwpvpr" path="res://Shaders/Engine Trail/Engine Trail.tscn" id="20_wq5b2"]
+[ext_resource type="PackedScene" uid="uid://bxuabe0q0v7ev" path="res://Planes/Douglas A26/Douglas_A26.tscn" id="21_853ml"]
+[ext_resource type="Script" uid="uid://dh42xfnklqtji" path="res://Worlds/Main World/camera_switcher.gd" id="22_bvqgv"]
+[ext_resource type="Script" uid="uid://cotp128au10av" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlEngine.gd" id="23_1l584"]
+[ext_resource type="Script" uid="uid://vog6iun1du3x" path="res://addons/simplified_flightsim/aircraft_modules/Engine/Engine.gd" id="24_o4j1n"]
+[ext_resource type="AudioStream" uid="uid://gjcu3yum1dl8" path="res://Sounds/SFX/engine/engine.ogg" id="25_qk7h5"]
+[ext_resource type="AudioStream" uid="uid://c06dd713oqubl" path="res://Sounds/SFX/engine/engine_start.wav" id="26_3xxvp"]
+[ext_resource type="Script" uid="uid://3q8fwcw1rpff" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlLandingGear.gd" id="27_i6ei0"]
+[ext_resource type="Script" uid="uid://dtt76b47ja0vv" path="res://addons/simplified_flightsim/aircraft_modules/LandingGear/LandingGear.gd" id="28_ah7so"]
+[ext_resource type="AudioStream" uid="uid://cvxa8h3yftguj" path="res://Sounds/SFX/landing_gear/deploy.wav" id="29_ou6x5"]
+[ext_resource type="AudioStream" uid="uid://ch1k8klfyw0mq" path="res://Sounds/SFX/landing_gear/stow.wav" id="30_h1dob"]
+[ext_resource type="Script" uid="uid://cem0t5cun1vgp" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlSteering.gd" id="31_srnxa"]
+[ext_resource type="Script" uid="uid://crtdxbbwyn5w4" path="res://addons/simplified_flightsim/aircraft_modules/Steering/Steering.gd" id="32_78tlf"]
+[ext_resource type="Script" uid="uid://bum1xjmxkkfq7" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlEnergyContainer.gd" id="33_jvc3n"]
+[ext_resource type="Script" uid="uid://crpb2c6mbbj28" path="res://addons/simplified_flightsim/aircraft_modules/EnergyContainer/EnergyContainer.gd" id="34_72n1b"]
+[ext_resource type="PackedScene" uid="uid://3hhc2j6mntrp" path="res://UI/Pause Menu/Pause Menu.tscn" id="35_nwihr"]
+[ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="36_txse7"]
+[ext_resource type="Script" uid="uid://c61fw3bxcx20j" path="res://Worlds/Main World/fps_counter.gd" id="37_vt1ab"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hoawo"]
+panorama = ExtResource("1_ytu47")
+energy_multiplier = 1.3
+
+[sub_resource type="Sky" id="Sky_ky8lf"]
+sky_material = SubResource("PanoramaSkyMaterial_hoawo")
+
+[sub_resource type="Environment" id="Environment_jgrli"]
+background_mode = 2
+sky = SubResource("Sky_ky8lf")
+ambient_light_sky_contribution = 0.2
+ambient_light_energy = 2.0
+tonemap_mode = 2
+tonemap_white = 0.76
+fog_mode = 1
+fog_density = 1.0
+fog_height_density = 0.7843
+
+[sub_resource type="Resource" id="Resource_lves4"]
+script = ExtResource("4_itqvp")
+Name = "Grass"
+AlbedoTexture = ExtResource("3_ax22e")
+TextureDetail = -1
+Triplanar = false
+
+[sub_resource type="Resource" id="Resource_ptadx"]
+script = ExtResource("4_itqvp")
+Name = "Stone 1"
+AlbedoTexture = ExtResource("5_wh0h6")
+TextureDetail = 1
+Triplanar = false
+
+[sub_resource type="Resource" id="Resource_7s48p"]
+script = ExtResource("4_itqvp")
+Name = "Stone 3"
+AlbedoTexture = ExtResource("6_t6ap6")
+TextureDetail = 1
+Triplanar = false
+
+[sub_resource type="Resource" id="Resource_qam2w"]
+script = ExtResource("4_itqvp")
+Name = "Dirt"
+AlbedoTexture = ExtResource("7_j1obu")
+TextureDetail = -1
+Triplanar = true
+
+[sub_resource type="Resource" id="Resource_th7pt"]
+script = ExtResource("8_l7sne")
+TextureSets = [SubResource("Resource_lves4"), SubResource("Resource_ptadx"), SubResource("Resource_7s48p"), SubResource("Resource_qam2w")]
+
+[sub_resource type="Resource" id="Resource_jream"]
+script = ExtResource("11_vnq7e")
+ZonePosition = Vector2i(0, 0)
+HeightMapTexture = ExtResource("9_1xl12")
+SplatmapsTexture = [ExtResource("10_qlep6")]
+FoliagesTexture = []
+ObjectsTexture = []
+
+[sub_resource type="Resource" id="Resource_r6404"]
+script = ExtResource("11_vnq7e")
+ZonePosition = Vector2i(-1, 0)
+HeightMapTexture = ExtResource("12_fprnh")
+SplatmapsTexture = [ExtResource("13_12ill")]
+FoliagesTexture = []
+ObjectsTexture = []
+
+[sub_resource type="Resource" id="Resource_30st7"]
+script = ExtResource("11_vnq7e")
+ZonePosition = Vector2i(0, -1)
+HeightMapTexture = ExtResource("14_v64lv")
+SplatmapsTexture = [ExtResource("15_sq3pa")]
+FoliagesTexture = []
+ObjectsTexture = []
+
+[sub_resource type="Resource" id="Resource_ud6gv"]
+script = ExtResource("11_vnq7e")
+ZonePosition = Vector2i(-1, -1)
+HeightMapTexture = ExtResource("16_yxbh6")
+SplatmapsTexture = [ExtResource("17_kbglj")]
+FoliagesTexture = []
+ObjectsTexture = []
+
+[sub_resource type="Resource" id="Resource_4moln"]
+script = ExtResource("18_8hvf6")
+Zones = [SubResource("Resource_jream"), SubResource("Resource_r6404"), SubResource("Resource_30st7"), SubResource("Resource_ud6gv")]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ayke5"]
+size = Vector3(5.9502, 1, 0.4)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d1jwd"]
+radius = 0.3
+height = 4.61841
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y1yxn"]
+size = Vector3(0.2, 0.9, 0.3)
+
+[node name="MainWorld" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 116, 0)
+light_energy = 0.846
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jgrli")
+
+[node name="TerraBrush" type="Node3D" parent="."]
+script = ExtResource("2_ypxia")
+DataPath = "res://Worlds/Terrain Data"
+LODRowsPerLevel = 101
+TextureSets = SubResource("Resource_th7pt")
+UseAntiTile = false
+Foliages = []
+Objects = []
+TerrainZones = SubResource("Resource_4moln")
+metadata/_edit_lock_ = false
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.21098, 15.1387, -92.3683)
+use_collision = true
+inner_radius = 7.0
+outer_radius = 10.0
+
+[node name="Douglas A26" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871557, 0, 0.0871557, 0.996195, 0, 3.40359, -1)
+script = ExtResource("19_80nn6")
+LiftFactor = 0.01
+
+[node name="Engine Trail1" parent="Douglas A26" instance=ExtResource("20_wq5b2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.65, 0.9)
+
+[node name="Engine Trail2" parent="Douglas A26" instance=ExtResource("20_wq5b2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.831504, 0.65, 0.9)
+
+[node name="Douglas A26" parent="Douglas A26" instance=ExtResource("21_853ml")]
+
+[node name="Camera Switcher" type="Node" parent="Douglas A26" node_paths=PackedStringArray("Camera1", "Camera2")]
+script = ExtResource("22_bvqgv")
+Camera1 = NodePath("../3rd Person Camera")
+Camera2 = NodePath("../1st Person Camera")
+
+[node name="1st Person Camera" type="Camera3D" parent="Douglas A26"]
+transform = Transform3D(1, 0, 0, 0, 1, -5.96046e-08, 0, 5.96046e-08, 1, 3.55271e-15, 1.1, -0.4)
+
+[node name="3rd Person Camera" type="Camera3D" parent="Douglas A26"]
+transform = Transform3D(1, 0, 0, 0, 0.999146, 0.0413001, 0, -0.0413001, 0.999146, 0, 2.14342, 5.54527)
+current = true
+
+[node name="AircraftModule_ControlEngine" type="Node" parent="Douglas A26"]
+script = ExtResource("23_1l584")
+ReceiveInput = true
+
+[node name="AircraftModule_Engine" type="Node3D" parent="Douglas A26"]
+script = ExtResource("24_o4j1n")
+PowerFactor = 25.0
+EngineSoundLoop = ExtResource("25_qk7h5")
+EngineSoundStart = ExtResource("26_3xxvp")
+EngineSoundStop = ExtResource("25_qk7h5")
+
+[node name="AircraftModule_ControlLandingGear" type="Node" parent="Douglas A26"]
+script = ExtResource("27_i6ei0")
+metadata/_custom_type_script = "uid://3q8fwcw1rpff"
+
+[node name="AircraftModule_LandingGear" type="Node3D" parent="Douglas A26"]
+script = ExtResource("28_ah7so")
+GearCollisionShape = NodePath("../CollisionShapeWheels1")
+InitialState = 1
+DeploySound = ExtResource("29_ou6x5")
+StowSound = ExtResource("30_h1dob")
+metadata/_custom_type_script = "uid://dtt76b47ja0vv"
+
+[node name="AircraftModule_ControlSteering" type="Node" parent="Douglas A26"]
+script = ExtResource("31_srnxa")
+
+[node name="AircraftModule_Steering" type="Node" parent="Douglas A26"]
+script = ExtResource("32_78tlf")
+
+[node name="AircraftModule_ControlEnergyContainer" type="Node" parent="Douglas A26"]
+script = ExtResource("33_jvc3n")
+metadata/_custom_type_script = "uid://bum1xjmxkkfq7"
+
+[node name="AircraftModule_EnergyContainer" type="Node" parent="Douglas A26"]
+script = ExtResource("34_72n1b")
+ContainerActive = false
+
+[node name="CollisionShapeWings" type="CollisionShape3D" parent="Douglas A26"]
+transform = Transform3D(1, 0, 0, 0, -4.47035e-08, -1, 0, 1, -4.47035e-08, 0.00914764, 0.840756, 0.414786)
+shape = SubResource("BoxShape3D_ayke5")
+
+[node name="CollisionShapeFuselage" type="CollisionShape3D" parent="Douglas A26"]
+transform = Transform3D(1, 0, 0, 0, -4.47035e-08, -1, 0, 1, -4.47035e-08, -0.0157547, 0.689438, 0.803805)
+shape = SubResource("CapsuleShape3D_d1jwd")
+
+[node name="CollisionShapeWheels1" type="CollisionShape3D" parent="Douglas A26"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0.251513, -0.758583)
+shape = SubResource("BoxShape3D_y1yxn")
+
+[node name="CollisionShapeWheels2" type="CollisionShape3D" parent="Douglas A26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.4, 0.25)
+shape = SubResource("BoxShape3D_y1yxn")
+
+[node name="CollisionShapeWheels3" type="CollisionShape3D" parent="Douglas A26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.4, 0.25)
+shape = SubResource("BoxShape3D_y1yxn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("35_nwihr")]
+
+[node name="FPS Counter" type="Label" parent="CanvasLayer"]
+offset_left = 11.0
+offset_top = 8.0
+offset_right = 121.0
+offset_bottom = 56.0
+theme = ExtResource("36_txse7")
+theme_override_colors/font_color = Color(0.20871, 0.20871, 0.20871, 1)
+script = ExtResource("37_vt1ab")
+
+[connection signal="update_interface" from="Douglas A26/AircraftModule_Engine" to="Douglas A26/Engine Trail1" method="_on_aircraft_module_engine_update_interface"]
