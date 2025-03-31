@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxuabe0q0v7ev"]
+[gd_scene load_steps=6 format=3 uid="uid://bxuabe0q0v7ev"]
 
 [ext_resource type="PackedScene" uid="uid://dq1fjh8mft5b1" path="res://Planes/Douglas A26/Douglas A26.blend" id="1_ovy3l"]
+[ext_resource type="Script" uid="uid://c5yjtvfqgi65j" path="res://Planes/Douglas A26/DA26_animplayer.gd" id="2_rtdl6"]
 
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_ym00q"]
 
@@ -14,8 +15,9 @@ transitions = ["Start", "BlendSpace1D", SubResource("AnimationNodeStateMachineTr
 
 [node name="Douglas A26" instance=ExtResource("1_ovy3l")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("2_rtdl6")
 
-[node name="AnimationPlayer" parent="." index="8"]
+[node name="AnimationPlayer" parent="." index="9"]
 autoplay = "Propeller Spin"
 
 [node name="AnimationTree" type="AnimationTree" parent="AnimationPlayer" index="0"]
