@@ -165,10 +165,10 @@ transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871557, 0, 0.0871557, 0.996195
 script = ExtResource("15_lh1n4")
 LiftFactor = 0.01
 
-[node name="Engine Trail1" parent="Douglas A26" instance=ExtResource("20_y1yxn")]
+[node name="Engine Trail_r" parent="Douglas A26" instance=ExtResource("20_y1yxn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.65, 0.9)
 
-[node name="Engine Trail2" parent="Douglas A26" instance=ExtResource("20_y1yxn")]
+[node name="Engine Trail_l" parent="Douglas A26" instance=ExtResource("20_y1yxn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.831504, 0.65, 0.9)
 
 [node name="Douglas A26" parent="Douglas A26" instance=ExtResource("16_1japn")]
@@ -250,4 +250,5 @@ theme = ExtResource("28_pvlcu")
 theme_override_colors/font_color = Color(0.20871, 0.20871, 0.20871, 1)
 script = ExtResource("28_gk3pa")
 
-[connection signal="update_interface" from="Douglas A26/AircraftModule_Engine" to="Douglas A26/Engine Trail1" method="_on_aircraft_module_engine_update_interface"]
+[connection signal="update_interface" from="Douglas A26/AircraftModule_Engine" to="Douglas A26/Engine Trail_r" method="_on_aircraft_module_engine_update_interface"]
+[connection signal="update_interface" from="Douglas A26/AircraftModule_LandingGear" to="Douglas A26/Douglas A26" method="_on_LandingGear_update_interface"]

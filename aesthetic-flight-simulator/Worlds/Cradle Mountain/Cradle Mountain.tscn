@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://lnnvk76tg4s"]
+
+[ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_ywfr2"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="TerraBrush" type="Node3D" parent="."]
+script = ExtResource("1_ywfr2")
+DataPath = "res://Worlds/Cradle Mountain/Terrain Data"
+metadata/_custom_type_script = "uid://i5jcj7ukvoen"
+metadata/_edit_lock_ = true

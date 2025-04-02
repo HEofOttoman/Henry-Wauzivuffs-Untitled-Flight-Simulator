@@ -22,6 +22,6 @@ func _on_LandingGear_update_interface(values):
 		$AnimationPlayer.play_backwards("Landing Gear")
 	
 	if values["lgear_up"]:
-		$AnimationPlayer.play("Stow", -1, 1.0, true) # move to end
+		$AnimationPlayer.play("Landing Gear", -1, 1.0, true) # move to end
 	if values["lgear_down"]:
-		$AnimationPlayer.play("Deploy", -1, 1.0, true) # move to end
+		$AnimationPlayer.play("Landing Gear", -1, 1.0, true) # move to end
