@@ -7,7 +7,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 ## Plays the propeller spinning animation (defunct)
@@ -17,11 +17,11 @@ func _on_aircraft_module_engine_update_interface(values):
 ## Plays the landing gear animations (defunct)
 func _on_LandingGear_update_interface(values):
 	if values["lgear_stowing"]:
-		$AnimationPlayer.play("Landing Gear")
+		$AnimationPlayer.play("Stow")
 	if values["lgear_deploying"]:
-		$AnimationPlayer.play_backwards("Landing Gear")
+		$AnimationPlayer.play("Deploy")
 	
 	if values["lgear_up"]:
-		$AnimationPlayer.play("Landing Gear", -1, 1.0, true) # move to end
+		$AnimationPlayer.play("Stow", -1, 1.0, true) # move to end
 	if values["lgear_down"]:
-		$AnimationPlayer.play("Landing Gear", -1, 1.0, true) # move to end
+		$AnimationPlayer.play("Deploy", -1, 1.0, true) # move to end

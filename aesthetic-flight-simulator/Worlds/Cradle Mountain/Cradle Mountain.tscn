@@ -7,5 +7,7 @@
 [node name="TerraBrush" type="Node3D" parent="."]
 script = ExtResource("1_ywfr2")
 DataPath = "res://Worlds/Cradle Mountain/Terrain Data"
+Foliages = []
+Objects = []
 metadata/_custom_type_script = "uid://i5jcj7ukvoen"
 metadata/_edit_lock_ = true
