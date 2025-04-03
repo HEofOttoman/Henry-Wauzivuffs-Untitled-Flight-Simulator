@@ -18,7 +18,8 @@ func playAudio():
 func _on_play_button_pressed():
 	playAudio()
 	
-	get_tree().change_scene_to_file("res://Worlds/Main World/Main World.tscn") # Goes to playable scene world
+	#get_tree().change_scene_to_file("res://Worlds/Main World/Main World.tscn") # Goes to playable scene world
+	get_tree().change_scene_to_file("res://UI/World Select/World Select.tscn") # Goes to playable scene world
 
 
 

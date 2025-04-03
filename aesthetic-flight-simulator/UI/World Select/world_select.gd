@@ -14,3 +14,7 @@ func _process(delta):
 # Goes to the world used for testing/tutorial
 func _on_tutorial_button_pressed():
 	get_tree().change_scene_to_file("uid://dg3vbnm2f8mef")
+
+
+func _on_dove_lake_pressed():
+	get_tree().change_scene_to_file("res://Worlds/Cradle Mountain/Cradle Mountain.tscn")

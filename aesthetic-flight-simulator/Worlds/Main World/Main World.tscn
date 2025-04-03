@@ -1,7 +1,7 @@
-[gd_scene load_steps=53 format=3 uid="uid://dg3vbnm2f8mef"]
+[gd_scene load_steps=50 format=3 uid="uid://dg3vbnm2f8mef"]
 
-[ext_resource type="Texture2D" uid="uid://cmbxldpwu1uk3" path="res://Images/sky_23_2k.png" id="1_ce4g2"]
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_d7bij"]
+[ext_resource type="Environment" uid="uid://t1ni51qa0x5q" path="res://Worlds/Skybox.tres" id="1_ta6me"]
 [ext_resource type="Texture2D" uid="uid://8vkjet336oa0" path="res://Images/textures/handpainted-style-textures-3/hp_03/hp_03.png" id="2_oxcxs"]
 [ext_resource type="Script" uid="uid://c2l8t4xcdxwvu" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetResource.cs" id="3_g6eo6"]
 [ext_resource type="Texture2D" uid="uid://clglmh8l6cr1q" path="res://Images/textures/handpainted-style-textures-3/hp_02/hp_02.png" id="4_nvlb8"]
@@ -36,24 +36,6 @@
 [ext_resource type="AudioStream" uid="uid://cvxa8h3yftguj" path="res://Sounds/SFX/landing_gear/deploy.wav" id="29_ta6me"]
 [ext_resource type="AudioStream" uid="uid://ch1k8klfyw0mq" path="res://Sounds/SFX/landing_gear/stow.wav" id="30_o8pog"]
 [ext_resource type="Script" uid="uid://nt172hqpx1j5" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="134_52xcw"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hoawo"]
-panorama = ExtResource("1_ce4g2")
-energy_multiplier = 1.3
-
-[sub_resource type="Sky" id="Sky_ky8lf"]
-sky_material = SubResource("PanoramaSkyMaterial_hoawo")
-
-[sub_resource type="Environment" id="Environment_jgrli"]
-background_mode = 2
-sky = SubResource("Sky_ky8lf")
-ambient_light_sky_contribution = 0.2
-ambient_light_energy = 2.0
-tonemap_mode = 2
-tonemap_white = 0.76
-fog_mode = 1
-fog_density = 1.0
-fog_height_density = 0.7843
 
 [sub_resource type="Resource" id="Resource_lves4"]
 script = ExtResource("3_g6eo6")
@@ -141,7 +123,7 @@ light_energy = 0.846
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_jgrli")
+environment = ExtResource("1_ta6me")
 
 [node name="TerraBrush" type="Node3D" parent="."]
 script = ExtResource("1_d7bij")
