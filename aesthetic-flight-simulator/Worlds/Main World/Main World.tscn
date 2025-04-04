@@ -116,7 +116,7 @@ height = 4.61841
 size = Vector3(0.2, 0.9, 0.3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ta6me"]
-size = Vector3(542.149, 878.097, 15.3667)
+size = Vector3(658.154, 697.971, 15.3667)
 
 [node name="MainWorld" type="Node3D"]
 
@@ -254,7 +254,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 142.83
 shape = SubResource("BoxShape3D_ta6me")
 
 [node name="Boundary Top" type="CollisionShape3D" parent="World Boundary"]
-transform = Transform3D(1.91069e-15, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, -143.972, 578.421, -117.929)
+transform = Transform3D(1.91069e-15, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, -126.978, 514.396, -117.929)
 shape = SubResource("BoxShape3D_ta6me")
 
 [connection signal="update_interface" from="Douglas A26/AircraftModule_Engine" to="Douglas A26/Engine Trail_r" method="_on_aircraft_module_engine_update_interface"]
