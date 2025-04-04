@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://dg3vbnm2f8mef"]
+[gd_scene load_steps=61 format=3 uid="uid://dg3vbnm2f8mef"]
 
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_d7bij"]
 [ext_resource type="Environment" uid="uid://t1ni51qa0x5q" path="res://Worlds/Skybox.tres" id="1_ta6me"]
@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://dcce6tjkgdr3u" path="res://Worlds/Terrain Data/Water_0_-1.res" id="30_e1k6w"]
 [ext_resource type="Texture2D" uid="uid://omq5anaphlf" path="res://Worlds/Terrain Data/Water_-1_-1.res" id="35_wbwop"]
 [ext_resource type="PackedScene" uid="uid://bhwoorpvl4ocu" path="res://Planes/D-A26_player.tscn" id="37_j4vk3"]
+[ext_resource type="PackedScene" uid="uid://c1fvfyqusl37" path="res://UI/Tutorial Billboard/Welcome message.tscn" id="41_ybuj5"]
 [ext_resource type="Script" uid="uid://nt172hqpx1j5" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="134_52xcw"]
 
 [sub_resource type="Resource" id="Resource_lves4"]
@@ -207,7 +208,7 @@ transform = Transform3D(250, 0, 0, 0, 250, 0, 0, 0, 250, -123.964, -17.9387, -12
 mesh = SubResource("PlaneMesh_64hml")
 
 [node name="Douglas A26" parent="." instance=ExtResource("37_j4vk3")]
-transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871557, 0, 0.0871557, 0.996195, 0, 6.00022, -1)
+transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871557, 0, 0.0871557, 0.996195, 0.591257, 6.00022, -1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -272,3 +273,6 @@ transform = Transform3D(-0.606308, -0.79523, -3.47606e-08, 0.79523, -0.606308, -
 use_collision = true
 inner_radius = 7.0
 outer_radius = 10.0
+
+[node name="Welcome Message" parent="." instance=ExtResource("41_ybuj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.612798, 7.42332, -5.17289)

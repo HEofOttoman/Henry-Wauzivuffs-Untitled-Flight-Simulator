@@ -1,8 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1fvfyqusl37"]
+[gd_scene load_steps=3 format=3 uid="uid://c1fvfyqusl37"]
 
-[ext_resource type="Script" uid="uid://bf1agmyfmgy0" path="res://UI/Tutorial Billboard/welcome message.gd" id="1_3t4t0"]
+[ext_resource type="Script" uid="uid://bf1agmyfmgy0" path="res://UI/Tutorial Billboard/welcome_message.gd" id="1_3t4t0"]
+[ext_resource type="FontFile" uid="uid://bbn2d2ptawl1d" path="res://Fonts/Kalam/Kalam-Bold.ttf" id="1_82qgj"]
 
-[node name="Label" type="Label3D"]
+[node name="Welcome Message" type="Label3D"]
 billboard = 2
-text = "Hello!!"
+modulate = Color(0.377919, 0.377919, 0.377919, 1)
+outline_modulate = Color(0.0966767, 0.263741, 0.328879, 1)
+text = "Welcome to my flight simulator!
+to start playing, press P to turn on the engine.
+O will shut the engine off, and using F5 will switch 
+between the first person and 3rd person camera.
+Pause with Escape, and throttle up & down with F & V.
+ and control with WASDEQ (see controls menu)
+If you ever need to see the controls again, 
+look at the options menu
+This game is as of now just a simple flight simulator with 
+no real objective, but to explore the world!
+Hide this message with X, and start playing. (Show with Z)"
+font = ExtResource("1_82qgj")
+font_size = 100
+outline_size = 1
 script = ExtResource("1_3t4t0")
