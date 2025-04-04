@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://lnnvk76tg4s"]
+[gd_scene load_steps=95 format=3 uid="uid://lnnvk76tg4s"]
 
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_ywfr2"]
 [ext_resource type="Texture2D" uid="uid://8vkjet336oa0" path="res://Images/textures/handpainted-style-textures-3/hp_03/hp_03.png" id="2_161ho"]
@@ -61,6 +61,11 @@
 [ext_resource type="Texture2D" uid="uid://hqrrr0g7l4dv" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_3_1_1.res" id="53_f4tnt"]
 [ext_resource type="Texture2D" uid="uid://cnf3p2ptxfcty" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_3_2_1.res" id="56_p2hff"]
 [ext_resource type="Texture2D" uid="uid://btqx5eofv43lu" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_3_3_1.res" id="59_44s0u"]
+[ext_resource type="PackedScene" uid="uid://bhwoorpvl4ocu" path="res://Planes/D-A26_player.tscn" id="62_nuwyr"]
+[ext_resource type="Shader" uid="uid://ds25nonmsusn8" path="res://Water.gdshader" id="62_o8cwt"]
+[ext_resource type="PackedScene" uid="uid://3hhc2j6mntrp" path="res://UI/Pause Menu/Pause Menu.tscn" id="63_mpinp"]
+[ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="64_cdxef"]
+[ext_resource type="Script" uid="uid://c61fw3bxcx20j" path="res://Worlds/Main World/fps_counter.gd" id="65_ykmy3"]
 
 [sub_resource type="Resource" id="Resource_xidlq"]
 script = ExtResource("3_3u5sp")
@@ -244,7 +249,42 @@ Zones = [SubResource("Resource_ute4h"), SubResource("Resource_n0se5"), SubResour
 [sub_resource type="BoxShape3D" id="BoxShape3D_f43po"]
 size = Vector3(1326, 1202, 15.3667)
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ao0bw"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nuwyr"]
+noise = SubResource("FastNoiseLite_ao0bw")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ao0bw"]
+render_priority = 0
+shader = ExtResource("62_o8cwt")
+shader_parameter/time_speed = 0.2
+shader_parameter/surface_speed = 1.0
+shader_parameter/spin = 0.0
+shader_parameter/brightness = 0.9
+shader_parameter/color_intensity = 0.0
+shader_parameter/horizontal_frequency = 2.0
+shader_parameter/vertical_frequency = 2.0
+shader_parameter/size = 3.0
+shader_parameter/banding_bias = 0.6
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_nuwyr")
+shader_parameter/wave_height = 0.0
+shader_parameter/texture_height = 0.0
+shader_parameter/color1 = Color(0.59, 0.761, 1, 1)
+shader_parameter/color2 = Color(0.274, 0.474, 0.98, 1)
+shader_parameter/color3 = Color(0.059, 0.389, 0.85, 1)
+shader_parameter/color4 = Color(0, 0.267, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nuit2"]
+material = SubResource("ShaderMaterial_ao0bw")
+
+[node name="Cradle Mountain" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 330.229, 0)
+light_energy = 0.846
+shadow_enabled = true
+sky_mode = 1
 
 [node name="TerraBrush" type="Node3D" parent="."]
 script = ExtResource("1_ywfr2")
@@ -259,8 +299,26 @@ metadata/_edit_lock_ = false
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("42_tqfhw")
 
+[node name="Douglas A26" parent="." instance=ExtResource("62_nuwyr")]
+transform = Transform3D(-0.666402, -0.0649826, -0.742755, 0, 0.996195, -0.0871557, 0.745592, -0.0580808, -0.663867, -74.7607, 214.648, 553.18)
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 202.434, 277.029, 652.095)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("63_mpinp")]
+metadata/_edit_use_anchors_ = true
+
+[node name="FPS Counter" type="Label" parent="CanvasLayer"]
+offset_left = 11.0
+offset_top = 8.0
+offset_right = 121.0
+offset_bottom = 56.0
+theme = ExtResource("64_cdxef")
+theme_override_colors/font_color = Color(0.20871, 0.20871, 0.20871, 1)
+script = ExtResource("65_ykmy3")
+metadata/_edit_use_anchors_ = true
 
 [node name="World Boundary" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 204, 124, 501)
@@ -284,3 +342,7 @@ shape = SubResource("BoxShape3D_f43po")
 [node name="Boundary Top" type="CollisionShape3D" parent="World Boundary"]
 transform = Transform3D(1.91069e-15, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, 184.036, 643.396, -89.929)
 shape = SubResource("BoxShape3D_f43po")
+
+[node name="Waterplane" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 303.847, 250.442, 607.054)
+mesh = SubResource("PlaneMesh_nuit2")

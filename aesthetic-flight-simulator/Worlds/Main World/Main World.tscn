@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://dg3vbnm2f8mef"]
+[gd_scene load_steps=60 format=3 uid="uid://dg3vbnm2f8mef"]
 
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_d7bij"]
 [ext_resource type="Environment" uid="uid://t1ni51qa0x5q" path="res://Worlds/Skybox.tres" id="1_ta6me"]
@@ -17,37 +17,28 @@
 [ext_resource type="Texture2D" uid="uid://jqquugfpq73v" path="res://Worlds/Terrain Data/Heightmap_-1_0.res" id="10_ml7nd"]
 [ext_resource type="Texture2D" uid="uid://dnbhwbqwtbt2r" path="res://Worlds/Terrain Data/Splatmap_-1_0_0.res" id="11_e4aq6"]
 [ext_resource type="Texture2D" uid="uid://c6g4cr6rt2tr0" path="res://Worlds/Terrain Data/Splatmap_0_0_1.res" id="12_3sq7t"]
+[ext_resource type="Shader" uid="uid://ds25nonmsusn8" path="res://Water.gdshader" id="12_64hml"]
 [ext_resource type="Texture2D" uid="uid://8ghe357s1uk6" path="res://Images/textures/Snow004_2K-PNG/Snow004_2K-PNG_Displacement.png" id="12_b80dp"]
 [ext_resource type="Script" uid="uid://di03satw2avie" path="res://addons/terrabrush/Scripts/EditorResources/SnowResource.cs" id="12_ba6lp"]
 [ext_resource type="Texture2D" uid="uid://dgpegykw40w31" path="res://Worlds/Terrain Data/Heightmap_0_-1.res" id="14_yx011"]
-[ext_resource type="Script" uid="uid://dk5ygil2ej188" path="res://addons/simplified_flightsim/Aircraft/Aircraft.gd" id="15_lh1n4"]
 [ext_resource type="Texture2D" uid="uid://c8we12seo0pja" path="res://Worlds/Terrain Data/Splatmap_0_-1_0.res" id="15_qkeig"]
 [ext_resource type="Texture2D" uid="uid://bbykvdd5nf4ic" path="res://Worlds/Terrain Data/Snow_0_0.res" id="15_xx56b"]
-[ext_resource type="PackedScene" uid="uid://bxuabe0q0v7ev" path="res://Planes/Douglas A26/Douglas_A26.tscn" id="16_1japn"]
 [ext_resource type="Texture2D" uid="uid://dgbjfigf5wvrw" path="res://Worlds/Terrain Data/Splatmap_-1_0_1.res" id="16_23qo4"]
 [ext_resource type="Texture2D" uid="uid://bqc3qfu6ke4ih" path="res://Worlds/Terrain Data/Heightmap_-1_-1.res" id="16_brt00"]
 [ext_resource type="Texture2D" uid="uid://d3j1ulp5s0m5b" path="res://Worlds/Terrain Data/Splatmap_-1_-1_0.res" id="17_dj2t6"]
-[ext_resource type="Script" uid="uid://vog6iun1du3x" path="res://addons/simplified_flightsim/aircraft_modules/Engine/Engine.gd" id="17_m0t87"]
-[ext_resource type="AudioStream" uid="uid://gjcu3yum1dl8" path="res://Sounds/SFX/engine/engine.ogg" id="18_b0yo7"]
+[ext_resource type="Texture2D" uid="uid://csu2n2wxjgk4d" path="res://Worlds/Terrain Data/Water_0_0.res" id="19_ao0bw"]
 [ext_resource type="Texture2D" uid="uid://dqoarbhsfnbc5" path="res://Worlds/Terrain Data/Splatmap_0_-1_1.res" id="19_ba6lp"]
-[ext_resource type="Script" uid="uid://dh42xfnklqtji" path="res://Worlds/Main World/camera_switcher.gd" id="19_kuydp"]
-[ext_resource type="AudioStream" uid="uid://c06dd713oqubl" path="res://Sounds/SFX/engine/engine_start.wav" id="19_o75lj"]
 [ext_resource type="Texture2D" uid="uid://bt3iclfywjtyt" path="res://Worlds/Terrain Data/Snow_-1_0.res" id="20_foxph"]
-[ext_resource type="Script" uid="uid://cotp128au10av" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlEngine.gd" id="20_pb5wc"]
-[ext_resource type="PackedScene" uid="uid://bpna5btnwpvpr" path="res://Shaders/Engine Trail/Engine Trail.tscn" id="20_y1yxn"]
-[ext_resource type="Script" uid="uid://crpb2c6mbbj28" path="res://addons/simplified_flightsim/aircraft_modules/EnergyContainer/EnergyContainer.gd" id="21_h3o1i"]
 [ext_resource type="Texture2D" uid="uid://d1ovhxdv0q8gi" path="res://Worlds/Terrain Data/Splatmap_-1_-1_1.res" id="22_jugqc"]
-[ext_resource type="Script" uid="uid://crtdxbbwyn5w4" path="res://addons/simplified_flightsim/aircraft_modules/Steering/Steering.gd" id="22_pcbf8"]
-[ext_resource type="Script" uid="uid://cem0t5cun1vgp" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlSteering.gd" id="23_edpxg"]
 [ext_resource type="PackedScene" uid="uid://3hhc2j6mntrp" path="res://UI/Pause Menu/Pause Menu.tscn" id="24_77xnj"]
 [ext_resource type="Texture2D" uid="uid://c178sw31r7b3" path="res://Worlds/Terrain Data/Snow_0_-1.res" id="24_karnx"]
-[ext_resource type="Script" uid="uid://dtt76b47ja0vv" path="res://addons/simplified_flightsim/aircraft_modules/LandingGear/LandingGear.gd" id="26_m0yag"]
-[ext_resource type="Script" uid="uid://3q8fwcw1rpff" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlLandingGear.gd" id="27_woe7w"]
+[ext_resource type="Texture2D" uid="uid://b8cmi7jb3j16q" path="res://Worlds/Terrain Data/Water_-1_0.res" id="25_64hml"]
 [ext_resource type="Script" uid="uid://c61fw3bxcx20j" path="res://Worlds/Main World/fps_counter.gd" id="28_gk3pa"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="28_pvlcu"]
 [ext_resource type="Texture2D" uid="uid://3js5i4qsycku" path="res://Worlds/Terrain Data/Snow_-1_-1.res" id="28_v31ub"]
-[ext_resource type="AudioStream" uid="uid://cvxa8h3yftguj" path="res://Sounds/SFX/landing_gear/deploy.wav" id="29_ta6me"]
-[ext_resource type="AudioStream" uid="uid://ch1k8klfyw0mq" path="res://Sounds/SFX/landing_gear/stow.wav" id="30_o8pog"]
+[ext_resource type="Texture2D" uid="uid://dcce6tjkgdr3u" path="res://Worlds/Terrain Data/Water_0_-1.res" id="30_e1k6w"]
+[ext_resource type="Texture2D" uid="uid://omq5anaphlf" path="res://Worlds/Terrain Data/Water_-1_-1.res" id="35_wbwop"]
+[ext_resource type="PackedScene" uid="uid://bhwoorpvl4ocu" path="res://Planes/D-A26_player.tscn" id="37_j4vk3"]
 [ext_resource type="Script" uid="uid://nt172hqpx1j5" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="134_52xcw"]
 
 [sub_resource type="Resource" id="Resource_lves4"]
@@ -112,6 +103,7 @@ HeightMapTexture = ExtResource("5_gmdld")
 SplatmapsTexture = [ExtResource("6_a70g8"), ExtResource("12_3sq7t")]
 FoliagesTexture = []
 ObjectsTexture = []
+WaterTexture = ExtResource("19_ao0bw")
 SnowTexture = ExtResource("15_xx56b")
 
 [sub_resource type="Resource" id="Resource_r6404"]
@@ -121,6 +113,7 @@ HeightMapTexture = ExtResource("10_ml7nd")
 SplatmapsTexture = [ExtResource("11_e4aq6"), ExtResource("16_23qo4")]
 FoliagesTexture = []
 ObjectsTexture = []
+WaterTexture = ExtResource("25_64hml")
 SnowTexture = ExtResource("20_foxph")
 
 [sub_resource type="Resource" id="Resource_30st7"]
@@ -130,6 +123,7 @@ HeightMapTexture = ExtResource("14_yx011")
 SplatmapsTexture = [ExtResource("15_qkeig"), ExtResource("19_ba6lp")]
 FoliagesTexture = []
 ObjectsTexture = []
+WaterTexture = ExtResource("30_e1k6w")
 SnowTexture = ExtResource("24_karnx")
 
 [sub_resource type="Resource" id="Resource_ud6gv"]
@@ -139,21 +133,49 @@ HeightMapTexture = ExtResource("16_brt00")
 SplatmapsTexture = [ExtResource("17_dj2t6"), ExtResource("22_jugqc")]
 FoliagesTexture = []
 ObjectsTexture = []
+WaterTexture = ExtResource("35_wbwop")
 SnowTexture = ExtResource("28_v31ub")
 
 [sub_resource type="Resource" id="Resource_4moln"]
 script = ExtResource("134_52xcw")
 Zones = [SubResource("Resource_jream"), SubResource("Resource_r6404"), SubResource("Resource_30st7"), SubResource("Resource_ud6gv")]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ayke5"]
-size = Vector3(5.9502, 1, 0.4)
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ao0bw"]
+noise_type = 3
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d1jwd"]
-radius = 0.3
-height = 4.61841
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ao0bw"]
+noise = SubResource("FastNoiseLite_ao0bw")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_y1yxn"]
-size = Vector3(0.2, 0.9, 0.3)
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_64hml"]
+noise_type = 3
+seed = 10
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e1k6w"]
+noise = SubResource("FastNoiseLite_64hml")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wbwop"]
+render_priority = 0
+shader = ExtResource("12_64hml")
+shader_parameter/time_speed = 0.035
+shader_parameter/surface_speed = 1.0
+shader_parameter/spin = 0.0
+shader_parameter/brightness = 0.9
+shader_parameter/color_intensity = 0.0
+shader_parameter/horizontal_frequency = 2.0
+shader_parameter/vertical_frequency = 2.0
+shader_parameter/size = 3.0
+shader_parameter/banding_bias = 0.6
+shader_parameter/wave_texture = SubResource("NoiseTexture2D_e1k6w")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ao0bw")
+shader_parameter/wave_height = 0.0
+shader_parameter/texture_height = 0.0
+shader_parameter/color1 = Color(0.59, 0.761, 1, 1)
+shader_parameter/color2 = Color(0.274, 0.474, 0.98, 1)
+shader_parameter/color3 = Color(0.059, 0.389, 0.85, 1)
+shader_parameter/color4 = Color(0, 0.267, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_64hml"]
+material = SubResource("ShaderMaterial_wbwop")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ta6me"]
 size = Vector3(658.154, 697.971, 15.3667)
@@ -180,92 +202,17 @@ SnowDefinition = SubResource("Resource_jugqc")
 TerrainZones = SubResource("Resource_4moln")
 metadata/_edit_lock_ = false
 
-[node name="CSGTorus3D" type="CSGTorus3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.21098, 15.1387, -92.3683)
-use_collision = true
-inner_radius = 7.0
-outer_radius = 10.0
+[node name="Waterplane" type="MeshInstance3D" parent="."]
+transform = Transform3D(250, 0, 0, 0, 250, 0, 0, 0, 250, -123.964, -17.9387, -126.235)
+mesh = SubResource("PlaneMesh_64hml")
 
-[node name="Douglas A26" type="RigidBody3D" parent="."]
+[node name="Douglas A26" parent="." instance=ExtResource("37_j4vk3")]
 transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871557, 0, 0.0871557, 0.996195, 0, 6.00022, -1)
-script = ExtResource("15_lh1n4")
-LiftFactor = 0.01
-
-[node name="Engine Trail_r" parent="Douglas A26" instance=ExtResource("20_y1yxn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.65, 0.9)
-
-[node name="Engine Trail_l" parent="Douglas A26" instance=ExtResource("20_y1yxn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.831504, 0.65, 0.9)
-
-[node name="Douglas A26" parent="Douglas A26" instance=ExtResource("16_1japn")]
-transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, 0)
-
-[node name="Camera Switcher" type="Node" parent="Douglas A26" node_paths=PackedStringArray("Camera1", "Camera2")]
-script = ExtResource("19_kuydp")
-Camera1 = NodePath("../3rd Person Camera")
-Camera2 = NodePath("../1st Person Camera")
-
-[node name="1st Person Camera" type="Camera3D" parent="Douglas A26"]
-transform = Transform3D(1, 0, 0, 0, 1, -5.96046e-08, 0, 5.96046e-08, 1, 3.55271e-15, 1.1, -0.4)
-
-[node name="3rd Person Camera" type="Camera3D" parent="Douglas A26"]
-transform = Transform3D(1, 0, 0, 0, 0.999146, 0.0413002, 0, -0.0413002, 0.999146, 0, 1.34315, 4.61146)
-current = true
-
-[node name="CollisionShapeWings" type="CollisionShape3D" parent="Douglas A26"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00914764, 0.840756, 0.414786)
-shape = SubResource("BoxShape3D_ayke5")
-
-[node name="CollisionShapeFuselage" type="CollisionShape3D" parent="Douglas A26"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0157547, 0.689438, 0.803805)
-shape = SubResource("CapsuleShape3D_d1jwd")
-
-[node name="CollisionShapeWheels1" type="CollisionShape3D" parent="Douglas A26"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0.251513, -0.758583)
-shape = SubResource("BoxShape3D_y1yxn")
-
-[node name="CollisionShapeWheels2" type="CollisionShape3D" parent="Douglas A26"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.4, 0.25)
-shape = SubResource("BoxShape3D_y1yxn")
-
-[node name="CollisionShapeWheels3" type="CollisionShape3D" parent="Douglas A26"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.4, 0.25)
-shape = SubResource("BoxShape3D_y1yxn")
-
-[node name="AircraftModule_ControlEngine" type="Node" parent="Douglas A26"]
-script = ExtResource("20_pb5wc")
-
-[node name="AircraftModule_Engine" type="Node3D" parent="Douglas A26"]
-script = ExtResource("17_m0t87")
-PowerFactor = 25.0
-EngineSoundLoop = ExtResource("18_b0yo7")
-EngineSoundStart = ExtResource("19_o75lj")
-EngineSoundStop = ExtResource("18_b0yo7")
-
-[node name="AircraftModule_EnergyContainer" type="Node" parent="Douglas A26"]
-script = ExtResource("21_h3o1i")
-
-[node name="AircraftModule_Steering" type="Node" parent="Douglas A26"]
-script = ExtResource("22_pcbf8")
-
-[node name="AircraftModule_ControlSteering" type="Node" parent="Douglas A26"]
-script = ExtResource("23_edpxg")
-
-[node name="AircraftModule_LandingGear" type="Node3D" parent="Douglas A26"]
-script = ExtResource("26_m0yag")
-GearCollisionShape = NodePath("../CollisionShapeWheels3")
-InitialState = 1
-DeploySound = ExtResource("29_ta6me")
-StowSound = ExtResource("30_o8pog")
-metadata/_custom_type_script = "uid://dtt76b47ja0vv"
-
-[node name="AircraftModule_ControlLandingGear" type="Node" parent="Douglas A26"]
-script = ExtResource("27_woe7w")
-metadata/_custom_type_script = "uid://3q8fwcw1rpff"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("24_77xnj")]
+metadata/_edit_use_anchors_ = true
 
 [node name="FPS Counter" type="Label" parent="CanvasLayer"]
 offset_left = 11.0
@@ -275,6 +222,7 @@ offset_bottom = 56.0
 theme = ExtResource("28_pvlcu")
 theme_override_colors/font_color = Color(0.20871, 0.20871, 0.20871, 1)
 script = ExtResource("28_gk3pa")
+metadata/_edit_use_anchors_ = true
 
 [node name="World Boundary" type="StaticBody3D" parent="."]
 
@@ -298,5 +246,29 @@ shape = SubResource("BoxShape3D_ta6me")
 transform = Transform3D(1.91069e-15, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, -126.978, 514.396, -117.929)
 shape = SubResource("BoxShape3D_ta6me")
 
-[connection signal="update_interface" from="Douglas A26/AircraftModule_Engine" to="Douglas A26/Engine Trail_r" method="_on_aircraft_module_engine_update_interface"]
-[connection signal="update_interface" from="Douglas A26/AircraftModule_LandingGear" to="Douglas A26/Douglas A26" method="_on_LandingGear_update_interface"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+transform = Transform3D(0.554394, -0.832254, -3.6379e-08, 0, -4.37114e-08, 1, -0.832254, -0.554394, -2.42333e-08, -57.9787, 64.5906, -209.95)
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.554394, 0.832254, 3.6379e-08, -0.832254, 0.554394, -1.94781e-08, -3.6379e-08, -1.94781e-08, 1, -63.3806, -116.944, -49.4519)
+use_collision = true
+inner_radius = 7.0
+outer_radius = 10.0
+
+[node name="CSGTorus3D2" type="CSGTorus3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 8.88178e-16, 0, 8.88178e-16, 1, 0, 0, 0)
+use_collision = true
+inner_radius = 7.0
+outer_radius = 10.0
+
+[node name="CSGTorus3D4" type="CSGTorus3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.231918, -0.972735, -4.25196e-08, 0.972735, 0.231918, -3.3574e-08, 4.25196e-08, -3.3574e-08, 1, -98.3475, 53.0543, -25.7291)
+use_collision = true
+inner_radius = 7.0
+outer_radius = 10.0
+
+[node name="CSGTorus3D3" type="CSGTorus3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.606308, -0.79523, -3.47606e-08, 0.79523, -0.606308, -7.0214e-08, 3.47606e-08, -7.0214e-08, 1, -207.715, 34.133, -49.5639)
+use_collision = true
+inner_radius = 7.0
+outer_radius = 10.0
