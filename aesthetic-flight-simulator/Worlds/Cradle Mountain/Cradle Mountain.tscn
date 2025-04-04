@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://lnnvk76tg4s"]
+[gd_scene load_steps=86 format=3 uid="uid://lnnvk76tg4s"]
 
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_ywfr2"]
 [ext_resource type="Texture2D" uid="uid://8vkjet336oa0" path="res://Images/textures/handpainted-style-textures-3/hp_03/hp_03.png" id="2_161ho"]
@@ -11,13 +11,17 @@
 [ext_resource type="Script" uid="uid://d2qebwt0ednya" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="6_v8rdq"]
 [ext_resource type="Texture2D" uid="uid://vo80yjkarlyh" path="res://Worlds/Cradle Mountain/Terrain Data/Heightmap_0_1.res" id="7_lviin"]
 [ext_resource type="Texture2D" uid="uid://ca17m83ghr1fx" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_0_0_0.res" id="7_svb8i"]
+[ext_resource type="Texture2D" uid="uid://c701hvs586x3m" path="res://Images/textures/Snow004_2K-PNG/Snow004_2K-PNG_Color.png" id="7_ute4h"]
 [ext_resource type="Texture2D" uid="uid://ds53j0hml3waw" path="res://Worlds/Cradle Mountain/Terrain Data/Heightmap_0_2.res" id="8_0ml2x"]
+[ext_resource type="Texture2D" uid="uid://wq8gc8x1hy44" path="res://Images/textures/Snow004_2K-PNG/Snow004_2K-PNG_NormalGL.png" id="8_n0se5"]
 [ext_resource type="Texture2D" uid="uid://bu5es6xefffao" path="res://Worlds/Cradle Mountain/Terrain Data/Heightmap_0_3.res" id="9_joann"]
+[ext_resource type="Texture2D" uid="uid://dxxm768l5r47w" path="res://Images/textures/Snow004_2K-PNG/Snow004_2K-PNG_Roughness.png" id="9_ntrx1"]
 [ext_resource type="Texture2D" uid="uid://dlhr3rvt0mhbn" path="res://Worlds/Cradle Mountain/Terrain Data/Heightmap_1_0.res" id="10_7cyo5"]
 [ext_resource type="Texture2D" uid="uid://dlpkk8y7its8j" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_0_1_0.res" id="10_haakd"]
 [ext_resource type="Texture2D" uid="uid://dew1xnga8ie8e" path="res://Worlds/Cradle Mountain/Terrain Data/Heightmap_1_1.res" id="11_48rt0"]
 [ext_resource type="Texture2D" uid="uid://hsuspilhwo3t" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_0_2_0.res" id="12_tqfhw"]
 [ext_resource type="Texture2D" uid="uid://bn3nsal57i5qp" path="res://Worlds/Cradle Mountain/Terrain Data/Heightmap_1_2.res" id="12_wm1my"]
+[ext_resource type="Texture2D" uid="uid://dltfvbd1ksrmq" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_0_0_1.res" id="13_f43po"]
 [ext_resource type="Texture2D" uid="uid://dk3ci2hk8d6b" path="res://Worlds/Cradle Mountain/Terrain Data/Heightmap_1_3.res" id="13_i2hk2"]
 [ext_resource type="Texture2D" uid="uid://dbfeaxl3x3w7d" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_0_3_0.res" id="14_xidlq"]
 [ext_resource type="Texture2D" uid="uid://bee53rq0k66dv" path="res://Worlds/Cradle Mountain/Terrain Data/Heightmap_2_0.res" id="14_xs3x3"]
@@ -25,23 +29,38 @@
 [ext_resource type="Texture2D" uid="uid://rahynktvj4l3" path="res://Worlds/Cradle Mountain/Terrain Data/Heightmap_2_2.res" id="16_dtwmx"]
 [ext_resource type="Texture2D" uid="uid://b3g2vbpqsshcy" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_1_0_0.res" id="16_qqirc"]
 [ext_resource type="Texture2D" uid="uid://bpih4m2vcd4p4" path="res://Worlds/Cradle Mountain/Terrain Data/Heightmap_2_3.res" id="17_172ve"]
+[ext_resource type="Texture2D" uid="uid://dbmugn6tlp0qw" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_0_1_1.res" id="17_o8cwt"]
 [ext_resource type="Texture2D" uid="uid://duard2q4k5eh1" path="res://Worlds/Cradle Mountain/Terrain Data/Heightmap_3_0.res" id="18_fjahv"]
 [ext_resource type="Texture2D" uid="uid://dns0ay5hrxosl" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_1_1_0.res" id="18_ute4h"]
 [ext_resource type="Texture2D" uid="uid://dprh5rpixi64m" path="res://Worlds/Cradle Mountain/Terrain Data/Heightmap_3_1.res" id="19_d3gel"]
 [ext_resource type="Texture2D" uid="uid://dc0br77juw2jt" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_1_2_0.res" id="20_n0se5"]
+[ext_resource type="Texture2D" uid="uid://cdbm2jg8vjbkq" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_0_2_1.res" id="20_nuwyr"]
 [ext_resource type="Texture2D" uid="uid://63rmyhauoth2" path="res://Worlds/Cradle Mountain/Terrain Data/Heightmap_3_2.res" id="20_svb8i"]
 [ext_resource type="Texture2D" uid="uid://nuin7riee407" path="res://Worlds/Cradle Mountain/Terrain Data/Heightmap_3_3.res" id="21_haakd"]
 [ext_resource type="Texture2D" uid="uid://bukxblo6ubvtf" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_1_3_0.res" id="22_ntrx1"]
 [ext_resource type="Script" uid="uid://nt172hqpx1j5" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="22_tqfhw"]
+[ext_resource type="Texture2D" uid="uid://b7wtj3hwar7no" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_0_3_1.res" id="23_nuit2"]
 [ext_resource type="Texture2D" uid="uid://brwqrusijgcdd" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_2_0_0.res" id="24_58i6t"]
+[ext_resource type="Texture2D" uid="uid://copjn6h0wobmp" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_1_0_1.res" id="26_1sgg7"]
 [ext_resource type="Texture2D" uid="uid://bqa7gfybeu7kt" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_2_1_0.res" id="26_fm400"]
 [ext_resource type="Texture2D" uid="uid://cl5myr3c34v4n" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_2_2_0.res" id="28_rb4pd"]
+[ext_resource type="Texture2D" uid="uid://cfkerhtd56q73" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_1_1_1.res" id="29_mpinp"]
 [ext_resource type="Texture2D" uid="uid://bxdxgi2bp542d" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_2_3_0.res" id="30_73pyd"]
 [ext_resource type="Texture2D" uid="uid://cbq07pyhlvsce" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_3_0_0.res" id="32_1v4pi"]
+[ext_resource type="Texture2D" uid="uid://bab8rb7syhi82" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_1_2_1.res" id="32_cdxef"]
 [ext_resource type="Texture2D" uid="uid://dmavfydl0p1wm" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_3_1_0.res" id="34_v38kl"]
+[ext_resource type="Texture2D" uid="uid://d1o23k5ec7ldi" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_1_3_1.res" id="35_ykmy3"]
 [ext_resource type="Texture2D" uid="uid://dobx82fjhc22v" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_3_2_0.res" id="36_wd3ba"]
+[ext_resource type="Texture2D" uid="uid://d4c7t048by1o8" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_2_0_1.res" id="38_llgqv"]
 [ext_resource type="Texture2D" uid="uid://b7h8iakf1my6m" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_3_3_0.res" id="38_rae2a"]
+[ext_resource type="Texture2D" uid="uid://cd15ujkotsndv" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_2_1_1.res" id="41_tdbyr"]
 [ext_resource type="Environment" uid="uid://t1ni51qa0x5q" path="res://Worlds/Skybox.tres" id="42_tqfhw"]
+[ext_resource type="Texture2D" uid="uid://djd5y3y1xbie" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_2_2_1.res" id="44_eywd7"]
+[ext_resource type="Texture2D" uid="uid://dplouewihb1ho" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_2_3_1.res" id="47_4e28u"]
+[ext_resource type="Texture2D" uid="uid://d37kagnwovrve" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_3_0_1.res" id="50_ty7ut"]
+[ext_resource type="Texture2D" uid="uid://hqrrr0g7l4dv" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_3_1_1.res" id="53_f4tnt"]
+[ext_resource type="Texture2D" uid="uid://cnf3p2ptxfcty" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_3_2_1.res" id="56_p2hff"]
+[ext_resource type="Texture2D" uid="uid://btqx5eofv43lu" path="res://Worlds/Cradle Mountain/Terrain Data/Splatmap_3_3_1.res" id="59_44s0u"]
 
 [sub_resource type="Resource" id="Resource_xidlq"]
 script = ExtResource("3_3u5sp")
@@ -75,16 +94,26 @@ TextureDetail = 1
 Triplanar = true
 metadata/_custom_type_script = "uid://c2l8t4xcdxwvu"
 
+[sub_resource type="Resource" id="Resource_nuit2"]
+script = ExtResource("3_3u5sp")
+Name = "Snow"
+AlbedoTexture = ExtResource("7_ute4h")
+NormalTexture = ExtResource("8_n0se5")
+RoughnessTexture = ExtResource("9_ntrx1")
+TextureDetail = -1
+Triplanar = false
+metadata/_custom_type_script = "uid://c2l8t4xcdxwvu"
+
 [sub_resource type="Resource" id="Resource_qqirc"]
 script = ExtResource("4_g4siv")
-TextureSets = [SubResource("Resource_xidlq"), SubResource("Resource_o8cwt"), SubResource("Resource_nuwyr"), SubResource("Resource_tqfhw")]
+TextureSets = [SubResource("Resource_xidlq"), SubResource("Resource_o8cwt"), SubResource("Resource_nuwyr"), SubResource("Resource_tqfhw"), SubResource("Resource_nuit2")]
 metadata/_custom_type_script = "uid://043vjblb04jf"
 
 [sub_resource type="Resource" id="Resource_ute4h"]
 script = ExtResource("6_v8rdq")
 ZonePosition = Vector2i(0, 0)
 HeightMapTexture = ExtResource("5_f0vmw")
-SplatmapsTexture = [ExtResource("7_svb8i")]
+SplatmapsTexture = [ExtResource("7_svb8i"), ExtResource("13_f43po")]
 FoliagesTexture = []
 ObjectsTexture = []
 
@@ -92,7 +121,7 @@ ObjectsTexture = []
 script = ExtResource("6_v8rdq")
 ZonePosition = Vector2i(0, 1)
 HeightMapTexture = ExtResource("7_lviin")
-SplatmapsTexture = [ExtResource("10_haakd")]
+SplatmapsTexture = [ExtResource("10_haakd"), ExtResource("17_o8cwt")]
 FoliagesTexture = []
 ObjectsTexture = []
 
@@ -100,7 +129,7 @@ ObjectsTexture = []
 script = ExtResource("6_v8rdq")
 ZonePosition = Vector2i(0, 2)
 HeightMapTexture = ExtResource("8_0ml2x")
-SplatmapsTexture = [ExtResource("12_tqfhw")]
+SplatmapsTexture = [ExtResource("12_tqfhw"), ExtResource("20_nuwyr")]
 FoliagesTexture = []
 ObjectsTexture = []
 
@@ -108,7 +137,7 @@ ObjectsTexture = []
 script = ExtResource("6_v8rdq")
 ZonePosition = Vector2i(0, 3)
 HeightMapTexture = ExtResource("9_joann")
-SplatmapsTexture = [ExtResource("14_xidlq")]
+SplatmapsTexture = [ExtResource("14_xidlq"), ExtResource("23_nuit2")]
 FoliagesTexture = []
 ObjectsTexture = []
 
@@ -116,7 +145,7 @@ ObjectsTexture = []
 script = ExtResource("6_v8rdq")
 ZonePosition = Vector2i(1, 0)
 HeightMapTexture = ExtResource("10_7cyo5")
-SplatmapsTexture = [ExtResource("16_qqirc")]
+SplatmapsTexture = [ExtResource("16_qqirc"), ExtResource("26_1sgg7")]
 FoliagesTexture = []
 ObjectsTexture = []
 
@@ -124,7 +153,7 @@ ObjectsTexture = []
 script = ExtResource("6_v8rdq")
 ZonePosition = Vector2i(1, 1)
 HeightMapTexture = ExtResource("11_48rt0")
-SplatmapsTexture = [ExtResource("18_ute4h")]
+SplatmapsTexture = [ExtResource("18_ute4h"), ExtResource("29_mpinp")]
 FoliagesTexture = []
 ObjectsTexture = []
 
@@ -132,7 +161,7 @@ ObjectsTexture = []
 script = ExtResource("6_v8rdq")
 ZonePosition = Vector2i(1, 2)
 HeightMapTexture = ExtResource("12_wm1my")
-SplatmapsTexture = [ExtResource("20_n0se5")]
+SplatmapsTexture = [ExtResource("20_n0se5"), ExtResource("32_cdxef")]
 FoliagesTexture = []
 ObjectsTexture = []
 
@@ -140,7 +169,7 @@ ObjectsTexture = []
 script = ExtResource("6_v8rdq")
 ZonePosition = Vector2i(1, 3)
 HeightMapTexture = ExtResource("13_i2hk2")
-SplatmapsTexture = [ExtResource("22_ntrx1")]
+SplatmapsTexture = [ExtResource("22_ntrx1"), ExtResource("35_ykmy3")]
 FoliagesTexture = []
 ObjectsTexture = []
 
@@ -148,7 +177,7 @@ ObjectsTexture = []
 script = ExtResource("6_v8rdq")
 ZonePosition = Vector2i(2, 0)
 HeightMapTexture = ExtResource("14_xs3x3")
-SplatmapsTexture = [ExtResource("24_58i6t")]
+SplatmapsTexture = [ExtResource("24_58i6t"), ExtResource("38_llgqv")]
 FoliagesTexture = []
 ObjectsTexture = []
 
@@ -156,7 +185,7 @@ ObjectsTexture = []
 script = ExtResource("6_v8rdq")
 ZonePosition = Vector2i(2, 1)
 HeightMapTexture = ExtResource("15_kgta6")
-SplatmapsTexture = [ExtResource("26_fm400")]
+SplatmapsTexture = [ExtResource("26_fm400"), ExtResource("41_tdbyr")]
 FoliagesTexture = []
 ObjectsTexture = []
 
@@ -164,7 +193,7 @@ ObjectsTexture = []
 script = ExtResource("6_v8rdq")
 ZonePosition = Vector2i(2, 2)
 HeightMapTexture = ExtResource("16_dtwmx")
-SplatmapsTexture = [ExtResource("28_rb4pd")]
+SplatmapsTexture = [ExtResource("28_rb4pd"), ExtResource("44_eywd7")]
 FoliagesTexture = []
 ObjectsTexture = []
 
@@ -172,7 +201,7 @@ ObjectsTexture = []
 script = ExtResource("6_v8rdq")
 ZonePosition = Vector2i(2, 3)
 HeightMapTexture = ExtResource("17_172ve")
-SplatmapsTexture = [ExtResource("30_73pyd")]
+SplatmapsTexture = [ExtResource("30_73pyd"), ExtResource("47_4e28u")]
 FoliagesTexture = []
 ObjectsTexture = []
 
@@ -180,7 +209,7 @@ ObjectsTexture = []
 script = ExtResource("6_v8rdq")
 ZonePosition = Vector2i(3, 0)
 HeightMapTexture = ExtResource("18_fjahv")
-SplatmapsTexture = [ExtResource("32_1v4pi")]
+SplatmapsTexture = [ExtResource("32_1v4pi"), ExtResource("50_ty7ut")]
 FoliagesTexture = []
 ObjectsTexture = []
 
@@ -188,7 +217,7 @@ ObjectsTexture = []
 script = ExtResource("6_v8rdq")
 ZonePosition = Vector2i(3, 1)
 HeightMapTexture = ExtResource("19_d3gel")
-SplatmapsTexture = [ExtResource("34_v38kl")]
+SplatmapsTexture = [ExtResource("34_v38kl"), ExtResource("53_f4tnt")]
 FoliagesTexture = []
 ObjectsTexture = []
 
@@ -196,7 +225,7 @@ ObjectsTexture = []
 script = ExtResource("6_v8rdq")
 ZonePosition = Vector2i(3, 2)
 HeightMapTexture = ExtResource("20_svb8i")
-SplatmapsTexture = [ExtResource("36_wd3ba")]
+SplatmapsTexture = [ExtResource("36_wd3ba"), ExtResource("56_p2hff")]
 FoliagesTexture = []
 ObjectsTexture = []
 
@@ -204,13 +233,16 @@ ObjectsTexture = []
 script = ExtResource("6_v8rdq")
 ZonePosition = Vector2i(3, 3)
 HeightMapTexture = ExtResource("21_haakd")
-SplatmapsTexture = [ExtResource("38_rae2a")]
+SplatmapsTexture = [ExtResource("38_rae2a"), ExtResource("59_44s0u")]
 FoliagesTexture = []
 ObjectsTexture = []
 
 [sub_resource type="Resource" id="Resource_f43po"]
 script = ExtResource("22_tqfhw")
 Zones = [SubResource("Resource_ute4h"), SubResource("Resource_n0se5"), SubResource("Resource_ntrx1"), SubResource("Resource_58i6t"), SubResource("Resource_fm400"), SubResource("Resource_rb4pd"), SubResource("Resource_73pyd"), SubResource("Resource_1v4pi"), SubResource("Resource_v38kl"), SubResource("Resource_wd3ba"), SubResource("Resource_rae2a"), SubResource("Resource_jbc3n"), SubResource("Resource_w7ym7"), SubResource("Resource_71ulj"), SubResource("Resource_qyu18"), SubResource("Resource_k0mls")]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f43po"]
+size = Vector3(1326, 1202, 15.3667)
 
 [node name="Node3D" type="Node3D"]
 
@@ -229,3 +261,26 @@ environment = ExtResource("42_tqfhw")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 202.434, 277.029, 652.095)
+
+[node name="World Boundary" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 204, 124, 501)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World Boundary"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.704, 160.546, 338)
+shape = SubResource("BoxShape3D_f43po")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="World Boundary"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.704, 175.352, -659)
+shape = SubResource("BoxShape3D_f43po")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="World Boundary"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -285.017, 177.883, -195)
+shape = SubResource("BoxShape3D_f43po")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="World Boundary"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 572.836, 158.74, -174.929)
+shape = SubResource("BoxShape3D_f43po")
+
+[node name="Boundary Top" type="CollisionShape3D" parent="World Boundary"]
+transform = Transform3D(1.91069e-15, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, 184.036, 643.396, -89.929)
+shape = SubResource("BoxShape3D_f43po")
