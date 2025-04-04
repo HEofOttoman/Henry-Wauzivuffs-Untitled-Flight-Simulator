@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dg3vbnm2f8mef"]
+[gd_scene load_steps=51 format=3 uid="uid://dg3vbnm2f8mef"]
 
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_d7bij"]
 [ext_resource type="Environment" uid="uid://t1ni51qa0x5q" path="res://Worlds/Skybox.tres" id="1_ta6me"]
@@ -115,6 +115,9 @@ height = 4.61841
 [sub_resource type="BoxShape3D" id="BoxShape3D_y1yxn"]
 size = Vector3(0.2, 0.9, 0.3)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ta6me"]
+size = Vector3(542.149, 878.097, 15.3667)
+
 [node name="MainWorld" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -143,7 +146,7 @@ inner_radius = 7.0
 outer_radius = 10.0
 
 [node name="Douglas A26" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871557, 0, 0.0871557, 0.996195, 0, 3.40359, -1)
+transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871557, 0, 0.0871557, 0.996195, 0, 6.00022, -1)
 script = ExtResource("15_lh1n4")
 LiftFactor = 0.01
 
@@ -231,6 +234,28 @@ offset_bottom = 56.0
 theme = ExtResource("28_pvlcu")
 theme_override_colors/font_color = Color(0.20871, 0.20871, 0.20871, 1)
 script = ExtResource("28_gk3pa")
+
+[node name="World Boundary" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World Boundary"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -123.296, 160.546, 154)
+shape = SubResource("BoxShape3D_ta6me")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="World Boundary"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -123.296, 175.352, -393)
+shape = SubResource("BoxShape3D_ta6me")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="World Boundary"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -398.017, 177.883, -111)
+shape = SubResource("BoxShape3D_ta6me")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="World Boundary"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 142.836, 158.74, -117.929)
+shape = SubResource("BoxShape3D_ta6me")
+
+[node name="Boundary Top" type="CollisionShape3D" parent="World Boundary"]
+transform = Transform3D(1.91069e-15, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, -143.972, 578.421, -117.929)
+shape = SubResource("BoxShape3D_ta6me")
 
 [connection signal="update_interface" from="Douglas A26/AircraftModule_Engine" to="Douglas A26/Engine Trail_r" method="_on_aircraft_module_engine_update_interface"]
 [connection signal="update_interface" from="Douglas A26/AircraftModule_LandingGear" to="Douglas A26/Douglas A26" method="_on_LandingGear_update_interface"]

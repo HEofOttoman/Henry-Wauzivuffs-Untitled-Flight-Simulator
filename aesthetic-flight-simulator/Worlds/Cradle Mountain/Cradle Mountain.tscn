@@ -222,7 +222,7 @@ Foliages = []
 Objects = []
 TerrainZones = SubResource("Resource_f43po")
 metadata/_custom_type_script = "uid://i5jcj7ukvoen"
-metadata/_edit_lock_ = true
+metadata/_edit_lock_ = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("42_tqfhw")
