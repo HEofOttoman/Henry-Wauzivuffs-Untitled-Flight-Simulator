@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://dg3vbnm2f8mef"]
+[gd_scene load_steps=66 format=3 uid="uid://dg3vbnm2f8mef"]
 
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_d7bij"]
 [ext_resource type="Environment" uid="uid://t1ni51qa0x5q" path="res://Worlds/Skybox.tres" id="1_ta6me"]
@@ -16,10 +16,14 @@
 [ext_resource type="Texture2D" uid="uid://dxxm768l5r47w" path="res://Images/textures/Snow004_2K-PNG/Snow004_2K-PNG_Roughness.png" id="10_ba6lp"]
 [ext_resource type="Texture2D" uid="uid://jqquugfpq73v" path="res://Worlds/Terrain Data/Heightmap_-1_0.res" id="10_ml7nd"]
 [ext_resource type="Texture2D" uid="uid://dnbhwbqwtbt2r" path="res://Worlds/Terrain Data/Splatmap_-1_0_0.res" id="11_e4aq6"]
+[ext_resource type="Texture2D" uid="uid://fmdfnc53di4a" path="res://Images/textures/handpainted-style-textures-3/hp_03/hp_03 (saturated variant2).png" id="11_jugqc"]
 [ext_resource type="Texture2D" uid="uid://c6g4cr6rt2tr0" path="res://Worlds/Terrain Data/Splatmap_0_0_1.res" id="12_3sq7t"]
+[ext_resource type="Texture2D" uid="uid://ys72kt87fxrl" path="res://Images/textures/handpainted-style-textures-3/hp_03/hp_03_h.png" id="12_4oind"]
 [ext_resource type="Shader" uid="uid://ds25nonmsusn8" path="res://Water.gdshader" id="12_64hml"]
 [ext_resource type="Texture2D" uid="uid://8ghe357s1uk6" path="res://Images/textures/Snow004_2K-PNG/Snow004_2K-PNG_Displacement.png" id="12_b80dp"]
 [ext_resource type="Script" uid="uid://di03satw2avie" path="res://addons/terrabrush/Scripts/EditorResources/SnowResource.cs" id="12_ba6lp"]
+[ext_resource type="Texture2D" uid="uid://bnn8shlomx0as" path="res://Images/textures/handpainted-style-textures-3/hp_03/hp_03_n.png" id="13_snt1n"]
+[ext_resource type="Texture2D" uid="uid://cw5a73h8kau4x" path="res://Images/textures/handpainted-style-textures-3/hp_03/hp_03_r.png" id="14_dtgyv"]
 [ext_resource type="Texture2D" uid="uid://dgpegykw40w31" path="res://Worlds/Terrain Data/Heightmap_0_-1.res" id="14_yx011"]
 [ext_resource type="Texture2D" uid="uid://c8we12seo0pja" path="res://Worlds/Terrain Data/Splatmap_0_-1_0.res" id="15_qkeig"]
 [ext_resource type="Texture2D" uid="uid://bbykvdd5nf4ic" path="res://Worlds/Terrain Data/Snow_0_0.res" id="15_xx56b"]
@@ -80,9 +84,20 @@ TextureDetail = 1
 Triplanar = false
 metadata/_custom_type_script = "uid://c2l8t4xcdxwvu"
 
+[sub_resource type="Resource" id="Resource_b80dp"]
+script = ExtResource("3_g6eo6")
+Name = "Grass 02 Variant"
+AlbedoTexture = ExtResource("11_jugqc")
+NormalTexture = ExtResource("13_snt1n")
+RoughnessTexture = ExtResource("14_dtgyv")
+HeightTexture = ExtResource("12_4oind")
+TextureDetail = -1
+Triplanar = false
+metadata/_custom_type_script = "uid://c2l8t4xcdxwvu"
+
 [sub_resource type="Resource" id="Resource_th7pt"]
 script = ExtResource("4_p45yv")
-TextureSets = [SubResource("Resource_lves4"), SubResource("Resource_ptadx"), SubResource("Resource_7s48p"), SubResource("Resource_qam2w"), SubResource("Resource_4oind")]
+TextureSets = [SubResource("Resource_lves4"), SubResource("Resource_ptadx"), SubResource("Resource_7s48p"), SubResource("Resource_qam2w"), SubResource("Resource_4oind"), SubResource("Resource_b80dp")]
 
 [sub_resource type="Resource" id="Resource_jugqc"]
 script = ExtResource("12_ba6lp")
@@ -201,7 +216,7 @@ Foliages = []
 Objects = []
 SnowDefinition = SubResource("Resource_jugqc")
 TerrainZones = SubResource("Resource_4moln")
-metadata/_edit_lock_ = false
+metadata/_edit_lock_ = true
 
 [node name="Waterplane" type="MeshInstance3D" parent="."]
 transform = Transform3D(250, 0, 0, 0, 250, 0, 0, 0, 250, -123.964, -17.9387, -126.235)
