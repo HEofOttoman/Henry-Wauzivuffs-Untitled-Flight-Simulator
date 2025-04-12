@@ -43,7 +43,7 @@ border_width_left = 3
 border_width_top = 2
 border_width_right = 3
 border_width_bottom = 5
-border_color = Color(0.233925, 0.233925, 0.233925, 1)
+border_color = Color(0.201527, 0.201527, 0.201527, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjs4d"]
 content_margin_left = 4.0
