@@ -38,9 +38,12 @@ corner_radius_bottom_left = 3
 corner_detail = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exfog"]
-bg_color = Color(0.2484, 0.2484, 0.2484, 1)
+bg_color = Color(0.197937, 0.197937, 0.197937, 1)
+border_width_left = 3
+border_width_top = 2
+border_width_right = 3
 border_width_bottom = 5
-border_color = Color(0.205117, 0.205117, 0.205117, 1)
+border_color = Color(0.233925, 0.233925, 0.233925, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjs4d"]
 content_margin_left = 4.0
