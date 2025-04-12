@@ -7,41 +7,41 @@
 [ext_resource type="Texture2D" uid="uid://clglmh8l6cr1q" path="res://Images/textures/handpainted-style-textures-3/hp_02/hp_02.png" id="4_nvlb8"]
 [ext_resource type="Script" uid="uid://043vjblb04jf" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetsResource.cs" id="4_p45yv"]
 [ext_resource type="Texture2D" uid="uid://tpaxlx4gra6s" path="res://Images/textures/handpainted-style-textures-3/hp_01/hp_01.png" id="5_djem5"]
-[ext_resource type="Texture2D" uid="uid://dxb4das5l8yk" path="res://Worlds/Terrain Data/Heightmap_0_0.res" id="5_gmdld"]
-[ext_resource type="Texture2D" uid="uid://dydlf0kcx071r" path="res://Worlds/Terrain Data/Splatmap_0_0_0.res" id="6_a70g8"]
+[ext_resource type="Texture2D" uid="uid://dxb4das5l8yk" path="res://Worlds/Tutorial World/Terrain Data/Heightmap_0_0.res" id="5_gmdld"]
+[ext_resource type="Texture2D" uid="uid://dydlf0kcx071r" path="res://Worlds/Tutorial World/Terrain Data/Splatmap_0_0_0.res" id="6_a70g8"]
 [ext_resource type="Texture2D" uid="uid://dbmmierdtwbug" path="res://Images/textures/handpainted-style-textures-3/hp_04/hp_04.png" id="7_fofse"]
 [ext_resource type="Script" uid="uid://d2qebwt0ednya" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="7_mt8ef"]
 [ext_resource type="Texture2D" uid="uid://c701hvs586x3m" path="res://Images/textures/Snow004_2K-PNG/Snow004_2K-PNG_Color.png" id="8_ybuj5"]
 [ext_resource type="Texture2D" uid="uid://wq8gc8x1hy44" path="res://Images/textures/Snow004_2K-PNG/Snow004_2K-PNG_NormalGL.png" id="9_23qo4"]
 [ext_resource type="Texture2D" uid="uid://dxxm768l5r47w" path="res://Images/textures/Snow004_2K-PNG/Snow004_2K-PNG_Roughness.png" id="10_ba6lp"]
-[ext_resource type="Texture2D" uid="uid://jqquugfpq73v" path="res://Worlds/Terrain Data/Heightmap_-1_0.res" id="10_ml7nd"]
-[ext_resource type="Texture2D" uid="uid://dnbhwbqwtbt2r" path="res://Worlds/Terrain Data/Splatmap_-1_0_0.res" id="11_e4aq6"]
+[ext_resource type="Texture2D" uid="uid://jqquugfpq73v" path="res://Worlds/Tutorial World/Terrain Data/Heightmap_-1_0.res" id="10_ml7nd"]
+[ext_resource type="Texture2D" uid="uid://dnbhwbqwtbt2r" path="res://Worlds/Tutorial World/Terrain Data/Splatmap_-1_0_0.res" id="11_e4aq6"]
 [ext_resource type="Texture2D" uid="uid://fmdfnc53di4a" path="res://Images/textures/handpainted-style-textures-3/hp_03/hp_03 (saturated variant2).png" id="11_jugqc"]
-[ext_resource type="Texture2D" uid="uid://c6g4cr6rt2tr0" path="res://Worlds/Terrain Data/Splatmap_0_0_1.res" id="12_3sq7t"]
+[ext_resource type="Texture2D" uid="uid://c6g4cr6rt2tr0" path="res://Worlds/Tutorial World/Terrain Data/Splatmap_0_0_1.res" id="12_3sq7t"]
 [ext_resource type="Texture2D" uid="uid://ys72kt87fxrl" path="res://Images/textures/handpainted-style-textures-3/hp_03/hp_03_h.png" id="12_4oind"]
 [ext_resource type="Shader" uid="uid://ds25nonmsusn8" path="res://Water.gdshader" id="12_64hml"]
 [ext_resource type="Texture2D" uid="uid://8ghe357s1uk6" path="res://Images/textures/Snow004_2K-PNG/Snow004_2K-PNG_Displacement.png" id="12_b80dp"]
 [ext_resource type="Script" uid="uid://di03satw2avie" path="res://addons/terrabrush/Scripts/EditorResources/SnowResource.cs" id="12_ba6lp"]
 [ext_resource type="Texture2D" uid="uid://bnn8shlomx0as" path="res://Images/textures/handpainted-style-textures-3/hp_03/hp_03_n.png" id="13_snt1n"]
 [ext_resource type="Texture2D" uid="uid://cw5a73h8kau4x" path="res://Images/textures/handpainted-style-textures-3/hp_03/hp_03_r.png" id="14_dtgyv"]
-[ext_resource type="Texture2D" uid="uid://dgpegykw40w31" path="res://Worlds/Terrain Data/Heightmap_0_-1.res" id="14_yx011"]
-[ext_resource type="Texture2D" uid="uid://c8we12seo0pja" path="res://Worlds/Terrain Data/Splatmap_0_-1_0.res" id="15_qkeig"]
-[ext_resource type="Texture2D" uid="uid://bbykvdd5nf4ic" path="res://Worlds/Terrain Data/Snow_0_0.res" id="15_xx56b"]
-[ext_resource type="Texture2D" uid="uid://dgbjfigf5wvrw" path="res://Worlds/Terrain Data/Splatmap_-1_0_1.res" id="16_23qo4"]
-[ext_resource type="Texture2D" uid="uid://bqc3qfu6ke4ih" path="res://Worlds/Terrain Data/Heightmap_-1_-1.res" id="16_brt00"]
-[ext_resource type="Texture2D" uid="uid://d3j1ulp5s0m5b" path="res://Worlds/Terrain Data/Splatmap_-1_-1_0.res" id="17_dj2t6"]
-[ext_resource type="Texture2D" uid="uid://csu2n2wxjgk4d" path="res://Worlds/Terrain Data/Water_0_0.res" id="19_ao0bw"]
-[ext_resource type="Texture2D" uid="uid://dqoarbhsfnbc5" path="res://Worlds/Terrain Data/Splatmap_0_-1_1.res" id="19_ba6lp"]
-[ext_resource type="Texture2D" uid="uid://bt3iclfywjtyt" path="res://Worlds/Terrain Data/Snow_-1_0.res" id="20_foxph"]
-[ext_resource type="Texture2D" uid="uid://d1ovhxdv0q8gi" path="res://Worlds/Terrain Data/Splatmap_-1_-1_1.res" id="22_jugqc"]
+[ext_resource type="Texture2D" uid="uid://dgpegykw40w31" path="res://Worlds/Tutorial World/Terrain Data/Heightmap_0_-1.res" id="14_yx011"]
+[ext_resource type="Texture2D" uid="uid://c8we12seo0pja" path="res://Worlds/Tutorial World/Terrain Data/Splatmap_0_-1_0.res" id="15_qkeig"]
+[ext_resource type="Texture2D" uid="uid://bbykvdd5nf4ic" path="res://Worlds/Tutorial World/Terrain Data/Snow_0_0.res" id="15_xx56b"]
+[ext_resource type="Texture2D" uid="uid://dgbjfigf5wvrw" path="res://Worlds/Tutorial World/Terrain Data/Splatmap_-1_0_1.res" id="16_23qo4"]
+[ext_resource type="Texture2D" uid="uid://bqc3qfu6ke4ih" path="res://Worlds/Tutorial World/Terrain Data/Heightmap_-1_-1.res" id="16_brt00"]
+[ext_resource type="Texture2D" uid="uid://d3j1ulp5s0m5b" path="res://Worlds/Tutorial World/Terrain Data/Splatmap_-1_-1_0.res" id="17_dj2t6"]
+[ext_resource type="Texture2D" uid="uid://csu2n2wxjgk4d" path="res://Worlds/Tutorial World/Terrain Data/Water_0_0.res" id="19_ao0bw"]
+[ext_resource type="Texture2D" uid="uid://dqoarbhsfnbc5" path="res://Worlds/Tutorial World/Terrain Data/Splatmap_0_-1_1.res" id="19_ba6lp"]
+[ext_resource type="Texture2D" uid="uid://bt3iclfywjtyt" path="res://Worlds/Tutorial World/Terrain Data/Snow_-1_0.res" id="20_foxph"]
+[ext_resource type="Texture2D" uid="uid://d1ovhxdv0q8gi" path="res://Worlds/Tutorial World/Terrain Data/Splatmap_-1_-1_1.res" id="22_jugqc"]
 [ext_resource type="PackedScene" uid="uid://3hhc2j6mntrp" path="res://UI/Pause Menu/Pause Menu.tscn" id="24_77xnj"]
-[ext_resource type="Texture2D" uid="uid://c178sw31r7b3" path="res://Worlds/Terrain Data/Snow_0_-1.res" id="24_karnx"]
-[ext_resource type="Texture2D" uid="uid://b8cmi7jb3j16q" path="res://Worlds/Terrain Data/Water_-1_0.res" id="25_64hml"]
-[ext_resource type="Script" uid="uid://c61fw3bxcx20j" path="res://Worlds/Main World/fps_counter.gd" id="28_gk3pa"]
+[ext_resource type="Texture2D" uid="uid://c178sw31r7b3" path="res://Worlds/Tutorial World/Terrain Data/Snow_0_-1.res" id="24_karnx"]
+[ext_resource type="Texture2D" uid="uid://b8cmi7jb3j16q" path="res://Worlds/Tutorial World/Terrain Data/Water_-1_0.res" id="25_64hml"]
+[ext_resource type="Script" uid="uid://c61fw3bxcx20j" path="res://UI/fps_counter.gd" id="28_gk3pa"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="28_pvlcu"]
-[ext_resource type="Texture2D" uid="uid://3js5i4qsycku" path="res://Worlds/Terrain Data/Snow_-1_-1.res" id="28_v31ub"]
-[ext_resource type="Texture2D" uid="uid://dcce6tjkgdr3u" path="res://Worlds/Terrain Data/Water_0_-1.res" id="30_e1k6w"]
-[ext_resource type="Texture2D" uid="uid://omq5anaphlf" path="res://Worlds/Terrain Data/Water_-1_-1.res" id="35_wbwop"]
+[ext_resource type="Texture2D" uid="uid://3js5i4qsycku" path="res://Worlds/Tutorial World/Terrain Data/Snow_-1_-1.res" id="28_v31ub"]
+[ext_resource type="Texture2D" uid="uid://dcce6tjkgdr3u" path="res://Worlds/Tutorial World/Terrain Data/Water_0_-1.res" id="30_e1k6w"]
+[ext_resource type="Texture2D" uid="uid://omq5anaphlf" path="res://Worlds/Tutorial World/Terrain Data/Water_-1_-1.res" id="35_wbwop"]
 [ext_resource type="PackedScene" uid="uid://bhwoorpvl4ocu" path="res://Planes/D-A26_player.tscn" id="37_j4vk3"]
 [ext_resource type="PackedScene" uid="uid://c1fvfyqusl37" path="res://UI/Tutorial Billboard/Welcome message.tscn" id="41_ybuj5"]
 [ext_resource type="Script" uid="uid://nt172hqpx1j5" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="134_52xcw"]
@@ -208,7 +208,7 @@ environment = ExtResource("1_ta6me")
 
 [node name="TerraBrush" type="Node3D" parent="."]
 script = ExtResource("1_d7bij")
-DataPath = "res://Worlds/Terrain Data"
+DataPath = "res://Worlds/Tutorial World/Terrain Data"
 LODRowsPerLevel = 101
 TextureSets = SubResource("Resource_th7pt")
 UseAntiTile = false
@@ -216,7 +216,7 @@ Foliages = []
 Objects = []
 SnowDefinition = SubResource("Resource_jugqc")
 TerrainZones = SubResource("Resource_4moln")
-metadata/_edit_lock_ = true
+metadata/_edit_lock_ = false
 
 [node name="Waterplane" type="MeshInstance3D" parent="."]
 transform = Transform3D(250, 0, 0, 0, 250, 0, 0, 0, 250, -123.964, -17.9387, -126.235)
@@ -291,3 +291,4 @@ outer_radius = 10.0
 
 [node name="Welcome Message" parent="." instance=ExtResource("41_ybuj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.612798, 7.42332, -5.17289)
+visible = false

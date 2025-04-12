@@ -8,20 +8,20 @@
 [ext_resource type="Texture2D" uid="uid://tpaxlx4gra6s" path="res://Images/textures/handpainted-style-textures-3/hp_01/hp_01.png" id="6_t6ap6"]
 [ext_resource type="Texture2D" uid="uid://dbmmierdtwbug" path="res://Images/textures/handpainted-style-textures-3/hp_04/hp_04.png" id="7_j1obu"]
 [ext_resource type="Script" uid="uid://043vjblb04jf" path="res://addons/terrabrush/Scripts/EditorResources/TextureSetsResource.cs" id="8_l7sne"]
-[ext_resource type="Texture2D" uid="uid://dxb4das5l8yk" path="res://Worlds/Terrain Data/Heightmap_0_0.res" id="9_1xl12"]
-[ext_resource type="Texture2D" uid="uid://dydlf0kcx071r" path="res://Worlds/Terrain Data/Splatmap_0_0_0.res" id="10_qlep6"]
+[ext_resource type="Texture2D" uid="uid://dxb4das5l8yk" path="res://Worlds/Tutorial World/Terrain Data/Heightmap_0_0.res" id="9_1xl12"]
+[ext_resource type="Texture2D" uid="uid://dydlf0kcx071r" path="res://Worlds/Tutorial World/Terrain Data/Splatmap_0_0_0.res" id="10_qlep6"]
 [ext_resource type="Script" uid="uid://d2qebwt0ednya" path="res://addons/terrabrush/Scripts/EditorResources/ZoneResource.cs" id="11_vnq7e"]
-[ext_resource type="Texture2D" uid="uid://jqquugfpq73v" path="res://Worlds/Terrain Data/Heightmap_-1_0.res" id="12_fprnh"]
-[ext_resource type="Texture2D" uid="uid://dnbhwbqwtbt2r" path="res://Worlds/Terrain Data/Splatmap_-1_0_0.res" id="13_12ill"]
-[ext_resource type="Texture2D" uid="uid://dgpegykw40w31" path="res://Worlds/Terrain Data/Heightmap_0_-1.res" id="14_v64lv"]
-[ext_resource type="Texture2D" uid="uid://c8we12seo0pja" path="res://Worlds/Terrain Data/Splatmap_0_-1_0.res" id="15_sq3pa"]
-[ext_resource type="Texture2D" uid="uid://bqc3qfu6ke4ih" path="res://Worlds/Terrain Data/Heightmap_-1_-1.res" id="16_yxbh6"]
-[ext_resource type="Texture2D" uid="uid://d3j1ulp5s0m5b" path="res://Worlds/Terrain Data/Splatmap_-1_-1_0.res" id="17_kbglj"]
+[ext_resource type="Texture2D" uid="uid://jqquugfpq73v" path="res://Worlds/Tutorial World/Terrain Data/Heightmap_-1_0.res" id="12_fprnh"]
+[ext_resource type="Texture2D" uid="uid://dnbhwbqwtbt2r" path="res://Worlds/Tutorial World/Terrain Data/Splatmap_-1_0_0.res" id="13_12ill"]
+[ext_resource type="Texture2D" uid="uid://dgpegykw40w31" path="res://Worlds/Tutorial World/Terrain Data/Heightmap_0_-1.res" id="14_v64lv"]
+[ext_resource type="Texture2D" uid="uid://c8we12seo0pja" path="res://Worlds/Tutorial World/Terrain Data/Splatmap_0_-1_0.res" id="15_sq3pa"]
+[ext_resource type="Texture2D" uid="uid://bqc3qfu6ke4ih" path="res://Worlds/Tutorial World/Terrain Data/Heightmap_-1_-1.res" id="16_yxbh6"]
+[ext_resource type="Texture2D" uid="uid://d3j1ulp5s0m5b" path="res://Worlds/Tutorial World/Terrain Data/Splatmap_-1_-1_0.res" id="17_kbglj"]
 [ext_resource type="Script" uid="uid://nt172hqpx1j5" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="18_8hvf6"]
 [ext_resource type="Script" uid="uid://dk5ygil2ej188" path="res://addons/simplified_flightsim/Aircraft/Aircraft.gd" id="19_80nn6"]
 [ext_resource type="PackedScene" uid="uid://bpna5btnwpvpr" path="res://Shaders/Engine Trail/Engine Trail.tscn" id="20_wq5b2"]
 [ext_resource type="PackedScene" uid="uid://bxuabe0q0v7ev" path="res://Planes/Douglas A26/Douglas_A26.tscn" id="21_853ml"]
-[ext_resource type="Script" uid="uid://dh42xfnklqtji" path="res://Worlds/Main World/camera_switcher.gd" id="22_bvqgv"]
+[ext_resource type="Script" uid="uid://dh42xfnklqtji" path="res://UI/camera_switcher.gd" id="22_bvqgv"]
 [ext_resource type="Script" uid="uid://cotp128au10av" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlEngine.gd" id="23_1l584"]
 [ext_resource type="Script" uid="uid://vog6iun1du3x" path="res://addons/simplified_flightsim/aircraft_modules/Engine/Engine.gd" id="24_o4j1n"]
 [ext_resource type="AudioStream" uid="uid://gjcu3yum1dl8" path="res://Sounds/SFX/engine/engine.ogg" id="25_qk7h5"]
@@ -36,7 +36,7 @@
 [ext_resource type="Script" uid="uid://crpb2c6mbbj28" path="res://addons/simplified_flightsim/aircraft_modules/EnergyContainer/EnergyContainer.gd" id="34_72n1b"]
 [ext_resource type="PackedScene" uid="uid://3hhc2j6mntrp" path="res://UI/Pause Menu/Pause Menu.tscn" id="35_nwihr"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="36_txse7"]
-[ext_resource type="Script" uid="uid://c61fw3bxcx20j" path="res://Worlds/Main World/fps_counter.gd" id="37_vt1ab"]
+[ext_resource type="Script" uid="uid://c61fw3bxcx20j" path="res://UI/fps_counter.gd" id="37_vt1ab"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hoawo"]
 panorama = ExtResource("1_ytu47")
@@ -146,14 +146,14 @@ environment = SubResource("Environment_jgrli")
 
 [node name="TerraBrush" type="Node3D" parent="."]
 script = ExtResource("2_ypxia")
-DataPath = "res://Worlds/Terrain Data"
+DataPath = "res://Worlds/Tutorial World/Terrain Data"
 LODRowsPerLevel = 101
 TextureSets = SubResource("Resource_th7pt")
 UseAntiTile = false
 Foliages = []
 Objects = []
 TerrainZones = SubResource("Resource_4moln")
-metadata/_edit_lock_ = false
+metadata/_edit_lock_ = true
 
 [node name="CSGTorus3D" type="CSGTorus3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.21098, 15.1387, -92.3683)

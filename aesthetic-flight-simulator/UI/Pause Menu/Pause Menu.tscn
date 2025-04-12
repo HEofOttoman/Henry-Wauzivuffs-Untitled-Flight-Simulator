@@ -7,7 +7,7 @@
 code = "shader_type canvas_item;
 // Pause Menu Blur Shader
 // Courtesy of *Kobedev*
-// From tutorial at: htt ps://www.youtube.com/watch?v=e9-WQg1yMCY
+// From tutorial at: https://www.youtube.com/watch?v=e9-WQg1yMCY
 
 uniform sampler2D SCREEN_TEXTURE: hint_screen_texture, filter_linear_mipmap;
 
@@ -154,7 +154,7 @@ text = "Quit
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ddgu4")
+&"": SubResource("AnimationLibrary_ddgu4")
 }
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]

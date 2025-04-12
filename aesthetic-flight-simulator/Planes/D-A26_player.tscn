@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dk5ygil2ej188" path="res://addons/simplified_flightsim/Aircraft/Aircraft.gd" id="1_fk8dm"]
 [ext_resource type="PackedScene" uid="uid://bpna5btnwpvpr" path="res://Shaders/Engine Trail/Engine Trail.tscn" id="2_aq4x1"]
 [ext_resource type="PackedScene" uid="uid://bxuabe0q0v7ev" path="res://Planes/Douglas A26/Douglas_A26.tscn" id="3_mdw11"]
-[ext_resource type="Script" uid="uid://dh42xfnklqtji" path="res://Worlds/Main World/camera_switcher.gd" id="4_7yhwt"]
+[ext_resource type="Script" uid="uid://dh42xfnklqtji" path="res://UI/camera_switcher.gd" id="4_7yhwt"]
 [ext_resource type="Script" uid="uid://cotp128au10av" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlEngine.gd" id="5_pixhv"]
 [ext_resource type="Script" uid="uid://vog6iun1du3x" path="res://addons/simplified_flightsim/aircraft_modules/Engine/Engine.gd" id="6_4oi3g"]
 [ext_resource type="AudioStream" uid="uid://gjcu3yum1dl8" path="res://Sounds/SFX/engine/engine.ogg" id="7_wun2l"]
@@ -30,7 +30,6 @@ size = Vector3(1.74121, 0.344711, 1.44938)
 size = Vector3(0.2, 0.9, 0.3)
 
 [node name="Douglas A26" type="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871557, 0, 0.0871557, 0.996195, 0, 0, 0)
 script = ExtResource("1_fk8dm")
 LiftFactor = 0.01
 

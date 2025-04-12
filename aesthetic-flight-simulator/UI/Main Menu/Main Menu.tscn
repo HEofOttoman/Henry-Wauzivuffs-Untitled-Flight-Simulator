@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://djif2soo2slbl"]
+[gd_scene load_steps=6 format=3 uid="uid://djif2soo2slbl"]
 
 [ext_resource type="Script" uid="uid://f6n4d05h4b5i" path="res://UI/Main Menu/main_menu.gd" id="1_o0nip"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="1_vf83f"]
+[ext_resource type="FontFile" uid="uid://bpfvut4r5e6vs" path="res://Fonts/Kalam/Kalam-Light.ttf" id="3_7mptw"]
 [ext_resource type="AudioStream" uid="uid://drccxqvt7df1w" path="res://Sounds/SFX/click1.ogg" id="3_p06n8"]
 [ext_resource type="PackedScene" uid="uid://dejyueed3cder" path="res://Sounds/Music/menu_music.tscn" id="4_3rqpy"]
 
@@ -75,15 +76,16 @@ metadata/_edit_use_anchors_ = true
 [node name="Subtitle" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0429688
+anchor_left = 0.0342882
 anchor_top = 0.214506
-anchor_right = 0.344184
+anchor_right = 0.335503
 anchor_bottom = 0.314815
 offset_left = 8.5
 offset_right = -8.5
 grow_horizontal = 2
 theme = ExtResource("1_vf83f")
 theme_type_variation = &"HeaderMedium"
+theme_override_fonts/font = ExtResource("3_7mptw")
 text = "By Henry Wauzivuff"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
