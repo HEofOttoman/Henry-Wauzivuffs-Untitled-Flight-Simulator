@@ -41,3 +41,9 @@ func _on_quit_button_pressed():
 	playAudio()
 	
 	get_tree().quit()
+
+
+
+
+func _on_repo_link_pressed():
+	OS.shell_open("https://github.com/HEofOttoman/Henry-Wauzivuffs-Untitled-Flight-Simulator")

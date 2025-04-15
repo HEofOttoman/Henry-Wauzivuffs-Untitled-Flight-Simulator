@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://djif2soo2slbl"]
+[gd_scene load_steps=10 format=3 uid="uid://djif2soo2slbl"]
 
 [ext_resource type="Script" uid="uid://f6n4d05h4b5i" path="res://UI/Main Menu/main_menu.gd" id="1_o0nip"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="1_vf83f"]
@@ -12,6 +12,8 @@ colors = PackedColorArray(0.168627, 0.168627, 0.168627, 1, 0.237539, 0.237539, 0
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ypa8y"]
 gradient = SubResource("Gradient_h3qnv")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h3qnv"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_o0nip")
@@ -127,9 +129,21 @@ unique_name_in_owner = true
 stream = ExtResource("3_p06n8")
 bus = &"Sound Effects"
 
+[node name="Repo Link" type="Button" parent="Main Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.90625
+anchor_top = 0.91821
+anchor_right = 0.986111
+anchor_bottom = 0.966049
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h3qnv")
+text = "Repository"
+metadata/_edit_use_anchors_ = true
+
 [node name="Menu Music" parent="." instance=ExtResource("4_3rqpy")]
 
 [connection signal="pressed" from="Main Menu/VBoxContainer/Play Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Main Menu/VBoxContainer/Options Button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Main Menu/VBoxContainer/Credits Button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Main Menu/VBoxContainer/Quit Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Main Menu/Repo Link" to="." method="_on_repo_link_pressed"]
