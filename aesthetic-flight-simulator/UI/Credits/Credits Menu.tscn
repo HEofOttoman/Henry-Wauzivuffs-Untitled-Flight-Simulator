@@ -23,7 +23,22 @@ anchor_bottom = 1.0
 offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.180005, 0.180005, 0.180005, 1)
+
+[node name="Section Background" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.109375
+anchor_top = 0.0216049
+anchor_right = 0.890625
+anchor_bottom = 0.978395
+offset_top = 0.0864201
+offset_bottom = 0.0864258
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
 color = Color(0.156863, 0.156863, 0.156863, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="Label" parent="Control"]
 layout_mode = 1
@@ -65,7 +80,8 @@ Freestylized.com - Skybox
 rubberduck - Handpainted Textures
 
 # Music
-Johann Sebastian Bach
+Zu Tanze, Zu Sprunge - Johann Sebastian Bach
+Gran Vals - Joni Ikäläinen, Francisco Tárrega, CC0, via Wikimedia Commons
 
 # Honorable Mentions
 Kobedev (For his tutorials) 
@@ -77,14 +93,16 @@ metadata/_edit_use_anchors_ = true
 [node name="Back Button" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.891304
-anchor_right = 0.145833
-anchor_bottom = 0.973602
+anchor_left = 0.00607639
+anchor_top = 0.920807
+anchor_right = 0.0885417
+anchor_bottom = 0.975155
 offset_top = 2.0
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_um854")
+theme_override_font_sizes/font_size = 15
 text = "Back to Menu"
 metadata/_edit_use_anchors_ = true
 

@@ -80,6 +80,16 @@ theme_override_font_sizes/font_size = 15
 text = "Back to Menu"
 metadata/_edit_use_anchors_ = true
 
+[node name="Btn Music Options" type="Button" parent="Control"]
+layout_mode = 2
+anchor_left = 0.147569
+anchor_top = 0.584877
+anchor_right = 0.483507
+anchor_bottom = 0.66358
+theme = ExtResource("1_uxtlu")
+text = "Music Options"
+metadata/_edit_use_anchors_ = true
+
 [node name="Controls Section" type="VBoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
@@ -144,7 +154,7 @@ text = "Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="Control/Audio Options/Volume Section"]
+[node name="Label Master Volume" type="Label" parent="Control/Audio Options/Volume Section"]
 layout_mode = 2
 theme = ExtResource("1_uxtlu")
 text = "Master Volume"
@@ -155,7 +165,7 @@ theme = ExtResource("1_uxtlu")
 max_value = 1.0
 step = 0.05
 
-[node name="Label2" type="Label" parent="Control/Audio Options/Volume Section"]
+[node name="Label Music Volume" type="Label" parent="Control/Audio Options/Volume Section"]
 layout_mode = 2
 theme = ExtResource("1_uxtlu")
 text = "Music"
@@ -165,7 +175,7 @@ layout_mode = 2
 max_value = 1.0
 step = 0.05
 
-[node name="Label3" type="Label" parent="Control/Audio Options/Volume Section"]
+[node name="Label SFX Volume" type="Label" parent="Control/Audio Options/Volume Section"]
 layout_mode = 2
 theme = ExtResource("1_uxtlu")
 text = "Sound Effects"
@@ -175,16 +185,8 @@ layout_mode = 2
 max_value = 1.0
 step = 0.05
 
-[node name="Button" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 171.0
-offset_top = 362.0
-offset_right = 344.0
-offset_bottom = 413.0
-theme = ExtResource("1_uxtlu")
-text = "Music Options"
-
 [connection signal="pressed" from="Control/Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Control/Btn Music Options" to="." method="_on_btn_music_options_pressed"]
 [connection signal="mouse_exited" from="Control/Audio Options/Volume Section/Master Volume Slider" to="." method="_on_master_volume_slider_mouse_exited"]
 [connection signal="mouse_exited" from="Control/Audio Options/Volume Section/Master Volume Slider" to="Control/Audio Options" method="_on_master_volume_slider_mouse_exited"]
 [connection signal="value_changed" from="Control/Audio Options/Volume Section/Master Volume Slider" to="Control/Audio Options" method="_on_master_volume_slider_value_changed"]

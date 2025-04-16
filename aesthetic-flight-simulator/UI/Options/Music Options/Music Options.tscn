@@ -1,0 +1,121 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqaisvts1ayq2"]
+
+[ext_resource type="Script" uid="uid://0yv6dc7q5pju" path="res://UI/Options/Music Options/music_options.gd" id="1_rwb6l"]
+[ext_resource type="Shader" uid="uid://c422an0ctkmmk" path="res://UI/Pause Menu/Pause Menu Blur.gdshader" id="2_qo202"]
+[ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="3_180j6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lmq6i"]
+shader = ExtResource("2_qo202")
+shader_parameter/lod = 3.451
+
+[node name="MusicOptions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rwb6l")
+
+[node name="Background Color" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.17, 0.17, 0.17, 1)
+
+[node name="Blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_lmq6i")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.17, 0.17, 0.17, 1)
+
+[node name="Section Background" type="ColorRect" parent="."]
+layout_mode = 2
+anchor_left = 0.18316
+anchor_top = 0.0216049
+anchor_right = 0.81684
+anchor_bottom = 0.978395
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+color = Color(0.156863, 0.156863, 0.156863, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.161458
+anchor_right = 0.833333
+anchor_bottom = 0.151235
+grow_horizontal = 2
+theme = ExtResource("3_180j6")
+theme_type_variation = &"HeaderLarge"
+text = "Music Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Back Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0251736
+anchor_top = 0.882716
+anchor_right = 0.107639
+anchor_bottom = 0.930555
+offset_top = -0.00012207
+offset_right = 5.08589
+offset_bottom = 28.5601
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_180j6")
+theme_override_font_sizes/font_size = 15
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="Btn Music Options" type="CheckButton" parent="."]
+layout_mode = 2
+anchor_left = 0.309028
+anchor_top = 0.558642
+anchor_right = 0.644966
+anchor_bottom = 0.637345
+offset_bottom = 0.000457764
+theme = ExtResource("3_180j6")
+button_pressed = true
+text = "Play Music"
+metadata/_edit_use_anchors_ = true
+
+[node name="Music Options Section" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.295139
+anchor_top = 0.205247
+anchor_right = 0.644965
+anchor_bottom = 0.723765
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Subtitle" type="Label" parent="Music Options Section"]
+layout_mode = 2
+theme = ExtResource("3_180j6")
+theme_type_variation = &"HeaderMedium"
+text = "Music Options:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gran Vals" type="Button" parent="Music Options Section"]
+layout_mode = 2
+text = "Gran Vals - Francisco Tarrega"
+
+[node name="Zu Tanze Zu Sprunge" type="Button" parent="Music Options Section"]
+layout_mode = 2
+text = "Zu Tanze, Zu Sprunge - J.S. Bach"
+
+[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]

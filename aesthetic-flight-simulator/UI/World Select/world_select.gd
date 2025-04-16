@@ -18,3 +18,7 @@ func _on_tutorial_button_pressed():
 
 func _on_dove_lake_pressed():
 	get_tree().change_scene_to_file("res://Worlds/Cradle Mountain/Cradle Mountain.tscn")
+
+
+func _on_back_button_pressed():
+	get_tree().change_scene_to_file("res://UI/Main Menu/Main Menu.tscn")

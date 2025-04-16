@@ -14,3 +14,8 @@ func _process(delta):
 func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://UI/Main Menu/Main Menu.tscn") 
 	## Returns to the Main Menu (change to go back to previous scene somehow)
+
+
+func _on_btn_music_options_pressed():
+	get_tree().change_scene_to_file("res://UI/Options/Music Options/Music Options.tscn")
+	# Replace with function body.

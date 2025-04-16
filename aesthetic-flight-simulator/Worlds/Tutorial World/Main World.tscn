@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://dg3vbnm2f8mef"]
+[gd_scene load_steps=68 format=3 uid="uid://dg3vbnm2f8mef"]
 
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="1_d7bij"]
 [ext_resource type="Environment" uid="uid://t1ni51qa0x5q" path="res://Worlds/Skybox.tres" id="1_ta6me"]
@@ -44,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://omq5anaphlf" path="res://Worlds/Tutorial World/Terrain Data/Water_-1_-1.res" id="35_wbwop"]
 [ext_resource type="PackedScene" uid="uid://bhwoorpvl4ocu" path="res://Planes/D-A26_player.tscn" id="37_j4vk3"]
 [ext_resource type="PackedScene" uid="uid://c1fvfyqusl37" path="res://UI/Tutorial Billboard/Welcome message.tscn" id="41_ybuj5"]
+[ext_resource type="PackedScene" uid="uid://dhg4sb4ifrvh8" path="res://UI/Compass/Compass.tscn" id="42_ifsiw"]
 [ext_resource type="PackedScene" uid="uid://d1u6ooaf7acv2" path="res://UI/Locator Bar/Locator Bar.tscn" id="45_ona6w"]
 [ext_resource type="Script" uid="uid://nt172hqpx1j5" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="134_52xcw"]
 
@@ -242,7 +243,10 @@ script = ExtResource("28_gk3pa")
 metadata/_edit_use_anchors_ = true
 
 [node name="Locator Bar" parent="CanvasLayer" instance=ExtResource("45_ona6w")]
-anchor_bottom = 0.91821
+anchor_top = 0.782407
+anchor_bottom = 0.828703
+
+[node name="UICompass" parent="CanvasLayer" instance=ExtResource("42_ifsiw")]
 
 [node name="World Boundary" type="StaticBody3D" parent="."]
 

@@ -1,0 +1,139 @@
+[gd_scene load_steps=15 format=3 uid="uid://dqbi5q7iqny5s"]
+
+[ext_resource type="Environment" uid="uid://t1ni51qa0x5q" path="res://Worlds/Skybox.tres" id="1_u0hdb"]
+[ext_resource type="PackedScene" uid="uid://bhwoorpvl4ocu" path="res://Planes/D-A26_player.tscn" id="2_i16xc"]
+[ext_resource type="PackedScene" uid="uid://3hhc2j6mntrp" path="res://UI/Pause Menu/Pause Menu.tscn" id="3_wvdmg"]
+[ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="4_1wtfg"]
+[ext_resource type="Script" uid="uid://c61fw3bxcx20j" path="res://UI/fps_counter.gd" id="5_xtlyg"]
+[ext_resource type="PackedScene" uid="uid://d1u6ooaf7acv2" path="res://UI/Locator Bar/Locator Bar.tscn" id="6_at3t7"]
+
+[sub_resource type="Gradient" id="Gradient_42nk3"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qgwpp"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_u0hdb"]
+seamless = true
+color_ramp = SubResource("Gradient_42nk3")
+noise = SubResource("FastNoiseLite_qgwpp")
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_i16xc"]
+_shader_parameters = {
+&"bias_distance": 512.0,
+&"blend_sharpness": 0.87,
+&"depth_blur": 0.0,
+&"enable_macro_variation": true,
+&"enable_projection": true,
+&"height_blending": true,
+&"macro_variation1": Color(1, 1, 1, 1),
+&"macro_variation2": Color(1, 1, 1, 1),
+&"macro_variation_slope": 0.333,
+&"mipmap_bias": 1.0,
+&"noise1_angle": 0.0,
+&"noise1_offset": Vector2(0.5, 0.5),
+&"noise1_scale": 0.04,
+&"noise2_scale": 0.076,
+&"noise3_scale": 0.225,
+&"noise_texture": SubResource("NoiseTexture2D_u0hdb"),
+&"projection_angular_division": 2.0,
+&"projection_threshold": 0.8,
+&"world_space_normal_blend": true
+}
+show_checkered = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_he5k0"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 96.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_y2phf"]
+generated_type = 1
+height_offset = 0.5
+material_override = SubResource("StandardMaterial3D_he5k0")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_wvdmg"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_y2phf")])
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wvdmg"]
+size = Vector3(658.154, 697.971, 15.3667)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Terrain3D" type="Terrain3D" parent="."]
+data_directory = "res://Worlds/Tutorial World/Terrain 3D Data"
+material = SubResource("Terrain3DMaterial_i16xc")
+assets = SubResource("Terrain3DAssets_wvdmg")
+show_checkered = true
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 116, 0)
+light_energy = 0.846
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_u0hdb")
+
+[node name="Douglas A26" parent="." instance=ExtResource("2_i16xc")]
+transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871557, 0, 0.0871557, 0.996195, 387.458, 5.94781, 360.875)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("3_wvdmg")]
+metadata/_edit_use_anchors_ = true
+
+[node name="FPS Counter" type="Label" parent="CanvasLayer"]
+offset_left = 11.0
+offset_top = 8.0
+offset_right = 121.0
+offset_bottom = 56.0
+theme = ExtResource("4_1wtfg")
+theme_override_colors/font_color = Color(0.20871, 0.20871, 0.20871, 1)
+script = ExtResource("5_xtlyg")
+metadata/_edit_use_anchors_ = true
+
+[node name="Locator Bar" parent="CanvasLayer" instance=ExtResource("6_at3t7")]
+anchor_bottom = 0.91821
+
+[node name="World Boundary" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 385.046, 0, 365.521)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World Boundary"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -123.296, 160.546, 154)
+shape = SubResource("BoxShape3D_wvdmg")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="World Boundary"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -123.296, 175.352, -393)
+shape = SubResource("BoxShape3D_wvdmg")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="World Boundary"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -398.017, 177.883, -111)
+shape = SubResource("BoxShape3D_wvdmg")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="World Boundary"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 142.836, 158.74, -117.929)
+shape = SubResource("BoxShape3D_wvdmg")
+
+[node name="Boundary Top" type="CollisionShape3D" parent="World Boundary"]
+transform = Transform3D(1.91069e-15, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, -126.978, 514.396, -117.929)
+shape = SubResource("BoxShape3D_wvdmg")

@@ -1,14 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://clh8m5ca4xepk"]
+[gd_scene load_steps=8 format=3 uid="uid://clh8m5ca4xepk"]
 
 [ext_resource type="Script" uid="uid://cp1jyd07ba6dx" path="res://UI/World Select/world_select.gd" id="1_jfw2k"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="1_v2752"]
 [ext_resource type="Shader" uid="uid://c422an0ctkmmk" path="res://UI/Pause Menu/Pause Menu Blur.gdshader" id="2_dm76d"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vqw6r"]
+[sub_resource type="Gradient" id="Gradient_dm76d"]
+offsets = PackedFloat32Array(0, 0.986595)
+colors = PackedColorArray(0.168627, 0.168627, 0.168627, 1, 0.176471, 0.176471, 0.176471, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vqw6r"]
+gradient = SubResource("Gradient_dm76d")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_84ogh"]
 shader = ExtResource("2_dm76d")
-shader_parameter/lod = 1.86
+shader_parameter/lod = 0.365
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dm76d"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
 
 [node name="World Select" type="Control"]
 layout_mode = 3
@@ -19,14 +27,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jfw2k")
 
-[node name="Backgruound" type="Panel" parent="."]
-material = SubResource("ShaderMaterial_vqw6r")
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = SubResource("GradientTexture1D_vqw6r")
 
 [node name="Blur" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_84ogh")
@@ -39,18 +47,18 @@ offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 114.0
-offset_top = 34.0
-offset_right = -114.0
-offset_bottom = -34.0
+offset_left = 156.0
+offset_top = 17.0
+offset_right = -156.0
+offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.156863, 0.156863, 0.156863, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_dm76d")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
@@ -103,17 +111,16 @@ anchor_bottom = 0.739197
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_v2752")
-text = "Tasmania
-"
+text = "Tasmania (WIP)"
 metadata/_edit_use_anchors_ = true
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.368056
-anchor_top = 0.268519
-anchor_right = 0.636285
-anchor_bottom = 0.554012
+anchor_left = 0.619792
+anchor_top = 0.302469
+anchor_right = 0.888021
+anchor_bottom = 0.587963
 grow_vertical = 0
 columns = 2
 metadata/_edit_use_anchors_ = true
@@ -138,6 +145,22 @@ layout_mode = 2
 theme = ExtResource("1_v2752")
 text = "Level 4"
 
+[node name="Back Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00607639
+anchor_top = 0.920807
+anchor_right = 0.0885417
+anchor_bottom = 0.975155
+offset_top = 2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_v2752")
+theme_override_font_sizes/font_size = 15
+text = "Back to Menu"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="Tutorial" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="Dove Lake" to="." method="_on_dove_lake_pressed"]
-[connection signal="pressed" from="Tasmania" to="." method="_on_dove_lake_pressed"]
+[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]

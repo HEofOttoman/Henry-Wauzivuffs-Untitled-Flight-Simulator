@@ -1,0 +1,199 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhg4sb4ifrvh8"]
+
+[ext_resource type="Script" uid="uid://b8uwa70m52qwe" path="res://UI/Compass/Compass.gd" id="1_wosox"]
+[ext_resource type="Texture2D" uid="uid://drit0el54v3vg" path="res://UI/Compass/scale.png" id="2_c73pl"]
+[ext_resource type="Texture2D" uid="uid://dnqa0tfctjnm8" path="res://UI/Compass/compass2.png" id="2_j4xvc"]
+
+[sub_resource type="Gradient" id="Gradient_j4xvc"]
+offsets = PackedFloat32Array(0, 0.568365, 1)
+colors = PackedColorArray(0.156863, 0.156863, 0.156863, 1, 0.168627, 0.168627, 0.168627, 1, 0.156863, 0.156863, 0.156863, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_c73pl"]
+gradient = SubResource("Gradient_j4xvc")
+
+[sub_resource type="Gradient" id="Gradient_c73pl"]
+offsets = PackedFloat32Array(0, 0.563003, 0.997319)
+colors = PackedColorArray(0.207843, 0.227451, 0.356863, 1, 0.294, 0.3234, 0.42, 1, 0.207843, 0.227451, 0.356863, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_atnj8"]
+gradient = SubResource("Gradient_c73pl")
+
+[node name="UICompass" type="Control"]
+layout_mode = 3
+anchor_left = 0.793403
+anchor_top = 0.770062
+anchor_right = 0.980903
+anchor_bottom = 0.967593
+script = ExtResource("1_wosox")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_c73pl")
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = -10.0
+offset_bottom = 19.0
+theme_override_font_sizes/font_size = 10
+text = "Altitude"
+horizontal_alignment = 1
+
+[node name="Horizon" type="NinePatchRect" parent="Panel"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 21.0
+offset_right = 103.0
+offset_bottom = 117.0
+texture = SubResource("GradientTexture1D_atnj8")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="InnerPanel" type="Control" parent="Panel/Horizon"]
+clip_contents = true
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+
+[node name="BG" type="ColorRect" parent="Panel/Horizon/InnerPanel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.509368, 0.672925, 0.863248, 1)
+
+[node name="CenterRef" type="Control" parent="Panel/Horizon/InnerPanel"]
+anchors_preset = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="Ground" type="ColorRect" parent="Panel/Horizon/InnerPanel/CenterRef"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_right = 72.0
+offset_bottom = 144.0
+color = Color(0.765082, 0.784505, 0.565571, 1)
+
+[node name="Scale" type="TextureRect" parent="Panel/Horizon/InnerPanel/CenterRef/Ground"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_top = -72.0
+offset_right = -20.0
+offset_bottom = 72.0
+texture = ExtResource("2_c73pl")
+expand_mode = 1
+
+[node name="Scale2" type="TextureRect" parent="Panel/Horizon/InnerPanel/CenterRef/Ground"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 32.0
+offset_top = 72.0
+offset_right = 44.0
+offset_bottom = 216.0
+rotation = 3.14159
+texture = ExtResource("2_c73pl")
+expand_mode = 1
+
+[node name="PlaneHorizon" type="ColorRect" parent="Panel/Horizon/InnerPanel/CenterRef"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -1.0
+offset_right = 24.0
+offset_bottom = 1.0
+
+[node name="Compass" type="NinePatchRect" parent="Panel"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 21.0
+offset_right = 207.0
+offset_bottom = 117.0
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="InnerPanel" type="Control" parent="Panel/Compass"]
+clip_contents = true
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+
+[node name="BG" type="ColorRect" parent="Panel/Compass/InnerPanel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.0705882, 0.0705882, 0.0745098, 1)
+
+[node name="CenterRef" type="Control" parent="Panel/Compass/InnerPanel"]
+anchors_preset = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Compass/InnerPanel/CenterRef"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_j4xvc")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="Panel/Compass/InnerPanel"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -2.0
+offset_top = 30.0
+offset_right = 2.0
+offset_bottom = 46.0
+
+[node name="ColorRect2" type="ColorRect" parent="Panel/Compass/InnerPanel"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1.0
+offset_right = 1.0
+offset_bottom = 30.0
+color = Color(1, 1, 1, 0.501961)

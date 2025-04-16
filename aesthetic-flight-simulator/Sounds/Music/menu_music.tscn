@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://dejyueed3cder"]
 
-[ext_resource type="AudioStream" uid="uid://djd0hqwhkltxe" path="res://Sounds/Music/J.S. Aria_Zu Tanze, zu Sprunge so wackelt das Herz_ 4.mp3" id="1_ljqc4"]
+[ext_resource type="AudioStream" uid="uid://dmrhe0yy4xyrv" path="res://Sounds/Music/Francisco_Tárrega_-_Gran_Vals.ogg" id="1_fcctd"]
 
 [node name="Menu Music" type="AudioStreamPlayer"]
-stream = ExtResource("1_ljqc4")
+stream = ExtResource("1_fcctd")
 autoplay = true
 bus = &"Music"
