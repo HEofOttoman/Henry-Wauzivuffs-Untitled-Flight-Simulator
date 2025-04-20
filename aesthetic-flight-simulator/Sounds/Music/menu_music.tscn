@@ -1,8 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://dejyueed3cder"]
+[gd_scene load_steps=4 format=3 uid="uid://dejyueed3cder"]
 
 [ext_resource type="AudioStream" uid="uid://dmrhe0yy4xyrv" path="res://Sounds/Music/Francisco_Tárrega_-_Gran_Vals.ogg" id="1_fcctd"]
+[ext_resource type="Script" uid="uid://bdhvcgi7altua" path="res://Sounds/Music/menu_music.gd" id="2_4fi13"]
+[ext_resource type="AudioStream" uid="uid://djd0hqwhkltxe" path="res://Sounds/Music/J.S. Aria_Zu Tanze, zu Sprunge so wackelt das Herz_ 4.mp3" id="3_w271k"]
 
-[node name="Menu Music" type="AudioStreamPlayer"]
+[node name="Menu Music" type="AudioStreamPlayer" node_paths=PackedStringArray("Music1", "Music2")]
 stream = ExtResource("1_fcctd")
 autoplay = true
+bus = &"Music"
+script = ExtResource("2_4fi13")
+Music1 = NodePath("ZTZS 1")
+Music2 = NodePath("Gran Vals 1")
+
+[node name="ZTZS 1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_w271k")
+
+[node name="Gran Vals 1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_fcctd")
 bus = &"Music"

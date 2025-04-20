@@ -1,22 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqaisvts1ayq2"]
+[gd_scene load_steps=6 format=3 uid="uid://dsbna0jytyr62"]
 
-[ext_resource type="Script" uid="uid://0yv6dc7q5pju" path="res://UI/Options/Music Options/music_options.gd" id="1_rwb6l"]
-[ext_resource type="Shader" uid="uid://c422an0ctkmmk" path="res://UI/Pause Menu/Pause Menu Blur.gdshader" id="2_qo202"]
-[ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="3_180j6"]
-[ext_resource type="FontFile" uid="uid://6ihy8g4s5x64" path="res://Fonts/Kalam/Kalam-Regular.ttf" id="4_qo202"]
+[ext_resource type="Script" uid="uid://32br5mfhmb22" path="res://UI/Options/Controls Menu/controls_menu.gd" id="1_p4sg2"]
+[ext_resource type="Shader" uid="uid://c422an0ctkmmk" path="res://UI/Pause Menu/Pause Menu Blur.gdshader" id="1_rjvdf"]
+[ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="2_p4sg2"]
+[ext_resource type="FontFile" uid="uid://6ihy8g4s5x64" path="res://Fonts/Kalam/Kalam-Regular.ttf" id="3_r3qk0"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lmq6i"]
-shader = ExtResource("2_qo202")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dupcr"]
+shader = ExtResource("1_rjvdf")
 shader_parameter/lod = 3.451
 
-[node name="MusicOptions" type="Control"]
+[node name="Controls Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_rwb6l")
+script = ExtResource("1_p4sg2")
 
 [node name="Background Color" type="ColorRect" parent="."]
 layout_mode = 1
@@ -28,7 +28,7 @@ grow_vertical = 2
 color = Color(0.17, 0.17, 0.17, 1)
 
 [node name="Blur" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_lmq6i")
+material = SubResource("ShaderMaterial_dupcr")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,15 +38,17 @@ grow_vertical = 2
 color = Color(0.17, 0.17, 0.17, 1)
 
 [node name="Section Background" type="ColorRect" parent="."]
-layout_mode = 2
-anchor_left = 0.18316
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0824653
 anchor_top = 0.0216049
-anchor_right = 0.81684
+anchor_right = 0.917535
 anchor_bottom = 0.978395
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 color = Color(0.156863, 0.156863, 0.156863, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
@@ -55,38 +57,29 @@ anchor_left = 0.161458
 anchor_right = 0.833333
 anchor_bottom = 0.151235
 grow_horizontal = 2
-theme = ExtResource("3_180j6")
+theme = ExtResource("2_p4sg2")
 theme_type_variation = &"HeaderLarge"
-text = "Music Settings"
+text = "Controls"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Back Button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0251736
-anchor_top = 0.921296
-anchor_right = 0.0755208
-anchor_bottom = 0.975309
+anchor_left = 0.0138889
+anchor_top = 0.930556
+anchor_right = 0.0555556
+anchor_bottom = 0.978395
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_180j6")
+theme = ExtResource("2_p4sg2")
 theme_override_font_sizes/font_size = 15
 text = "Back"
 metadata/_edit_use_anchors_ = true
 
-[node name="Btn Music Options" type="CheckButton" parent="."]
-layout_mode = 2
-anchor_left = 0.309028
-anchor_top = 0.558642
-anchor_right = 0.644966
-anchor_bottom = 0.637345
-offset_bottom = 0.000457764
-theme = ExtResource("3_180j6")
-button_pressed = true
-text = "Play Music"
-
 [node name="Music Options Section" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.295139
@@ -95,26 +88,49 @@ anchor_right = 0.644965
 anchor_bottom = 0.723765
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Subtitle" type="Label" parent="Music Options Section"]
 layout_mode = 2
-theme = ExtResource("3_180j6")
+theme = ExtResource("2_p4sg2")
 theme_type_variation = &"HeaderMedium"
-theme_override_fonts/font = ExtResource("4_qo202")
+theme_override_fonts/font = ExtResource("3_r3qk0")
 text = "Music Options:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Gran Vals1" type="Button" parent="Music Options Section"]
+[node name="Gran Vals" type="Button" parent="Music Options Section"]
 layout_mode = 2
-theme = ExtResource("3_180j6")
 text = "Gran Vals - Francisco Tarrega"
 
-[node name="Zu Tanze Zu Sprunge1" type="Button" parent="Music Options Section"]
+[node name="Zu Tanze Zu Sprunge" type="Button" parent="Music Options Section"]
 layout_mode = 2
-theme = ExtResource("3_180j6")
 text = "Zu Tanze, Zu Sprunge - J.S. Bach"
 
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.233507
+anchor_top = 0.141975
+anchor_right = 0.766493
+anchor_bottom = 0.858025
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme = ExtResource("2_p4sg2")
+text = "Start Engine: P
+Stop Engine: O
+
+Pitch: W & S
+Roll: A & D
+Yaw: Q & E
+
+Throttle 1: 1
+Throttle 2: 2 
+Throttle 3: 3
+
+Throttle Up: F
+Throttle Down: V"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="Music Options Section/Gran Vals1" to="." method="_on_gran_vals_1_pressed"]
-[connection signal="pressed" from="Music Options Section/Zu Tanze Zu Sprunge1" to="." method="_on_zu_tanze_zu_sprunge_1_pressed"]

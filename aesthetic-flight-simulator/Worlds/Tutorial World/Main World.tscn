@@ -272,6 +272,7 @@ shape = SubResource("BoxShape3D_ta6me")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 transform = Transform3D(0.554394, -0.832254, -3.6379e-08, 0, -4.37114e-08, 1, -0.832254, -0.554394, -2.42333e-08, -57.9787, 64.5906, -209.95)
+calculate_tangents = false
 
 [node name="CSGTorus3D" type="CSGTorus3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.554394, 0.832254, 3.6379e-08, -0.832254, 0.554394, -1.94781e-08, -3.6379e-08, -1.94781e-08, 1, -63.3806, -116.944, -49.4519)

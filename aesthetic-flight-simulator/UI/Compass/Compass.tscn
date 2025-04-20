@@ -42,27 +42,30 @@ patch_margin_right = 12
 patch_margin_bottom = 12
 
 [node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 10
 anchor_right = 1.0
 offset_left = 10.0
 offset_top = 5.0
 offset_right = -10.0
 offset_bottom = 19.0
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 10
 text = "Altitude"
 horizontal_alignment = 1
 
 [node name="Horizon" type="NinePatchRect" parent="Panel"]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 21.0
-offset_right = 103.0
-offset_bottom = 117.0
+anchor_left = 0.0327103
+anchor_top = 0.164062
+anchor_right = 0.481309
+anchor_bottom = 0.914062
 texture = SubResource("GradientTexture1D_atnj8")
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="InnerPanel" type="Control" parent="Panel/Horizon"]
 clip_contents = true
@@ -132,14 +135,15 @@ offset_bottom = 1.0
 
 [node name="Compass" type="NinePatchRect" parent="Panel"]
 layout_mode = 0
-offset_left = 111.0
-offset_top = 21.0
-offset_right = 207.0
-offset_bottom = 117.0
+anchor_left = 0.518692
+anchor_top = 0.164062
+anchor_right = 0.96729
+anchor_bottom = 0.914062
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="InnerPanel" type="Control" parent="Panel/Compass"]
 clip_contents = true

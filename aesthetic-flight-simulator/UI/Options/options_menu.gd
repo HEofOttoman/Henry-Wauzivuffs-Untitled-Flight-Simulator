@@ -19,3 +19,8 @@ func _on_back_button_pressed():
 func _on_btn_music_options_pressed():
 	get_tree().change_scene_to_file("res://UI/Options/Music Options/Music Options.tscn")
 	# Replace with function body.
+
+
+func _on_btn_controls_pressed():
+	get_tree().change_scene_to_file("res://UI/Options/Controls Menu/Controls Menu.tscn")
+	# 

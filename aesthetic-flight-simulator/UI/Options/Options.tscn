@@ -73,21 +73,13 @@ anchor_left = 0.00520833
 anchor_top = 0.938272
 anchor_right = 0.0876736
 anchor_bottom = 0.986111
+offset_top = -0.00012207
+offset_bottom = 0.000183105
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_uxtlu")
 theme_override_font_sizes/font_size = 15
 text = "Back to Menu"
-metadata/_edit_use_anchors_ = true
-
-[node name="Btn Music Options" type="Button" parent="Control"]
-layout_mode = 2
-anchor_left = 0.147569
-anchor_top = 0.584877
-anchor_right = 0.483507
-anchor_bottom = 0.66358
-theme = ExtResource("1_uxtlu")
-text = "Music Options"
 metadata/_edit_use_anchors_ = true
 
 [node name="Controls Section" type="VBoxContainer" parent="Control"]
@@ -105,27 +97,20 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 theme = ExtResource("1_uxtlu")
 theme_type_variation = &"HeaderMedium"
-text = "Controls:"
+text = "Buttons"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextEdit" type="TextEdit" parent="Control/Controls Section"]
+[node name="Btn Music Options" type="Button" parent="Control/Controls Section"]
 layout_mode = 2
-size_flags_vertical = 3
 theme = ExtResource("1_uxtlu")
-text = "Start Engine: P
-Stop Engine: O
+text = "Music Options"
+metadata/_edit_use_anchors_ = true
 
-Pitch: W & S
-Roll: A & D
-Yaw: Q & E
-
-Throttle 1: 1
-Throttle 2: 2 
-Throttle 3: 3
-
-Throttle Up: F
-Throttle Down: V"
+[node name="Btn Controls" type="Button" parent="Control/Controls Section"]
+layout_mode = 2
+theme = ExtResource("1_uxtlu")
+text = "Controls"
 
 [node name="Audio Options" type="Control" parent="Control"]
 anchors_preset = 0
@@ -186,7 +171,8 @@ max_value = 1.0
 step = 0.05
 
 [connection signal="pressed" from="Control/Back Button" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="Control/Btn Music Options" to="." method="_on_btn_music_options_pressed"]
+[connection signal="pressed" from="Control/Controls Section/Btn Music Options" to="." method="_on_btn_music_options_pressed"]
+[connection signal="pressed" from="Control/Controls Section/Btn Controls" to="." method="_on_btn_controls_pressed"]
 [connection signal="mouse_exited" from="Control/Audio Options/Volume Section/Master Volume Slider" to="." method="_on_master_volume_slider_mouse_exited"]
 [connection signal="mouse_exited" from="Control/Audio Options/Volume Section/Master Volume Slider" to="Control/Audio Options" method="_on_master_volume_slider_mouse_exited"]
 [connection signal="value_changed" from="Control/Audio Options/Volume Section/Master Volume Slider" to="Control/Audio Options" method="_on_master_volume_slider_value_changed"]

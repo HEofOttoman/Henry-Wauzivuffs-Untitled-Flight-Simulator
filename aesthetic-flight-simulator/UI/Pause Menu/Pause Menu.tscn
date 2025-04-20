@@ -25,7 +25,7 @@ shader = SubResource("Shader_l42mg")
 shader_parameter/lod = 0.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uh4wk"]
-bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+bg_color = Color(0.230315, 0.230315, 0.230315, 1)
 border_width_left = 3
 border_width_top = 5
 border_width_right = 3
