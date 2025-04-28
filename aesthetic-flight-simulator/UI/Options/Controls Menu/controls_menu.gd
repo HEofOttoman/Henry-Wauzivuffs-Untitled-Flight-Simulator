@@ -14,4 +14,5 @@ func _process(delta):
 
 
 func _on_back_button_pressed():
+	AudioManager.button_click_sfx.play()
 	get_tree().change_scene_to_file("res://UI/Options/Options.tscn")

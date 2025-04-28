@@ -1,10 +1,10 @@
 extends Node
 
-@export var Camera1: Camera3D # 3rd Person Camera
-@export var Camera2: Camera3D # 1st Person Camera
+@export var Camera1: Camera3D ## 3rd Person Camera
+@export var Camera2: Camera3D ## 1st Person Camera
+@export var Camera3: Camera3D ## Free Camera Tripod
 
-
-enum camera_state{FIRST, THIRD}
+enum camera_state{FIRST, THIRD, FREE}
 ## Establishes an enum between 2 cameras to use for a camera switcher
 
 var current_cam_state = camera_state.THIRD
@@ -20,9 +20,25 @@ func change_camera():
 		camera_state.THIRD:
 			Camera1.make_current()
 			current_cam_state = camera_state.FIRST
+			print("Camera Mode: THIRD")
 		camera_state.FIRST:
 			Camera2.make_current()
+			current_cam_state = camera_state.FREE
+			print("Camera Mode: FIRST")
+		camera_state.FREE:
+			Camera3.make_current()
 			current_cam_state = camera_state.THIRD
+			print("Camera Mode: FREE")
+		
+		#camera_state.FIRST:
+			#Camera2.make_current()
+			#current_cam_state = camera_state.FREE
+			#print("Camera Mode: FREE")
+		#camera_state.FREE:
+			#Camera3.make_current()
+			#current_cam_state = camera_state.THIRD
+			#print("Camera Mode: THIRD")
+		
 
 
 ## Called on any input

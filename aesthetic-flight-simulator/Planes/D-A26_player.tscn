@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://bhwoorpvl4ocu"]
+[gd_scene load_steps=21 format=3 uid="uid://bhwoorpvl4ocu"]
 
 [ext_resource type="Script" uid="uid://dk5ygil2ej188" path="res://addons/simplified_flightsim/Aircraft/Aircraft.gd" id="1_fk8dm"]
 [ext_resource type="PackedScene" uid="uid://bpna5btnwpvpr" path="res://Shaders/Engine Trail/Engine Trail.tscn" id="2_aq4x1"]
 [ext_resource type="PackedScene" uid="uid://bxuabe0q0v7ev" path="res://Planes/Douglas A26/Douglas_A26.tscn" id="3_mdw11"]
 [ext_resource type="Script" uid="uid://dh42xfnklqtji" path="res://UI/camera_switcher.gd" id="4_7yhwt"]
+[ext_resource type="Script" uid="uid://4me6ir7d2iyo" path="res://Planes/camera_tripod.gd" id="5_aq4x1"]
 [ext_resource type="Script" uid="uid://cotp128au10av" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlEngine.gd" id="5_pixhv"]
 [ext_resource type="Script" uid="uid://vog6iun1du3x" path="res://addons/simplified_flightsim/aircraft_modules/Engine/Engine.gd" id="6_4oi3g"]
 [ext_resource type="AudioStream" uid="uid://gjcu3yum1dl8" path="res://Sounds/SFX/engine/engine.ogg" id="7_wun2l"]
@@ -27,7 +28,7 @@ height = 4.61841
 size = Vector3(1.74121, 0.344711, 1.44938)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y1yxn"]
-size = Vector3(0.2, 0.9, 0.3)
+size = Vector3(0.2, 0.546411, 0.280698)
 
 [node name="Douglas A26" type="RigidBody3D"]
 script = ExtResource("1_fk8dm")
@@ -42,10 +43,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.831504, 0.65, 0.9)
 [node name="Douglas A26" parent="." instance=ExtResource("3_mdw11")]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, 0)
 
-[node name="Camera Switcher" type="Node" parent="." node_paths=PackedStringArray("Camera1", "Camera2")]
+[node name="Camera Switcher" type="Node" parent="." node_paths=PackedStringArray("Camera1", "Camera2", "Camera3")]
 script = ExtResource("4_7yhwt")
 Camera1 = NodePath("../3rd Person Camera")
 Camera2 = NodePath("../1st Person Camera")
+Camera3 = NodePath("../Camera Tripod")
 
 [node name="1st Person Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, -5.96046e-08, 0, 5.96046e-08, 1, 3.55271e-15, 1.1, -0.4)
@@ -53,6 +55,11 @@ transform = Transform3D(1, 0, 0, 0, 1, -5.96046e-08, 0, 5.96046e-08, 1, 3.55271e
 [node name="3rd Person Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.999146, 0.0413002, 0, -0.0413002, 0.999146, 0, 1.49576, 4.59811)
 current = true
+
+[node name="Camera Tripod" type="Camera3D" parent="."]
+transform = Transform3D(0.999056, 0, 0, 0, 0.999056, 0, 0, 0, 0.999056, 0, 0, 0)
+script = ExtResource("5_aq4x1")
+TargetNode = NodePath("..")
 
 [node name="CollisionShapeWings" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00914764, 0.840756, 0.414786)
@@ -67,18 +74,15 @@ transform = Transform3D(1, 0, 0, 0, 1, -1.93713e-07, 0, 1.93713e-07, 1, 0, 0.248
 shape = SubResource("BoxShape3D_fk8dm")
 
 [node name="CollisionShapeWheels1" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0.251513, -0.758583)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 0.939424, -0.342758, 0, 0.342758, 0.939424, 0, 0.344013, -0.742958)
 shape = SubResource("BoxShape3D_y1yxn")
 
 [node name="CollisionShapeWheels2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.4, 0.25)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.4, 0.358833)
 shape = SubResource("BoxShape3D_y1yxn")
 
 [node name="CollisionShapeWheels3" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.4, 0.25)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.317346, 0.358833)
 shape = SubResource("BoxShape3D_y1yxn")
 
 [node name="AircraftModule_ControlEngine" type="Node" parent="."]

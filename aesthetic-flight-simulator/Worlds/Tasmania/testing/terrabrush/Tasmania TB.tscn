@@ -215,4 +215,4 @@ Foliages = []
 Objects = []
 TerrainZones = SubResource("Resource_gferf")
 metadata/_custom_type_script = "uid://i5jcj7ukvoen"
-metadata/_edit_lock_ = true
+metadata/_edit_lock_ = false

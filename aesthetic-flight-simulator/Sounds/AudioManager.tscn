@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dejyueed3cder"]
+
+[ext_resource type="Script" uid="uid://bdhvcgi7altua" path="res://Sounds/Audio Manager.gd" id="1_e4xjf"]
+[ext_resource type="AudioStream" uid="uid://djd0hqwhkltxe" path="res://Sounds/Music/J.S. Aria_Zu Tanze, zu Sprunge so wackelt das Herz_ 4.mp3" id="2_8h7yy"]
+[ext_resource type="AudioStream" uid="uid://dmrhe0yy4xyrv" path="res://Sounds/Music/Francisco_Tárrega_-_Gran_Vals.ogg" id="3_a0otx"]
+[ext_resource type="AudioStream" uid="uid://drccxqvt7df1w" path="res://Sounds/SFX/click1.ogg" id="4_mpslv"]
+
+[node name="AudioManager" type="Node" node_paths=PackedStringArray("button_click_sfx", "Music1", "Music2")]
+script = ExtResource("1_e4xjf")
+button_click_sfx = NodePath("Button Click SFX")
+Music1 = NodePath("Gran Vals 1")
+Music2 = NodePath("ZTZS 1")
+
+[node name="Button Click SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mpslv")
+bus = &"Sound Effects"
+
+[node name="Gran Vals 1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_a0otx")
+autoplay = true
+bus = &"Music"
+
+[node name="ZTZS 1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8h7yy")
+bus = &"Music"

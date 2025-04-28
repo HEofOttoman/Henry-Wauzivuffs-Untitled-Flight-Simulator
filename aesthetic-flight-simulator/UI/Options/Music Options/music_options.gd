@@ -11,13 +11,13 @@ func _process(delta):
 	pass
 
 func _on_gran_vals_1_pressed():
-	MenuMusic.stop()
-	MenuMusic.play()
+	AudioManager.stop()
+	AudioManager.Music1.play()
 	# Replace with function body.
 
 func _on_zu_tanze_zu_sprunge_1_pressed():
-	MenuMusic.stop()
-	MenuMusic.play()
+	AudioManager.stop()
+	AudioManager.Music2.play()
 	# Replace with function body.
 
 func _on_back_button_pressed():
