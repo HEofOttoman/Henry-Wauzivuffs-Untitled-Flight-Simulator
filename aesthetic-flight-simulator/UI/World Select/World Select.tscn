@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://clh8m5ca4xepk"]
+[gd_scene load_steps=12 format=3 uid="uid://clh8m5ca4xepk"]
 
 [ext_resource type="Script" uid="uid://cp1jyd07ba6dx" path="res://UI/World Select/world_select.gd" id="1_jfw2k"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="1_v2752"]
 [ext_resource type="Shader" uid="uid://c422an0ctkmmk" path="res://UI/Pause Menu/Pause Menu Blur.gdshader" id="2_dm76d"]
+[ext_resource type="FontFile" uid="uid://6ihy8g4s5x64" path="res://Fonts/Kalam/Kalam-Regular.ttf" id="4_vqw6r"]
+[ext_resource type="Texture2D" uid="uid://bftdel4k1dill" path="res://Images/Tutorial World Thumbnail.png" id="5_84ogh"]
+[ext_resource type="Texture2D" uid="uid://bxm5u2rap4uwr" path="res://Images/Cradle Mountain Thumbnail.png" id="6_b3ovy"]
 
 [sub_resource type="Gradient" id="Gradient_dm76d"]
 offsets = PackedFloat32Array(0, 0.986595)
@@ -17,6 +20,10 @@ shader_parameter/lod = 0.365
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dm76d"]
 bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_84ogh"]
+font = ExtResource("4_vqw6r")
+font_size = 30
 
 [node name="World Select" type="Control"]
 layout_mode = 3
@@ -49,24 +56,23 @@ grow_vertical = 2
 
 [node name="ColorRect" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 156.0
-offset_top = 17.0
-offset_right = -156.0
-offset_bottom = -17.0
+anchors_preset = -1
+anchor_left = 0.0772569
+anchor_top = 0.0262346
+anchor_right = 0.902778
+anchor_bottom = 0.973765
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dm76d")
+metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.307726
-anchor_top = 0.0570988
+anchor_top = 0.0246914
 anchor_right = 0.692274
-anchor_bottom = 0.208333
+anchor_bottom = 0.175926
 grow_horizontal = 2
 theme = ExtResource("1_v2752")
 theme_type_variation = &"HeaderLarge"
@@ -74,34 +80,8 @@ text = "Select World"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Tutorial" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.369792
-anchor_top = 0.317901
-anchor_right = 0.631076
-anchor_bottom = 0.432099
-offset_bottom = -1.52588e-05
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_v2752")
-text = "Tutorial"
-metadata/_edit_use_anchors_ = true
-
-[node name="Dove Lake" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.37066
-anchor_top = 0.487654
-anchor_right = 0.62934
-anchor_bottom = 0.591049
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_v2752")
-text = "Dove Lake"
-metadata/_edit_use_anchors_ = true
-
 [node name="Tasmania" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.37066
@@ -114,46 +94,121 @@ theme = ExtResource("1_v2752")
 text = "Tasmania (WIP)"
 metadata/_edit_use_anchors_ = true
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="Tutorial Panel" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.619792
-anchor_top = 0.302469
-anchor_right = 0.888021
-anchor_bottom = 0.587963
-grow_vertical = 0
-columns = 2
+anchor_left = 0.197049
+anchor_top = 0.262346
+anchor_right = 0.444444
+anchor_bottom = 0.91821
+theme = ExtResource("1_v2752")
 metadata/_edit_use_anchors_ = true
 
-[node name="Torres Del Paine" type="Button" parent="GridContainer"]
-visible = false
+[node name="MarginContainer" type="MarginContainer" parent="Tutorial Panel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Subtitle" type="Label" parent="Tutorial Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tutorial World"
+label_settings = SubResource("LabelSettings_84ogh")
+horizontal_alignment = 1
+
+[node name="Thumbnail" type="TextureRect" parent="Tutorial Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_84ogh")
+expand_mode = 4
+
+[node name="HSeparator" type="HSeparator" parent="Tutorial Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Tutorial Btn" type="Button" parent="Tutorial Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_v2752")
-text = "Torres Del Paine"
+text = "Play"
 metadata/_edit_use_anchors_ = true
 
-[node name="Snowy Mountains" type="Button" parent="GridContainer"]
-visible = false
-layout_mode = 2
+[node name="Dove Lake Panel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.529514
+anchor_top = 0.262346
+anchor_right = 0.776909
+anchor_bottom = 0.91821
 theme = ExtResource("1_v2752")
-text = "Snowy Mountains"
 metadata/_edit_use_anchors_ = true
 
-[node name="Level 4" type="Button" parent="GridContainer"]
-visible = false
+[node name="MarginContainer" type="MarginContainer" parent="Dove Lake Panel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dove Lake Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Subtitle" type="Label" parent="Dove Lake Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Dove Lake"
+label_settings = SubResource("LabelSettings_84ogh")
+horizontal_alignment = 1
+
+[node name="Thumbnail" type="TextureRect" parent="Dove Lake Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_b3ovy")
+expand_mode = 4
+
+[node name="HSeparator" type="HSeparator" parent="Dove Lake Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Dove Lake Btn" type="Button" parent="Dove Lake Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_v2752")
-text = "Level 4"
+text = "Play"
+metadata/_edit_use_anchors_ = true
+
+[node name="Tasmania Panel" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.529514
+anchor_top = 0.262346
+anchor_right = 0.776909
+anchor_bottom = 0.91821
+theme = ExtResource("1_v2752")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Tasmania Panel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tasmania Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Subtitle" type="Label" parent="Tasmania Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tasmania (placehold)"
+label_settings = SubResource("LabelSettings_84ogh")
+horizontal_alignment = 1
+
+[node name="Thumbnail" type="TextureRect" parent="Tasmania Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_b3ovy")
+expand_mode = 4
+
+[node name="HSeparator" type="HSeparator" parent="Tasmania Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Tasmania Btn" type="Button" parent="Tasmania Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_v2752")
+text = "Play (placeholder)"
+metadata/_edit_use_anchors_ = true
 
 [node name="Back Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.00607639
-anchor_top = 0.920807
-anchor_right = 0.0885417
-anchor_bottom = 0.975155
-offset_top = 2.0
-offset_bottom = -2.0
+layout_mode = 2
+anchor_left = 0.00868054
+anchor_top = 0.939815
+anchor_right = 0.0911458
+anchor_bottom = 0.987654
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_v2752")
@@ -161,6 +216,6 @@ theme_override_font_sizes/font_size = 15
 text = "Back to Menu"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Tutorial" to="." method="_on_tutorial_button_pressed"]
-[connection signal="pressed" from="Dove Lake" to="." method="_on_dove_lake_pressed"]
+[connection signal="pressed" from="Tutorial Panel/MarginContainer/VBoxContainer/Tutorial Btn" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="Dove Lake Panel/MarginContainer/VBoxContainer/Dove Lake Btn" to="." method="_on_dove_lake_pressed"]
 [connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]

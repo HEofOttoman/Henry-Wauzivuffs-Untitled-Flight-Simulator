@@ -36,7 +36,7 @@
 [ext_resource type="Script" uid="uid://crpb2c6mbbj28" path="res://addons/simplified_flightsim/aircraft_modules/EnergyContainer/EnergyContainer.gd" id="34_72n1b"]
 [ext_resource type="PackedScene" uid="uid://3hhc2j6mntrp" path="res://UI/Pause Menu/Pause Menu.tscn" id="35_nwihr"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="36_txse7"]
-[ext_resource type="Script" uid="uid://c61fw3bxcx20j" path="res://UI/fps_counter.gd" id="37_vt1ab"]
+[ext_resource type="Script" uid="uid://c61fw3bxcx20j" path="res://UI/Debug Menu/fps_counter.gd" id="37_vt1ab"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hoawo"]
 panorama = ExtResource("1_ytu47")

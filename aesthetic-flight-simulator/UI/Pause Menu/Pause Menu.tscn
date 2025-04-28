@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://3hhc2j6mntrp"]
+[gd_scene load_steps=10 format=3 uid="uid://3hhc2j6mntrp"]
 
 [ext_resource type="Script" uid="uid://bcabwoldttrno" path="res://UI/Pause Menu/pause_menu.gd" id="1_mk7rm"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="2_omo8g"]
+[ext_resource type="PackedScene" uid="uid://cieyd22xf5ms3" path="res://UI/Options/Options (Ingame Version).tscn" id="3_l1fr7"]
 
 [sub_resource type="Shader" id="Shader_l42mg"]
 code = "shader_type canvas_item;
@@ -25,7 +26,7 @@ shader = SubResource("Shader_l42mg")
 shader_parameter/lod = 0.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uh4wk"]
-bg_color = Color(0.230315, 0.230315, 0.230315, 1)
+bg_color = Color(0.20871, 0.20871, 0.20871, 1)
 border_width_left = 3
 border_width_top = 5
 border_width_right = 3
@@ -54,7 +55,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/path = NodePath("Pause Panel:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -81,7 +82,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/path = NodePath("Pause Panel:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -116,20 +117,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="Pause Panel" type="PanelContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-anchor_left = 0.387153
+anchor_left = 0.377604
 anchor_top = 0.229938
-anchor_right = 0.644965
+anchor_right = 0.654514
 anchor_bottom = 0.771605
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_omo8g")
 theme_override_styles/panel = SubResource("StyleBoxFlat_uh4wk")
-metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Pause Panel"]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
@@ -137,36 +137,36 @@ theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause Panel/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="Resume" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Resume" type="Button" parent="Pause Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
 theme = ExtResource("2_omo8g")
 text = "Resume"
 
-[node name="Restart" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Restart" type="Button" parent="Pause Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
 theme = ExtResource("2_omo8g")
 text = "Restart"
 
-[node name="Options" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Options" type="Button" parent="Pause Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
 theme = ExtResource("2_omo8g")
 text = "Options"
 
-[node name="Main Menu" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Main Menu" type="Button" parent="Pause Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
 theme = ExtResource("2_omo8g")
 text = "Main Menu"
 
-[node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="Pause Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
 theme = ExtResource("2_omo8g")
@@ -178,8 +178,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_ddgu4")
 }
 
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[node name="Options Menu" parent="." instance=ExtResource("3_l1fr7")]
+layout_mode = 1
+
+[connection signal="pressed" from="Pause Panel/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause Panel/MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Pause Panel/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Pause Panel/MarginContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Pause Panel/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

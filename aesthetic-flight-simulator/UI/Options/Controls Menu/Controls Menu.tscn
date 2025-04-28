@@ -118,7 +118,9 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 theme = ExtResource("2_p4sg2")
-text = "Start Engine: P
+text = "Pause: Esc
+
+Start Engine: P
 Stop Engine: O
 
 Pitch: W & S
@@ -130,7 +132,9 @@ Throttle 2: 2
 Throttle 3: 3
 
 Throttle Up: F
-Throttle Down: V"
+Throttle Down: V
+
+"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]

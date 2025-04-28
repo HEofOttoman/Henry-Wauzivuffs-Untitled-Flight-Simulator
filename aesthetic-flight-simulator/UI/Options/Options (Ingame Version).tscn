@@ -1,0 +1,155 @@
+[gd_scene load_steps=7 format=3 uid="uid://cieyd22xf5ms3"]
+
+[ext_resource type="Shader" uid="uid://c422an0ctkmmk" path="res://UI/Pause Menu/Pause Menu Blur.gdshader" id="1_bw3oc"]
+[ext_resource type="Script" uid="uid://ci5ijqrxs4y6" path="res://UI/Options/options_(ingame_version).gd" id="1_vehyg"]
+[ext_resource type="Script" uid="uid://cbkybbadvvqnh" path="res://UI/Options/audio_options.gd" id="2_nmpgw"]
+[ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="3_vehyg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mrify"]
+shader = ExtResource("1_bw3oc")
+shader_parameter/lod = 2.326
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmpgw"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+border_width_left = 3
+border_width_top = 5
+border_width_right = 3
+border_width_bottom = 5
+border_color = Color(0.20871, 0.20871, 0.20871, 1)
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
+
+[node name="Options Menu" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vehyg")
+
+[node name="Blur" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_mrify")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.17, 0.17, 0.17, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.131944
+anchor_top = 0.0740741
+anchor_right = 0.868056
+anchor_bottom = 0.925926
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_vehyg")
+theme_override_styles/panel = SubResource("StyleBoxFlat_nmpgw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.161458
+anchor_top = 0.0895062
+anchor_right = 0.833333
+anchor_bottom = 0.240741
+grow_horizontal = 2
+theme = ExtResource("3_vehyg")
+theme_type_variation = &"HeaderLarge"
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Audio Options" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.179688
+anchor_top = 0.257716
+anchor_right = 0.536458
+anchor_bottom = 0.881173
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_nmpgw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Volume Section" type="VBoxContainer" parent="Audio Options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Subtitle" type="Label" parent="Audio Options/Volume Section"]
+process_mode = 3
+layout_mode = 2
+theme = ExtResource("3_vehyg")
+theme_type_variation = &"HeaderMedium"
+text = "Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label Master Volume" type="Label" parent="Audio Options/Volume Section"]
+layout_mode = 2
+theme = ExtResource("3_vehyg")
+text = "Master Volume"
+
+[node name="Master Volume Slider" type="HSlider" parent="Audio Options/Volume Section"]
+layout_mode = 2
+theme = ExtResource("3_vehyg")
+max_value = 1.0
+step = 0.05
+
+[node name="Label Music Volume" type="Label" parent="Audio Options/Volume Section"]
+layout_mode = 2
+theme = ExtResource("3_vehyg")
+text = "Music"
+
+[node name="Music Slider" type="HSlider" parent="Audio Options/Volume Section"]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+
+[node name="Label SFX Volume" type="Label" parent="Audio Options/Volume Section"]
+layout_mode = 2
+theme = ExtResource("3_vehyg")
+text = "Sound Effects"
+
+[node name="SFX Slider" type="HSlider" parent="Audio Options/Volume Section"]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+
+[node name="Back Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00868056
+anchor_top = 0.942901
+anchor_right = 0.0911458
+anchor_bottom = 0.990741
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_vehyg")
+theme_override_font_sizes/font_size = 15
+text = "Back to Menu"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="mouse_exited" from="Audio Options/Volume Section/Master Volume Slider" to="Audio Options" method="_on_master_volume_slider_mouse_exited"]
+[connection signal="value_changed" from="Audio Options/Volume Section/Master Volume Slider" to="Audio Options" method="_on_master_volume_slider_value_changed"]
+[connection signal="mouse_exited" from="Audio Options/Volume Section/Music Slider" to="Audio Options" method="_on_music_slider_mouse_exited"]
+[connection signal="value_changed" from="Audio Options/Volume Section/Music Slider" to="Audio Options" method="_on_music_slider_value_changed"]
+[connection signal="mouse_exited" from="Audio Options/Volume Section/SFX Slider" to="Audio Options" method="_on_sfx_slider_mouse_exited"]
+[connection signal="value_changed" from="Audio Options/Volume Section/SFX Slider" to="Audio Options" method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]

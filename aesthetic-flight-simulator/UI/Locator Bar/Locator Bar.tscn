@@ -1,29 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1u6ooaf7acv2"]
+[gd_scene load_steps=2 format=3 uid="uid://d1u6ooaf7acv2"]
 
-[ext_resource type="FontFile" uid="uid://bpfvut4r5e6vs" path="res://Fonts/Kalam/Kalam-Light.ttf" id="1_rhaky"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_54jf4"]
-font = ExtResource("1_rhaky")
+[ext_resource type="LabelSettings" uid="uid://lsoiq4hhnxvx" path="res://UI/Debug Menu/FPS UI Labelsettings.tres" id="1_rhaky"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchor_left = 0.267361
-anchor_top = 0.871914
-anchor_right = 0.732639
-anchor_bottom = 0.933642
+anchor_left = 0.331597
+anchor_top = 0.901235
+anchor_right = 0.668403
+anchor_bottom = 0.958333
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.775005
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.703808, 0.703808, 0.703808, 1)
 text = "Tutorial Map"
-label_settings = SubResource("LabelSettings_54jf4")
+label_settings = ExtResource("1_rhaky")
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true

@@ -1,4 +1,4 @@
-extends AudioStreamPlayer
+extends Node
 
 
 @export var Music1: AudioStreamPlayer

@@ -40,9 +40,12 @@ func _on_restart_pressed(): # Restart button
 	get_tree().reload_current_scene() # Reloads the scene
 
 
+## Code for the functioing menu overlay
 func _on_options_pressed(): # Options button (*my own code)
-	resume() # Code to unpause the game switching scenes*
-	get_tree().change_scene_to_file("res://UI/Options/Options.tscn") # Goes to the options menu
+	# Code to unpause the game switching scenes*
+	# get_tree().change_scene_to_file("res://UI/Options/Options.tscn") # Goes to the options menu
+	# $"Pause Panel".hide()
+	$"Options Menu".show()
 
 
 func _on_main_menu_pressed(): # Main Menu Button

@@ -65,7 +65,7 @@
 [ext_resource type="Shader" uid="uid://ds25nonmsusn8" path="res://Water.gdshader" id="62_o8cwt"]
 [ext_resource type="PackedScene" uid="uid://3hhc2j6mntrp" path="res://UI/Pause Menu/Pause Menu.tscn" id="63_mpinp"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="64_cdxef"]
-[ext_resource type="Script" uid="uid://c61fw3bxcx20j" path="res://UI/fps_counter.gd" id="65_ykmy3"]
+[ext_resource type="Script" uid="uid://c61fw3bxcx20j" path="res://UI/Debug Menu/fps_counter.gd" id="65_ykmy3"]
 
 [sub_resource type="Resource" id="Resource_xidlq"]
 script = ExtResource("3_3u5sp")

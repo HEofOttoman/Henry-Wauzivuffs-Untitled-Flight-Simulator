@@ -1,10 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://dqbi5q7iqny5s"]
+[gd_scene load_steps=24 format=3 uid="uid://dqbi5q7iqny5s"]
 
+[ext_resource type="Texture2D" uid="uid://8vkjet336oa0" path="res://Images/textures/handpainted-style-textures-3/hp_03/hp_03.png" id="1_1wtfg"]
 [ext_resource type="Environment" uid="uid://t1ni51qa0x5q" path="res://Worlds/Skybox.tres" id="1_u0hdb"]
+[ext_resource type="Texture2D" uid="uid://bnn8shlomx0as" path="res://Images/textures/handpainted-style-textures-3/hp_03/hp_03_n.png" id="2_12y85"]
 [ext_resource type="PackedScene" uid="uid://bhwoorpvl4ocu" path="res://Planes/D-A26_player.tscn" id="2_i16xc"]
+[ext_resource type="Texture2D" uid="uid://clglmh8l6cr1q" path="res://Images/textures/handpainted-style-textures-3/hp_02/hp_02.png" id="3_huin1"]
 [ext_resource type="PackedScene" uid="uid://3hhc2j6mntrp" path="res://UI/Pause Menu/Pause Menu.tscn" id="3_wvdmg"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="4_1wtfg"]
-[ext_resource type="Script" uid="uid://c61fw3bxcx20j" path="res://UI/fps_counter.gd" id="5_xtlyg"]
+[ext_resource type="Texture2D" uid="uid://bep2ybmg5ffky" path="res://Images/textures/handpainted-style-textures-3/hp_02/hp_02_n.png" id="4_p314t"]
+[ext_resource type="Texture2D" uid="uid://dbmmierdtwbug" path="res://Images/textures/handpainted-style-textures-3/hp_04/hp_04.png" id="5_p314t"]
+[ext_resource type="Script" uid="uid://c61fw3bxcx20j" path="res://UI/Debug Menu/fps_counter.gd" id="5_xtlyg"]
+[ext_resource type="Texture2D" uid="uid://c2a23r30xtl55" path="res://Images/textures/handpainted-style-textures-3/hp_04/hp_04_n.png" id="6_5p3gt"]
 [ext_resource type="PackedScene" uid="uid://d1u6ooaf7acv2" path="res://UI/Locator Bar/Locator Bar.tscn" id="6_at3t7"]
 
 [sub_resource type="Gradient" id="Gradient_42nk3"]
@@ -50,7 +56,7 @@ _shader_parameters = {
 &"projection_threshold": 0.8,
 &"world_space_normal_blend": true
 }
-show_checkered = true
+world_background = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_he5k0"]
 transparency = 4
@@ -70,8 +76,26 @@ last_lod = 0
 last_shadow_lod = 0
 lod0_range = 128.0
 
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_12y85"]
+name = "hp_03"
+albedo_texture = ExtResource("1_1wtfg")
+normal_texture = ExtResource("2_12y85")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_5p3gt"]
+name = "hp_02"
+id = 1
+albedo_texture = ExtResource("3_huin1")
+normal_texture = ExtResource("4_p314t")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_xeeub"]
+name = "hp_04"
+id = 2
+albedo_texture = ExtResource("5_p314t")
+normal_texture = ExtResource("6_5p3gt")
+
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_wvdmg"]
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_y2phf")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_12y85"), SubResource("Terrain3DTextureAsset_5p3gt"), SubResource("Terrain3DTextureAsset_xeeub")])
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wvdmg"]
 size = Vector3(658.154, 697.971, 15.3667)
@@ -82,7 +106,6 @@ size = Vector3(658.154, 697.971, 15.3667)
 data_directory = "res://Worlds/Tutorial World/Terrain 3D Data"
 material = SubResource("Terrain3DMaterial_i16xc")
 assets = SubResource("Terrain3DAssets_wvdmg")
-show_checkered = true
 top_level = true
 metadata/_edit_lock_ = true
 

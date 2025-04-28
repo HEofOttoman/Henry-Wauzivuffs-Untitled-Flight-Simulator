@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://d0202sdp1iiuq"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://d0202sdp1iiuq"]
 
 [ext_resource type="FontFile" uid="uid://6ihy8g4s5x64" path="res://Fonts/Kalam/Kalam-Regular.ttf" id="1_5uoek"]
 [ext_resource type="FontFile" uid="uid://8xtppup27fq1" path="res://Fonts/Grechen_Fuemen/GrechenFuemen-Regular.ttf" id="1_iwqcg"]
@@ -61,6 +61,24 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iesf5"]
+bg_color = Color(0.140447, 0.140447, 0.140447, 1)
+border_width_left = 3
+border_width_top = 1
+border_width_right = 3
+border_width_bottom = 1
+border_color = Color(0.162066, 0.162066, 0.162066, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 10
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 10
+expand_margin_left = 16.0
+expand_margin_top = 8.0
+expand_margin_right = 16.0
+expand_margin_bottom = 6.0
+shadow_color = Color(0.0962047, 0.0962048, 0.0962047, 0.6)
+shadow_size = 10
+
 [resource]
 default_font = ExtResource("3_8xv6t")
 default_font_size = 0
@@ -97,7 +115,7 @@ HeaderMedium/constants/shadow_offset_y = 2
 HeaderMedium/font_sizes/font_size = 40
 HeaderMedium/fonts/font = ExtResource("1_iwqcg")
 Label/font_sizes/font_size = 20
-PanelContainer/styles/panel = null
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_iesf5")
 TextEdit/constants/line_spacing = 0
 TextEdit/font_sizes/font_size = 20
 TextEdit/fonts/font = ExtResource("1_5uoek")

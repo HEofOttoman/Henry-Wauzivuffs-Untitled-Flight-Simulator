@@ -4,17 +4,16 @@
 [ext_resource type="Script" uid="uid://bdhvcgi7altua" path="res://Sounds/Music/menu_music.gd" id="2_4fi13"]
 [ext_resource type="AudioStream" uid="uid://djd0hqwhkltxe" path="res://Sounds/Music/J.S. Aria_Zu Tanze, zu Sprunge so wackelt das Herz_ 4.mp3" id="3_w271k"]
 
-[node name="Menu Music" type="AudioStreamPlayer" node_paths=PackedStringArray("Music1", "Music2")]
-stream = ExtResource("1_fcctd")
-autoplay = true
-bus = &"Music"
+[node name="Menu Music" type="Node" node_paths=PackedStringArray("Music1", "Music2")]
 script = ExtResource("2_4fi13")
 Music1 = NodePath("ZTZS 1")
 Music2 = NodePath("Gran Vals 1")
 
 [node name="ZTZS 1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_w271k")
+bus = &"Music"
 
 [node name="Gran Vals 1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_fcctd")
+autoplay = true
 bus = &"Music"

@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://bdv0k01g8qo0p"]
+
+[ext_resource type="Environment" uid="uid://t1ni51qa0x5q" path="res://Worlds/Skybox.tres" id="1_741bv"]
+[ext_resource type="Shader" uid="uid://ds25nonmsusn8" path="res://Water.gdshader" id="2_tdxba"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tdxba"]
+noise_type = 3
+seed = 5
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_brx7h"]
+noise = SubResource("FastNoiseLite_tdxba")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4y3oy"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_uns8p"]
+noise = SubResource("FastNoiseLite_4y3oy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4y3oy"]
+render_priority = 0
+shader = ExtResource("2_tdxba")
+shader_parameter/time_speed = 0.5
+shader_parameter/surface_speed = 1.0
+shader_parameter/spin = 0.0
+shader_parameter/brightness = 0.6
+shader_parameter/color_intensity = 0.0
+shader_parameter/horizontal_frequency = 2.0
+shader_parameter/vertical_frequency = 2.0
+shader_parameter/size = 3.0
+shader_parameter/banding_bias = 0.6
+shader_parameter/wave_texture = SubResource("NoiseTexture2D_uns8p")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_brx7h")
+shader_parameter/wave_height = 0.5
+shader_parameter/texture_height = 0.5
+shader_parameter/color1 = Color(0.59, 0.761, 1, 1)
+shader_parameter/color2 = Color(0.274, 0.474, 0.98, 1)
+shader_parameter/color3 = Color(0.059, 0.389, 0.85, 1)
+shader_parameter/color4 = Color(0, 0.267, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uns8p"]
+material = SubResource("ShaderMaterial_4y3oy")
+size = Vector2(1000, 1000)
+
+[node name="Tasmania" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 116, 0)
+light_energy = 0.846
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_741bv")
+
+[node name="Water" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_uns8p")
