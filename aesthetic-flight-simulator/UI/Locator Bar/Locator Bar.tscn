@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d1u6ooaf7acv2"]
 
-[ext_resource type="LabelSettings" uid="uid://lsoiq4hhnxvx" path="res://UI/Debug Menu/FPS UI Labelsettings.tres" id="1_rhaky"]
+[ext_resource type="LabelSettings" uid="uid://lsoiq4hhnxvx" path="res://UI/General UI Labelsettings.tres" id="1_rhaky"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

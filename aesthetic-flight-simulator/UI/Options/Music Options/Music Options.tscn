@@ -37,16 +37,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.17, 0.17, 0.17, 1)
 
-[node name="Section Background" type="ColorRect" parent="."]
+[node name="Section Background" type="Panel" parent="."]
 layout_mode = 2
-anchor_left = 0.18316
+anchor_left = 0.0998264
 anchor_top = 0.0216049
-anchor_right = 0.81684
+anchor_right = 0.900174
 anchor_bottom = 0.978395
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-color = Color(0.156863, 0.156863, 0.156863, 1)
+theme = ExtResource("3_180j6")
+metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1

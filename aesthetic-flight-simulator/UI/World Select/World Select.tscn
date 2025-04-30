@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cp1jyd07ba6dx" path="res://UI/World Select/world_select.gd" id="1_jfw2k"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="1_v2752"]
 [ext_resource type="Shader" uid="uid://c422an0ctkmmk" path="res://UI/Pause Menu/Pause Menu Blur.gdshader" id="2_dm76d"]
+[ext_resource type="StyleBox" uid="uid://db3wnmrpld7tf" path="res://UI/Background Panel Stylebox.tres" id="3_fnqvu"]
 [ext_resource type="FontFile" uid="uid://6ihy8g4s5x64" path="res://Fonts/Kalam/Kalam-Regular.ttf" id="4_vqw6r"]
 [ext_resource type="Texture2D" uid="uid://bftdel4k1dill" path="res://Images/Tutorial World Thumbnail.png" id="5_84ogh"]
 [ext_resource type="Texture2D" uid="uid://bxm5u2rap4uwr" path="res://Images/Cradle Mountain Thumbnail.png" id="6_b3ovy"]
@@ -17,9 +18,6 @@ gradient = SubResource("Gradient_dm76d")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_84ogh"]
 shader = ExtResource("2_dm76d")
 shader_parameter/lod = 0.365
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dm76d"]
-bg_color = Color(0.156863, 0.156863, 0.156863, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_84ogh"]
 font = ExtResource("4_vqw6r")
@@ -63,16 +61,16 @@ anchor_right = 0.902778
 anchor_bottom = 0.973765
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_dm76d")
+theme_override_styles/panel = ExtResource("3_fnqvu")
 metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.307726
-anchor_top = 0.0246914
+anchor_top = 0.058642
 anchor_right = 0.692274
-anchor_bottom = 0.175926
+anchor_bottom = 0.209877
 grow_horizontal = 2
 theme = ExtResource("1_v2752")
 theme_type_variation = &"HeaderLarge"

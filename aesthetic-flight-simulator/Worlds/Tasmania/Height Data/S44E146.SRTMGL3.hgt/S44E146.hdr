@@ -1,9 +1,0 @@
-SRTM HGT file "S44E146.hgt"
-Width		1024
-Height		1024
-DataBits	16
-DataType	SignedInt
-ByteOrder	Motorola
-SkipBytes	0
-NoData		-9999
-Resolution	0

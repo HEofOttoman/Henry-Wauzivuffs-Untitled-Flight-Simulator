@@ -179,6 +179,7 @@ libraries = {
 }
 
 [node name="Options Menu" parent="." instance=ExtResource("3_l1fr7")]
+visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="Pause Panel/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]

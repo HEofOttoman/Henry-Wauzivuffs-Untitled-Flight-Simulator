@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6nnujxsnvnkp"
-path.s3tc="res://.godot/imported/splatmap_1.png-99719867de8a1195ee8d8d0b99ba5c94.s3tc.ctex"
+path.s3tc="res://.godot/imported/splatmap_1.png-58b3dc0adc85dfc60241b22b43176e65.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/exported maps/tutorial world/splatmap_1.png"
-dest_files=["res://.godot/imported/splatmap_1.png-99719867de8a1195ee8d8d0b99ba5c94.s3tc.ctex"]
+source_file="res://Images/Exported Maps/Tutorial World/splatmap_1.png"
+dest_files=["res://.godot/imported/splatmap_1.png-58b3dc0adc85dfc60241b22b43176e65.s3tc.ctex"]
 
 [params]
 

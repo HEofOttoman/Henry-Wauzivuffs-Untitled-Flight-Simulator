@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://disy2psav3p27"
-path="res://.godot/imported/S43E147.png-53fa0d20d38e3d2a7df7180da2f970a1.ctex"
+path="res://.godot/imported/S43E147.png-18c997d694c26963c0ced0307ab1588a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Worlds/Tasmania/testing/S43E147.SRTMGL3.hgt/S43E147.png"
-dest_files=["res://.godot/imported/S43E147.png-53fa0d20d38e3d2a7df7180da2f970a1.ctex"]
+source_file="res://Worlds/Tasmania/Height Data/S43E147.SRTMGL3.hgt/S43E147.png"
+dest_files=["res://.godot/imported/S43E147.png-18c997d694c26963c0ced0307ab1588a.ctex"]
 
 [params]
 

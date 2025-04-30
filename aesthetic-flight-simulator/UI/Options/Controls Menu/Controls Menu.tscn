@@ -1,9 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://dsbna0jytyr62"]
+[gd_scene load_steps=21 format=3 uid="uid://dsbna0jytyr62"]
 
 [ext_resource type="Script" uid="uid://32br5mfhmb22" path="res://UI/Options/Controls Menu/controls_menu.gd" id="1_p4sg2"]
 [ext_resource type="Shader" uid="uid://c422an0ctkmmk" path="res://UI/Pause Menu/Pause Menu Blur.gdshader" id="1_rjvdf"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="2_p4sg2"]
 [ext_resource type="FontFile" uid="uid://6ihy8g4s5x64" path="res://Fonts/Kalam/Kalam-Regular.ttf" id="3_r3qk0"]
+[ext_resource type="LabelSettings" uid="uid://lsoiq4hhnxvx" path="res://UI/General UI Labelsettings.tres" id="4_hbsux"]
+[ext_resource type="Texture2D" uid="uid://cc2ywfjd8clei" path="res://Images/Graphics/Input Prompts/Fn keys/tile_F1.png" id="5_mo7mf"]
+[ext_resource type="Texture2D" uid="uid://ba3senutl1cej" path="res://Images/Graphics/Input Prompts/Fn keys/tile_F5.png" id="5_r3qk0"]
+[ext_resource type="Texture2D" uid="uid://b0ljv2v22me4t" path="res://Images/Graphics/arrow_down_dark.png" id="6_dupcr"]
+[ext_resource type="Texture2D" uid="uid://bjoid36e3xtdd" path="res://Images/Graphics/Input Prompts/Letters A-Z/tile_0086W.png" id="8_1x2v0"]
+[ext_resource type="Texture2D" uid="uid://17hprwbcdngt" path="res://Images/Graphics/Input Prompts/Letters A-Z/tile_0139x.png" id="8_vyluq"]
+[ext_resource type="Texture2D" uid="uid://cqpfqnltbmo5f" path="res://Images/Graphics/Input Prompts/Letters A-Z/tile_0087E.png" id="9_o4w25"]
+[ext_resource type="Texture2D" uid="uid://dieqs24d0lux4" path="res://Images/Graphics/Input Prompts/Letters A-Z/tile_0120A.png" id="9_ub1aw"]
+[ext_resource type="Texture2D" uid="uid://2gyv1mfknrqo" path="res://Images/Graphics/Input Prompts/Letters A-Z/tile_0085Q.png" id="10_hbsux"]
+[ext_resource type="Texture2D" uid="uid://dg7oamvhutiuc" path="res://Images/Graphics/Input Prompts/Letters A-Z/tile_0123F.png" id="10_mw212"]
+[ext_resource type="Texture2D" uid="uid://dveokwm1xwwos" path="res://Images/Graphics/Input Prompts/Letters A-Z/tile_0158V.png" id="11_vyluq"]
+[ext_resource type="Texture2D" uid="uid://dfj5nxpw4rqqa" path="res://Images/Graphics/Input Prompts/Letters A-Z/tile_0121S.png" id="14_lqso5"]
+[ext_resource type="Texture2D" uid="uid://dd2ta0fptgvv5" path="res://Images/Graphics/Input Prompts/Letters A-Z/tile_0122D.png" id="15_roh2x"]
+[ext_resource type="Texture2D" uid="uid://cl8ko408p0cju" path="res://Images/Graphics/Input Prompts/Letters A-Z/tile_0094P.png" id="16_rdqla"]
+[ext_resource type="Texture2D" uid="uid://bi1wg0ipjy188" path="res://Images/Graphics/Input Prompts/Letters A-Z/tile_0093O.png" id="17_b4c6e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dupcr"]
 shader = ExtResource("1_rjvdf")
@@ -78,42 +93,14 @@ theme_override_font_sizes/font_size = 15
 text = "Back"
 metadata/_edit_use_anchors_ = true
 
-[node name="Music Options Section" type="VBoxContainer" parent="."]
+[node name="Controls Textbox" type="TextEdit" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.295139
-anchor_top = 0.205247
-anchor_right = 0.644965
-anchor_bottom = 0.723765
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Subtitle" type="Label" parent="Music Options Section"]
-layout_mode = 2
-theme = ExtResource("2_p4sg2")
-theme_type_variation = &"HeaderMedium"
-theme_override_fonts/font = ExtResource("3_r3qk0")
-text = "Music Options:"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Gran Vals" type="Button" parent="Music Options Section"]
-layout_mode = 2
-text = "Gran Vals - Francisco Tarrega"
-
-[node name="Zu Tanze Zu Sprunge" type="Button" parent="Music Options Section"]
-layout_mode = 2
-text = "Zu Tanze, Zu Sprunge - J.S. Bach"
-
-[node name="TextEdit" type="TextEdit" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.233507
-anchor_top = 0.141975
-anchor_right = 0.766493
-anchor_bottom = 0.858025
+anchor_left = 0.107639
+anchor_top = 0.16821
+anchor_right = 0.892361
+anchor_bottom = 0.916667
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -135,6 +122,208 @@ Throttle Up: F
 Throttle Down: V
 
 "
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.731771
+anchor_top = 0.20216
+anchor_right = 0.868924
+anchor_bottom = 0.308642
+grow_horizontal = 0
+grow_vertical = 2
+text = "Camera Modes: FP, TP, Free"
+label_settings = ExtResource("4_hbsux")
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Fn Keys Section" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.158854
+anchor_top = 0.20679
+anchor_right = 0.841146
+anchor_bottom = 0.308642
+grow_horizontal = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Escape" type="Button" parent="Fn Keys Section"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r3qk0")
+text = "Escape - Pause"
+icon = ExtResource("6_dupcr")
+
+[node name="F1" type="Button" parent="Fn Keys Section"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r3qk0")
+text = "Hide UI (WIP)"
+icon = ExtResource("5_mo7mf")
+
+[node name="F5" type="Button" parent="Fn Keys Section"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r3qk0")
+text = "Change Camera"
+icon = ExtResource("5_r3qk0")
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.296007
+anchor_top = 0.402778
+anchor_right = 0.703993
+anchor_bottom = 0.421296
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Throttle Section" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.372396
+anchor_top = 0.33642
+anchor_right = 0.628472
+anchor_bottom = 0.390432
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="1" type="Button" parent="Throttle Section"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r3qk0")
+text = "Throttle 1"
+icon = ExtResource("8_vyluq")
+
+[node name="2" type="Button" parent="Throttle Section"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r3qk0")
+text = "Throttle 2"
+icon = ExtResource("8_vyluq")
+
+[node name="3" type="Button" parent="Throttle Section"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r3qk0")
+text = "Throttle 3"
+icon = ExtResource("8_vyluq")
+
+[node name="EQ (Yaw)" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.235243
+anchor_top = 0.481481
+anchor_right = 0.586806
+anchor_bottom = 0.54784
+offset_left = -25.0
+offset_right = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="E" type="Button" parent="EQ (Yaw)"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r3qk0")
+text = "Yaw Left"
+icon = ExtResource("9_o4w25")
+
+[node name="Q" type="Button" parent="EQ (Yaw)"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r3qk0")
+text = "Yaw Right"
+icon = ExtResource("10_hbsux")
+
+[node name="WASD" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.286458
+anchor_top = 0.569444
+anchor_right = 0.532986
+anchor_bottom = 0.824074
+offset_left = -25.0
+offset_top = 3.05176e-05
+offset_right = -25.0
+
+[node name="W" type="Button" parent="WASD"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r3qk0")
+text = "Pitch Forward"
+icon = ExtResource("8_1x2v0")
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="A" type="Button" parent="WASD"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r3qk0")
+text = "Pitch Backwards"
+icon = ExtResource("9_ub1aw")
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="S" type="Button" parent="WASD"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r3qk0")
+text = "Roll Left"
+icon = ExtResource("14_lqso5")
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="D" type="Button" parent="WASD"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r3qk0")
+text = "Roll Right"
+icon = ExtResource("15_roh2x")
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Engine" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.583333
+anchor_top = 0.475309
+anchor_right = 0.802951
+anchor_bottom = 0.546296
+offset_left = -25.0
+offset_right = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Start Engine" type="Button" parent="Engine"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r3qk0")
+text = "Start Engine"
+icon = ExtResource("16_rdqla")
+
+[node name="Stop Engine" type="Button" parent="Engine"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r3qk0")
+text = "Stop Engine"
+icon = ExtResource("17_b4c6e")
+
+[node name="Acceleration" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.594618
+anchor_top = 0.574074
+anchor_right = 0.712674
+anchor_bottom = 0.828704
+offset_left = -25.0
+offset_right = -25.0
+
+[node name="F" type="Button" parent="Acceleration"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r3qk0")
+text = "Accelerate"
+icon = ExtResource("10_mw212")
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="V" type="Button" parent="Acceleration"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r3qk0")
+text = "Decelerate"
+icon = ExtResource("11_vyluq")
+expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]

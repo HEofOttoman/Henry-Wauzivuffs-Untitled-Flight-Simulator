@@ -4,25 +4,13 @@
 [ext_resource type="Script" uid="uid://ci5ijqrxs4y6" path="res://UI/Options/options_(ingame_version).gd" id="1_vehyg"]
 [ext_resource type="Script" uid="uid://cbkybbadvvqnh" path="res://UI/Options/audio_options.gd" id="2_nmpgw"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="3_vehyg"]
+[ext_resource type="StyleBox" uid="uid://db3wnmrpld7tf" path="res://UI/Background Panel Stylebox.tres" id="4_tmkxc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mrify"]
 shader = ExtResource("1_bw3oc")
 shader_parameter/lod = 2.326
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmpgw"]
-bg_color = Color(0.156863, 0.156863, 0.156863, 1)
-border_width_left = 3
-border_width_top = 5
-border_width_right = 3
-border_width_bottom = 5
-border_color = Color(0.20871, 0.20871, 0.20871, 1)
-corner_radius_top_left = 17
-corner_radius_top_right = 17
-corner_radius_bottom_right = 17
-corner_radius_bottom_left = 17
-
 [node name="Options Menu" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,7 +31,7 @@ grow_vertical = 2
 color = Color(0.17, 0.17, 0.17, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.131944
@@ -53,7 +41,7 @@ anchor_bottom = 0.925926
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_vehyg")
-theme_override_styles/panel = SubResource("StyleBoxFlat_nmpgw")
+theme_override_styles/panel = ExtResource("4_tmkxc")
 metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="Label" parent="."]

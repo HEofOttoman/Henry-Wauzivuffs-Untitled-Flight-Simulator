@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1wv8n2rgofwd"
-path.s3tc="res://.godot/imported/water.png-65af1e1a2b117844f7369f36bfa20afb.s3tc.ctex"
+path.s3tc="res://.godot/imported/water.png-c0a4138269e38a2c074d0a15749670ff.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/exported maps/tutorial world/water.png"
-dest_files=["res://.godot/imported/water.png-65af1e1a2b117844f7369f36bfa20afb.s3tc.ctex"]
+source_file="res://Images/Exported Maps/Tutorial World/water.png"
+dest_files=["res://.godot/imported/water.png-c0a4138269e38a2c074d0a15749670ff.s3tc.ctex"]
 
 [params]
 
