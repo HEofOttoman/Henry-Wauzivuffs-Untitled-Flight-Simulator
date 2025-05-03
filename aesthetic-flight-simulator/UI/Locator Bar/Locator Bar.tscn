@@ -2,23 +2,25 @@
 
 [ext_resource type="LabelSettings" uid="uid://lsoiq4hhnxvx" path="res://UI/General UI Labelsettings.tres" id="1_rhaky"]
 
-[node name="Control" type="Control"]
+[node name="Locator Bar" type="Control"]
 layout_mode = 3
-anchor_left = 0.331597
-anchor_top = 0.901235
-anchor_right = 0.668403
-anchor_bottom = 0.958333
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.455295
+anchor_top = 0.895062
+anchor_right = 0.544705
+anchor_bottom = 0.945988
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 text = "Tutorial Map"
 label_settings = ExtResource("1_rhaky")
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

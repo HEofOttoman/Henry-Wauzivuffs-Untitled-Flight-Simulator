@@ -1,0 +1,42 @@
+[gd_resource type="ShaderMaterial" load_steps=8 format=3 uid="uid://ccp4eq6k1dvgm"]
+
+[ext_resource type="Shader" uid="uid://dykqeyscj41sf" path="res://Shaders/Water Shader II.gdshader" id="1_vlufb"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ngs4u"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yoq3w"]
+noise = SubResource("FastNoiseLite_ngs4u")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mm0ty"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qk6gb"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_mm0ty")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_b0aes"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qo33p"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_b0aes")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_vlufb")
+shader_parameter/depth_fade_distance = 1.265
+shader_parameter/absorbance = 2.4
+shader_parameter/shallow_color = Color(0, 0.575683, 0.9243, 1)
+shader_parameter/deep_color = Color(1.73271e-06, 0.377652, 0.661358, 1)
+shader_parameter/foam_amount = 1.19
+shader_parameter/foam_color = Color(1, 1, 1, 1)
+shader_parameter/foam_noise = SubResource("NoiseTexture2D_yoq3w")
+shader_parameter/roughness = 0.225
+shader_parameter/wave_scale = 10.0
+shader_parameter/height_scale = 0.0
+shader_parameter/normal1 = SubResource("NoiseTexture2D_qk6gb")
+shader_parameter/wave_dir1 = Vector2(-5, 10)
+shader_parameter/normal2 = SubResource("NoiseTexture2D_qo33p")
+shader_parameter/wave_dir2 = Vector2(10, -10)
+shader_parameter/wave_speed = 0.055

@@ -4,8 +4,8 @@
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="1_vf83f"]
 [ext_resource type="Texture2D" uid="uid://74l1x6bunnds" path="res://Images/Menu Picture.png" id="2_h3qnv"]
 [ext_resource type="FontFile" uid="uid://bpfvut4r5e6vs" path="res://Fonts/Kalam/Kalam-Light.ttf" id="3_7mptw"]
-[ext_resource type="Texture2D" uid="uid://c4b1l2kd12nj0" path="res://Images/Icons/github-mark/github-mark-white.svg" id="6_h3qnv"]
-[ext_resource type="Texture2D" uid="uid://byyos2q2nljs6" path="res://Images/Icons/itch.io-logos/app-icon.svg" id="7_ypa8y"]
+[ext_resource type="Texture2D" uid="uid://c4b1l2kd12nj0" path="res://Images/Graphics/Icons/github-mark/github-mark-white.svg" id="6_h3qnv"]
+[ext_resource type="Texture2D" uid="uid://byyos2q2nljs6" path="res://Images/Graphics/Icons/itch.io-logos/app-icon.svg" id="7_ypa8y"]
 
 [sub_resource type="Gradient" id="Gradient_h3qnv"]
 colors = PackedColorArray(0.168627, 0.168627, 0.168627, 1, 0.237539, 0.237539, 0.237539, 1)

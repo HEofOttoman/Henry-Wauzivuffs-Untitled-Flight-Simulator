@@ -7,7 +7,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
@@ -22,3 +22,8 @@ func _on_dove_lake_pressed():
 
 func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://UI/Main Menu/Main Menu.tscn")
+
+
+func _on_tasmania_btn_pressed():
+	get_tree().change_scene_to_file("res://Worlds/Tasmania/Tasmania.tscn") # 
+	

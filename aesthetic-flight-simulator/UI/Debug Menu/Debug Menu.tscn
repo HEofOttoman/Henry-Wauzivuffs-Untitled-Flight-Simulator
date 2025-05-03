@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://3ya2jopr6xui"]
+[gd_scene load_steps=5 format=3 uid="uid://3ya2jopr6xui"]
 
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="1_j6npw"]
 [ext_resource type="LabelSettings" uid="uid://lsoiq4hhnxvx" path="res://UI/General UI Labelsettings.tres" id="2_61rtd"]
 [ext_resource type="Script" uid="uid://c61fw3bxcx20j" path="res://UI/Debug Menu/fps_counter.gd" id="2_hiwtc"]
+[ext_resource type="Script" uid="uid://be6grqs8wykp3" path="res://UI/Debug Menu/camera_mode_display.gd" id="4_61rtd"]
 
 [node name="DebugMenu" type="Control"]
 layout_mode = 3
@@ -20,19 +21,6 @@ anchor_bottom = 0.160494
 color = Color(0, 0, 0, 0.0941176)
 metadata/_edit_use_anchors_ = true
 
-[node name="Camera Mode" type="Label" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0327869
-anchor_top = 0.519231
-anchor_right = 0.983607
-anchor_bottom = 0.836538
-theme = ExtResource("1_j6npw")
-theme_override_colors/font_color = Color(0.925353, 0.925353, 0.925353, 1)
-text = "Camera Mode:"
-label_settings = ExtResource("2_61rtd")
-metadata/_edit_use_anchors_ = true
-
 [node name="FPS Counter" type="Label" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = -1
@@ -40,9 +28,27 @@ anchor_left = 0.0327869
 anchor_top = 0.0961538
 anchor_right = 0.983607
 anchor_bottom = 0.461538
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_j6npw")
 theme_override_colors/font_color = Color(0.925353, 0.925353, 0.925353, 1)
-text = "FPS: 60 FPS"
+text = "60 FPS"
 label_settings = ExtResource("2_61rtd")
 script = ExtResource("2_hiwtc")
+
+[node name="Camera Mode" type="Label" parent="ColorRect"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0327869
+anchor_top = 0.576923
+anchor_right = 0.983607
+anchor_bottom = 0.894231
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_j6npw")
+theme_override_colors/font_color = Color(0.925353, 0.925353, 0.925353, 1)
+text = "Camera Mode:"
+label_settings = ExtResource("2_61rtd")
+script = ExtResource("4_61rtd")
 metadata/_edit_use_anchors_ = true

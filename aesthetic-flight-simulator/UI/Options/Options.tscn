@@ -110,7 +110,7 @@ text = "Controls"
 [node name="Btn Music Options" type="Button" parent="Control/Controls Section"]
 layout_mode = 2
 theme = ExtResource("1_uxtlu")
-text = "Music Options"
+text = "Music Settings"
 metadata/_edit_use_anchors_ = true
 
 [node name="Audio Options" type="Control" parent="Control"]

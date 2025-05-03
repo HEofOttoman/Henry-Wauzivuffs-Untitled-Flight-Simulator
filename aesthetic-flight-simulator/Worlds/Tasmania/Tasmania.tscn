@@ -1,44 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://bdv0k01g8qo0p"]
+[gd_scene load_steps=20 format=3 uid="uid://bdv0k01g8qo0p"]
 
 [ext_resource type="Environment" uid="uid://t1ni51qa0x5q" path="res://Worlds/Skybox.tres" id="1_741bv"]
-[ext_resource type="Shader" uid="uid://ds25nonmsusn8" path="res://Water.gdshader" id="2_tdxba"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_tdxba"]
-noise_type = 3
-seed = 5
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_brx7h"]
-noise = SubResource("FastNoiseLite_tdxba")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_urygu"]
-noise_type = 3
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_uns8p"]
-noise = SubResource("FastNoiseLite_urygu")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ymuma"]
-render_priority = 0
-shader = ExtResource("2_tdxba")
-shader_parameter/time_speed = 0.5
-shader_parameter/surface_speed = 1.0
-shader_parameter/spin = 0.0
-shader_parameter/brightness = 0.6
-shader_parameter/color_intensity = 0.0
-shader_parameter/horizontal_frequency = 2.0
-shader_parameter/vertical_frequency = 2.0
-shader_parameter/size = 3.0
-shader_parameter/banding_bias = 0.6
-shader_parameter/wave_texture = SubResource("NoiseTexture2D_uns8p")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_brx7h")
-shader_parameter/wave_height = 0.5
-shader_parameter/texture_height = 0.5
-shader_parameter/color1 = Color(0.59, 0.761, 1, 1)
-shader_parameter/color2 = Color(0.274, 0.474, 0.98, 1)
-shader_parameter/color3 = Color(0.059, 0.389, 0.85, 1)
-shader_parameter/color4 = Color(0, 0.267, 1, 1)
+[ext_resource type="Material" uid="uid://ccp4eq6k1dvgm" path="res://Shaders/Water Shader 2.tres" id="2_ymuma"]
+[ext_resource type="Texture2D" uid="uid://c88j3oj0lf6om" path="res://demo/assets/textures/rock023_alb_ht.png" id="3_4y3oy"]
+[ext_resource type="Texture2D" uid="uid://ddprscrpsofah" path="res://demo/assets/textures/ground037_alb_ht.png" id="3_6feja"]
+[ext_resource type="PackedScene" uid="uid://bhwoorpvl4ocu" path="res://Planes/D-A26_player.tscn" id="3_urygu"]
+[ext_resource type="Texture2D" uid="uid://c1ots7w6i0i1q" path="res://demo/assets/textures/ground037_nrm_rgh.png" id="4_kv7m2"]
+[ext_resource type="PackedScene" uid="uid://3ya2jopr6xui" path="res://UI/Debug Menu/Debug Menu.tscn" id="4_ymuma"]
+[ext_resource type="PackedScene" uid="uid://3hhc2j6mntrp" path="res://UI/Pause Menu/Pause Menu.tscn" id="5_brx7h"]
+[ext_resource type="Texture2D" uid="uid://c307hdmos4gtm" path="res://demo/assets/textures/rock023_nrm_rgh.png" id="6_fg0y8"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_uns8p"]
-material = SubResource("ShaderMaterial_ymuma")
+material = ExtResource("2_ymuma")
 size = Vector2(6040, 4096)
 
 [sub_resource type="Gradient" id="Gradient_tdxba"]
@@ -64,6 +37,10 @@ noise = SubResource("FastNoiseLite_ymuma")
 
 [sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_uns8p"]
 _shader_parameters = {
+&"auto_base_texture": 0,
+&"auto_height_reduction": 0.1,
+&"auto_overlay_texture": 1,
+&"auto_slope": 1.0,
 &"bias_distance": 512.0,
 &"blend_sharpness": 0.87,
 &"depth_blur": 0.0,
@@ -85,7 +62,7 @@ _shader_parameters = {
 &"world_space_normal_blend": true
 }
 world_background = 0
-show_checkered = true
+auto_shader = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5tvvt"]
 transparency = 4
@@ -105,8 +82,20 @@ last_lod = 0
 last_shadow_lod = 0
 lod0_range = 128.0
 
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_r7u8f"]
+name = "rock023_alb_ht"
+albedo_texture = ExtResource("3_4y3oy")
+normal_texture = ExtResource("6_fg0y8")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_6feja"]
+name = "ground037_alb_ht"
+id = 1
+albedo_texture = ExtResource("3_6feja")
+normal_texture = ExtResource("4_kv7m2")
+
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_kv7m2"]
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6feja")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_r7u8f"), SubResource("Terrain3DTextureAsset_6feja")])
 
 [node name="Tasmania" type="Node3D"]
 
@@ -126,6 +115,14 @@ mesh = SubResource("PlaneMesh_uns8p")
 data_directory = "res://Worlds/Tasmania/T3D Terrain Data"
 material = SubResource("Terrain3DMaterial_uns8p")
 assets = SubResource("Terrain3DAssets_kv7m2")
-show_checkered = true
 top_level = true
 metadata/_edit_lock_ = true
+
+[node name="Douglas A26" parent="." instance=ExtResource("3_urygu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 455, 80.4087, -111.202)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DebugMenu" parent="CanvasLayer" instance=ExtResource("4_ymuma")]
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("5_brx7h")]
