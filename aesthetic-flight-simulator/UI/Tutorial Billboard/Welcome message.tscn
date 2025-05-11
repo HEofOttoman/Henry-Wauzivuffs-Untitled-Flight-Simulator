@@ -8,15 +8,15 @@ billboard = 2
 modulate = Color(0.377919, 0.377919, 0.377919, 1)
 outline_modulate = Color(0.0966767, 0.263741, 0.328879, 1)
 text = "Welcome to my flight simulator!
-to start playing, press P to turn on the engine.
-O will shut the engine off, and using F5 will switch 
-between the first person and 3rd person camera.
+This game is a simple flight simulator, with the only purpose of 
+exploring the worlds that exist.
+To start playing, press P to turn on the engine.
+O will shut the engine off, and using F5 will cycle 
+between the 4 camera modes.
 Pause with Escape, and throttle up & down with F & V.
  and control with WASDEQ (see controls menu)
 If you ever need to see the controls again, 
-look at the options menu
-This game is as of now just a simple flight simulator with 
-no real objective, but to explore the world!
+look at the controls menu, located in the pause menu.
 Hide this message with X, and start playing. (Show with Z)"
 font = ExtResource("1_82qgj")
 font_size = 100

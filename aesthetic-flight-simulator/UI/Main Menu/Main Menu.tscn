@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://f6n4d05h4b5i" path="res://UI/Main Menu/main_menu.gd" id="1_o0nip"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="1_vf83f"]
 [ext_resource type="FontFile" uid="uid://bpfvut4r5e6vs" path="res://Fonts/Kalam/Kalam-Light.ttf" id="3_7mptw"]
-[ext_resource type="Texture2D" uid="uid://cbha87uwemkup" path="res://Images/Backgrounds/Artwork/Main Menu Background v024469.png" id="4_h3qnv"]
+[ext_resource type="Texture2D" uid="uid://cbha87uwemkup" path="res://Images/Backgrounds/Artwork/Main Menu Background.png" id="4_h3qnv"]
 [ext_resource type="Texture2D" uid="uid://c4b1l2kd12nj0" path="res://Images/Graphics/Icons/github-mark/github-mark-white.svg" id="6_h3qnv"]
 [ext_resource type="Texture2D" uid="uid://byyos2q2nljs6" path="res://Images/Graphics/Icons/itch.io-logos/app-icon.svg" id="7_ypa8y"]
 
@@ -87,7 +87,7 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0442708
 anchor_top = 0.0601852
-anchor_right = 0.758681
+anchor_right = 0.914063
 anchor_bottom = 0.21142
 grow_horizontal = 2
 theme = ExtResource("1_vf83f")

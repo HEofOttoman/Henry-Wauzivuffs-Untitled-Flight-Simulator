@@ -98,26 +98,27 @@ advance_expression_base_node = NodePath("../Douglas A26")
 anim_player = NodePath("../Douglas A26/AnimationPlayer")
 parameters/conditions/engine_on = false
 
-[node name="Camera Switcher" type="Node" parent="." node_paths=PackedStringArray("Camera1", "Camera2", "Camera3")]
+[node name="Camera Switcher" type="Node" parent="." node_paths=PackedStringArray("Camera1", "Camera2", "Camera3", "Camera4")]
 script = ExtResource("4_7yhwt")
 Camera1 = NodePath("../3rd Person Camera")
 Camera2 = NodePath("../1st Person Camera")
-Camera3 = NodePath("../Camera Tripod Origin/Camera Tripod")
+Camera3 = NodePath("../Back Facing Camera")
+Camera4 = NodePath("../Camera Tripod")
 
 [node name="1st Person Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, -5.96046e-08, 0, 5.96046e-08, 1, 3.55271e-15, 1.1, -0.4)
+transform = Transform3D(1, 0, 0, 0, 0.995552, 0.0942125, 0, -0.0942125, 0.995552, 3.55271e-15, 1.1, -0.367045)
 
 [node name="3rd Person Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.999146, 0.0413002, 0, -0.0413002, 0.999146, 0, 1.49576, 4.59811)
 current = true
 
-[node name="Camera Tripod Origin" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.28459)
+[node name="Back Facing Camera" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -5.96046e-08, -1.16069e-08, 0.980857, 0.194731, 5.84636e-08, 0.194731, -0.980857, 0, 2, -3.37791)
 
-[node name="Camera Tripod" type="Camera3D" parent="Camera Tripod Origin"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+[node name="Camera Tripod" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 1.47027e-07, 0, 1, 0, -1.47027e-07, 0, 1, 0, 0, 5.71541)
 script = ExtResource("5_aq4x1")
-TargetNode = NodePath("../../Douglas A26")
+TargetNode = NodePath("..")
 
 [node name="CollisionShapeWings" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00914764, 0.840756, 0.414786)
