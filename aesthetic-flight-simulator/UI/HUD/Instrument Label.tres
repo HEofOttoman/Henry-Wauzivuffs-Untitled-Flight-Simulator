@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cegulblpfxt8f"]
+
+[ext_resource type="FontFile" uid="uid://bpfvut4r5e6vs" path="res://Fonts/Kalam/Kalam-Light.ttf" id="1_cin8l"]
+
+[resource]
+font = ExtResource("1_cin8l")
+font_size = 15

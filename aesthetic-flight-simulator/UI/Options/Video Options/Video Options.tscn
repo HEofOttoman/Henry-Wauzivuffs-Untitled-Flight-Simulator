@@ -1,0 +1,109 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuehueebttxb2"]
+
+[ext_resource type="Script" uid="uid://dl0ict3axpfs0" path="res://UI/Options/Video Options/video_options.gd" id="1_33pxv"]
+[ext_resource type="Shader" uid="uid://c422an0ctkmmk" path="res://UI/Pause Menu/Pause Menu Blur.gdshader" id="2_ulobt"]
+[ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="3_vpsll"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l5wtf"]
+shader = ExtResource("2_ulobt")
+shader_parameter/lod = 3.451
+
+[node name="VideoOptions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_33pxv")
+
+[node name="Background Color" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.17, 0.17, 0.17, 1)
+
+[node name="Blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_l5wtf")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.17, 0.17, 0.17, 1)
+
+[node name="Section Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0824653
+anchor_top = 0.0216049
+anchor_right = 0.917535
+anchor_bottom = 0.978395
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.161458
+anchor_right = 0.833333
+anchor_bottom = 0.151235
+offset_top = 19.0
+offset_bottom = 19.0
+grow_horizontal = 2
+theme = ExtResource("3_vpsll")
+theme_type_variation = &"HeaderLarge"
+text = "Video Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00868056
+anchor_top = 0.930556
+anchor_right = 0.0737847
+anchor_bottom = 0.978395
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_vpsll")
+theme_override_font_sizes/font_size = 15
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="Btn VSync Toggle" type="CheckButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.337674
+anchor_top = 0.478395
+anchor_right = 0.662326
+anchor_bottom = 0.572531
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_vpsll")
+text = "VSync"
+metadata/_edit_use_anchors_ = true
+
+[node name="Btn Fullscreen Toggle" type="CheckButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.337674
+anchor_top = 0.325617
+anchor_right = 0.662326
+anchor_bottom = 0.421296
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_vpsll")
+text = "Fullscreen
+"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="toggled" from="Btn VSync Toggle" to="." method="_on_btn_vsync_toggle_toggled"]
+[connection signal="toggled" from="Btn Fullscreen Toggle" to="." method="_on_btn_fullscreen_toggle_toggled"]

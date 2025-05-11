@@ -1,0 +1,416 @@
+[gd_scene load_steps=13 format=3 uid="uid://x8w774x3c8ci"]
+
+[ext_resource type="FontFile" uid="uid://bpfvut4r5e6vs" path="res://Fonts/Kalam/Kalam-Light.ttf" id="1_y1lgh"]
+[ext_resource type="Script" uid="uid://b8uwa70m52qwe" path="res://UI/Compass/Compass.gd" id="1_yof8y"]
+[ext_resource type="Texture2D" uid="uid://btekexp2jh7kq" path="res://Images/Graphics/panel_bg9.png" id="2_yof8y"]
+[ext_resource type="Texture2D" uid="uid://drit0el54v3vg" path="res://UI/Compass/scale.png" id="3_sa42f"]
+[ext_resource type="Texture2D" uid="uid://ba1q1fbp0drn8" path="res://Images/Graphics/back_bg9.png" id="4_y1lgh"]
+[ext_resource type="Texture2D" uid="uid://dnqa0tfctjnm8" path="res://UI/Compass/compass2.png" id="5_hl5hr"]
+[ext_resource type="StyleBox" uid="uid://b2wcsxb4glvw1" path="res://UI/HUD/Instruments Panel.tres" id="5_sa42f"]
+[ext_resource type="LabelSettings" uid="uid://cegulblpfxt8f" path="res://UI/HUD/Instrument Label.tres" id="7_hl5hr"]
+[ext_resource type="Script" uid="uid://5oye4cgjxrh" path="res://UI/UI EnginePower/UIEnginePower.gd" id="8_y8j43"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sa42f"]
+font = ExtResource("1_y1lgh")
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_y8j43"]
+font = ExtResource("1_y1lgh")
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_yof8y"]
+font = ExtResource("1_y1lgh")
+font_size = 12
+
+[node name="Instruments" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yof8y")
+
+[node name="Altitude&Speed" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 507.0
+offset_right = 222.0
+offset_bottom = 644.0
+
+[node name="Altimeter Panel" type="Panel" parent="Altitude&Speed"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.567568
+anchor_right = 1.0045
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("5_sa42f")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Altitude&Speed/Altimeter Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_right = -1.52588e-05
+offset_bottom = 24.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 10
+text = "Altitude"
+label_settings = SubResource("LabelSettings_sa42f")
+horizontal_alignment = 1
+
+[node name="Horizon" type="NinePatchRect" parent="Altitude&Speed/Altimeter Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0721658
+anchor_top = 0.153285
+anchor_right = 0.938155
+anchor_bottom = 0.970803
+texture = ExtResource("2_yof8y")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="InnerPanel" type="Control" parent="Altitude&Speed/Altimeter Panel/Horizon"]
+clip_contents = true
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+
+[node name="BG" type="ColorRect" parent="Altitude&Speed/Altimeter Panel/Horizon/InnerPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.509368, 0.672925, 0.863248, 1)
+
+[node name="CenterRef" type="Control" parent="Altitude&Speed/Altimeter Panel/Horizon/InnerPanel"]
+anchors_preset = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="Ground" type="ColorRect" parent="Altitude&Speed/Altimeter Panel/Horizon/InnerPanel/CenterRef"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_right = 72.0
+offset_bottom = 144.0
+grow_horizontal = 2
+color = Color(0.765082, 0.784505, 0.565571, 1)
+
+[node name="Scale" type="TextureRect" parent="Altitude&Speed/Altimeter Panel/Horizon/InnerPanel/CenterRef/Ground"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_top = -72.0
+offset_right = -20.0
+offset_bottom = 72.0
+texture = ExtResource("3_sa42f")
+expand_mode = 1
+
+[node name="Scale2" type="TextureRect" parent="Altitude&Speed/Altimeter Panel/Horizon/InnerPanel/CenterRef/Ground"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 32.0
+offset_top = 72.0
+offset_right = 44.0
+offset_bottom = 216.0
+rotation = 3.14159
+texture = ExtResource("3_sa42f")
+expand_mode = 1
+
+[node name="PlaneHorizon" type="ColorRect" parent="Altitude&Speed/Altimeter Panel/Horizon/InnerPanel/CenterRef"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -1.0
+offset_right = 24.0
+offset_bottom = 1.0
+
+[node name="Speedometer" type="Panel" parent="Altitude&Speed"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.068
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.0960007
+offset_right = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("5_sa42f")
+
+[node name="Altitude" type="NinePatchRect" parent="Altitude&Speed/Speedometer"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 25.0
+offset_right = 103.0
+offset_bottom = 55.0
+texture = ExtResource("4_y1lgh")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="InnerPanel" type="Control" parent="Altitude&Speed/Speedometer/Altitude"]
+clip_contents = true
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+
+[node name="BG" type="ColorRect" parent="Altitude&Speed/Speedometer/Altitude/InnerPanel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.0705882, 0.0705882, 0.0745098, 1)
+
+[node name="ValueLabel" type="Label" parent="Altitude&Speed/Speedometer/Altitude/InnerPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Altitude&Speed/Speedometer"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 60.0
+offset_right = -10.0
+offset_bottom = 84.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 10
+text = "Speed"
+label_settings = SubResource("LabelSettings_y8j43")
+horizontal_alignment = 1
+
+[node name="Speed" type="NinePatchRect" parent="Altitude&Speed/Speedometer"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 87.0
+offset_right = 103.0
+offset_bottom = 117.0
+texture = ExtResource("4_y1lgh")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="InnerPanel" type="Control" parent="Altitude&Speed/Speedometer/Speed"]
+clip_contents = true
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+
+[node name="BG" type="ColorRect" parent="Altitude&Speed/Speedometer/Speed/InnerPanel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.0705882, 0.0705882, 0.0745098, 1)
+
+[node name="ValueLabel" type="Label" parent="Altitude&Speed/Speedometer/Speed/InnerPanel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="Compass Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.193576
+anchor_top = 0.782407
+anchor_right = 0.289931
+anchor_bottom = 0.993827
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("5_sa42f")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Compass Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_bottom = 24.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 10
+text = "Position"
+label_settings = ExtResource("7_hl5hr")
+horizontal_alignment = 1
+
+[node name="Compass" type="Panel" parent="Compass Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0720721
+anchor_top = 0.145985
+anchor_right = 0.936937
+anchor_bottom = 0.854015
+metadata/_edit_use_anchors_ = true
+
+[node name="InnerPanel" type="Control" parent="Compass Panel/Compass"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="Compass Panel/Compass/InnerPanel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.0705882, 0.0705882, 0.0745098, 1)
+
+[node name="CenterRef" type="Control" parent="Compass Panel/Compass/InnerPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Compass Panel/Compass/InnerPanel/CenterRef"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_hl5hr")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="Compass Panel/Compass/InnerPanel"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -2.0
+offset_top = 30.0
+offset_right = 2.0
+offset_bottom = 46.0
+
+[node name="ColorRect2" type="ColorRect" parent="Compass Panel/Compass/InnerPanel"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1.0
+offset_right = 1.0
+offset_bottom = 30.0
+color = Color(1, 1, 1, 0.501961)
+
+[node name="Coordinates Label" type="Label" parent="Compass Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.861
+anchor_right = 1.0
+anchor_bottom = 0.861
+offset_top = 0.0429916
+offset_bottom = 20.043
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 10
+text = "0, 0, 0"
+label_settings = SubResource("LabelSettings_yof8y")
+horizontal_alignment = 1
+
+[node name="EnginePower" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 346.0
+offset_top = 507.0
+offset_right = 410.0
+offset_bottom = 635.0
+script = ExtResource("8_y8j43")
+
+[node name="Panel" type="Panel" parent="EnginePower"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.07
+offset_bottom = 0.0399933
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("5_sa42f")
+
+[node name="Label" type="Label" parent="EnginePower/Panel"]
+layout_mode = 0
+offset_left = 12.0
+offset_right = 54.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 10
+text = "Engine"
+label_settings = ExtResource("7_hl5hr")
+horizontal_alignment = 1
+
+[node name="PowerBar" type="ColorRect" parent="EnginePower/Panel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 25.0
+offset_right = 34.0
+offset_bottom = 109.0
+color = Color(0, 0, 0, 1)
+
+[node name="Cursor" type="ColorRect" parent="EnginePower/Panel/PowerBar"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_top = 80.0
+offset_right = 16.0
+offset_bottom = 84.0
+
+[node name="OnlineBox" type="ColorRect" parent="EnginePower/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -12.5
+offset_top = -22.0
+offset_right = 12.5
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(1, 0, 0, 1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bhwoorpvl4ocu"]
+[gd_scene load_steps=35 format=3 uid="uid://bhwoorpvl4ocu"]
 
 [ext_resource type="Script" uid="uid://dk5ygil2ej188" path="res://addons/simplified_flightsim/Aircraft/Aircraft.gd" id="1_fk8dm"]
 [ext_resource type="PackedScene" uid="uid://bpna5btnwpvpr" path="res://Shaders/Engine Trail/Engine Trail.tscn" id="2_aq4x1"]
@@ -16,6 +16,41 @@
 [ext_resource type="AudioStream" uid="uid://cvxa8h3yftguj" path="res://Sounds/SFX/landing_gear/deploy.wav" id="13_oidtq"]
 [ext_resource type="AudioStream" uid="uid://ch1k8klfyw0mq" path="res://Sounds/SFX/landing_gear/stow.wav" id="14_twp3j"]
 [ext_resource type="Script" uid="uid://3q8fwcw1rpff" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlLandingGear.gd" id="15_8pvyp"]
+[ext_resource type="Script" uid="uid://bqaxuvrqadb78" path="res://addons/simplified_flightsim/aircraft_modules/Instruments/InstrumentAttitude.gd" id="17_mdw11"]
+[ext_resource type="Script" uid="uid://b4kdc7xq48kvs" path="res://UI/HUD/HUD_layer.gd" id="18_mxqxl"]
+[ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="18_xh781"]
+[ext_resource type="Script" uid="uid://c61fw3bxcx20j" path="res://UI/Debug Menu/fps_counter.gd" id="19_q4bkl"]
+[ext_resource type="PackedScene" uid="uid://dhg4sb4ifrvh8" path="res://UI/Compass/Compass.tscn" id="20_mxqxl"]
+[ext_resource type="PackedScene" uid="uid://d1u6ooaf7acv2" path="res://UI/Debug Menu/Locator Bar/Locator Bar.tscn" id="21_ev85x"]
+[ext_resource type="PackedScene" uid="uid://3hhc2j6mntrp" path="res://UI/Pause Menu/Pause Menu.tscn" id="22_b7pb1"]
+[ext_resource type="PackedScene" uid="uid://bmut2y2xaqj6x" path="res://UI/UI Altitude & Speed Reade Instrument/UIAltSpeed.tscn" id="23_q4bkl"]
+[ext_resource type="PackedScene" uid="uid://bu2hixfhu8ndm" path="res://UI/UI EnginePower/UIEnginePower.tscn" id="25_ev85x"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wph22"]
+animation = &"Deploy"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rtdl6"]
+animation = &"Propeller Spin "
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yux38"]
+animation = &"Stow"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rtdl6"]
+switch_mode = 1
+advance_mode = 2
+advance_condition = &"engine_on"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_q4bkl"]
+states/Deploy/node = SubResource("AnimationNodeAnimation_wph22")
+states/Deploy/position = Vector2(409, 7)
+states/End/position = Vector2(686, 81)
+"states/Propeller Spin /node" = SubResource("AnimationNodeAnimation_rtdl6")
+"states/Propeller Spin /position" = Vector2(409, 81)
+states/Start/position = Vector2(141, 81)
+states/Stow/node = SubResource("AnimationNodeAnimation_yux38")
+states/Stow/position = Vector2(403, 155)
+transitions = ["Start", "Propeller Spin ", SubResource("AnimationNodeStateMachineTransition_rtdl6")]
+graph_offset = Vector2(-1, -47)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ayke5"]
 size = Vector3(5.9502, 1, 0.4)
@@ -35,19 +70,40 @@ script = ExtResource("1_fk8dm")
 LiftFactor = 0.01
 
 [node name="Engine Trail_r" parent="." instance=ExtResource("2_aq4x1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.65, 0.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.817102, 0.65, 0.9)
 
 [node name="Engine Trail_l" parent="." instance=ExtResource("2_aq4x1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.831504, 0.65, 0.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.817, 0.65, 0.9)
 
-[node name="Douglas A26" parent="." instance=ExtResource("3_mdw11")]
+[node name="Douglas A26" parent="." node_paths=PackedStringArray("Animation_Player") instance=ExtResource("3_mdw11")]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, 0)
+Animation_Player = NodePath("AnimationPlayer")
+
+[node name="Propeller Right" parent="Douglas A26" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.815849, 0.648022, 0.699604)
+
+[node name="Propeller Left" parent="Douglas A26" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.815849, 0.648022, 0.699604)
+
+[node name="Front Wheels" parent="Douglas A26" index="7"]
+transform = Transform3D(0.0397319, 3.1258e-05, 0.000365125, 0.000345828, -0.0162942, -0.0362374, 0.000121225, 0.0362389, -0.0162938, 0, 0.551888, 0.683971)
+
+[node name="Wheels" parent="Douglas A26" index="8"]
+transform = Transform3D(0.0397319, 3.1258e-05, 0.000365125, 0.000345828, -0.0162942, -0.0362374, 0.000121225, 0.0362389, -0.0162938, 0, 0.523627, -0.35114)
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+active = false
+root_node = NodePath("../Douglas A26")
+tree_root = SubResource("AnimationNodeStateMachine_q4bkl")
+advance_expression_base_node = NodePath("../Douglas A26")
+anim_player = NodePath("../Douglas A26/AnimationPlayer")
+parameters/conditions/engine_on = false
 
 [node name="Camera Switcher" type="Node" parent="." node_paths=PackedStringArray("Camera1", "Camera2", "Camera3")]
 script = ExtResource("4_7yhwt")
 Camera1 = NodePath("../3rd Person Camera")
 Camera2 = NodePath("../1st Person Camera")
-Camera3 = NodePath("../Camera Tripod")
+Camera3 = NodePath("../Camera Tripod Origin/Camera Tripod")
 
 [node name="1st Person Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, -5.96046e-08, 0, 5.96046e-08, 1, 3.55271e-15, 1.1, -0.4)
@@ -56,10 +112,13 @@ transform = Transform3D(1, 0, 0, 0, 1, -5.96046e-08, 0, 5.96046e-08, 1, 3.55271e
 transform = Transform3D(1, 0, 0, 0, 0.999146, 0.0413002, 0, -0.0413002, 0.999146, 0, 1.49576, 4.59811)
 current = true
 
-[node name="Camera Tripod" type="Camera3D" parent="."]
-transform = Transform3D(0.999056, 0, 0, 0, 0.999056, 0, 0, 0, 0.999056, 0, 0, 0)
+[node name="Camera Tripod Origin" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.28459)
+
+[node name="Camera Tripod" type="Camera3D" parent="Camera Tripod Origin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
 script = ExtResource("5_aq4x1")
-TargetNode = NodePath("..")
+TargetNode = NodePath("../..")
 
 [node name="CollisionShapeWings" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00914764, 0.840756, 0.414786)
@@ -75,14 +134,17 @@ shape = SubResource("BoxShape3D_fk8dm")
 
 [node name="CollisionShapeWheels1" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.939424, -0.342758, 0, 0.342758, 0.939424, 0, 0.344013, -0.742958)
+visible = false
 shape = SubResource("BoxShape3D_y1yxn")
 
 [node name="CollisionShapeWheels2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.4, 0.358833)
+visible = false
 shape = SubResource("BoxShape3D_y1yxn")
 
 [node name="CollisionShapeWheels3" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.317346, 0.358833)
+visible = false
 shape = SubResource("BoxShape3D_y1yxn")
 
 [node name="AircraftModule_ControlEngine" type="Node" parent="."]
@@ -94,6 +156,7 @@ PowerFactor = 25.0
 EngineSoundLoop = ExtResource("7_wun2l")
 EngineSoundStart = ExtResource("8_xh781")
 EngineSoundStop = ExtResource("7_wun2l")
+UINode = NodePath("../HUDLayer/UIEnginePower")
 
 [node name="AircraftModule_EnergyContainer" type="Node" parent="."]
 script = ExtResource("9_q4bkl")
@@ -116,5 +179,45 @@ metadata/_custom_type_script = "uid://dtt76b47ja0vv"
 script = ExtResource("15_8pvyp")
 metadata/_custom_type_script = "uid://3q8fwcw1rpff"
 
+[node name="AircraftModule_InstrumentAttitude" type="Node" parent="."]
+script = ExtResource("17_mdw11")
+UINode = NodePath("../HUDLayer/UICompass")
+metadata/_custom_type_script = "uid://bqaxuvrqadb78"
+
+[node name="HUDLayer" type="CanvasLayer" parent="."]
+script = ExtResource("18_mxqxl")
+
+[node name="FPS Counter" type="Label" parent="HUDLayer"]
+anchors_preset = -1
+anchor_left = 0.00954861
+anchor_top = 0.0123457
+anchor_right = 0.105035
+anchor_bottom = 0.0632716
+theme = ExtResource("18_xh781")
+theme_override_colors/font_color = Color(0.20871, 0.20871, 0.20871, 1)
+text = "FPS:"
+script = ExtResource("19_q4bkl")
+metadata/_edit_use_anchors_ = true
+
+[node name="UICompass" parent="HUDLayer" groups=["HUD"] instance=ExtResource("20_mxqxl")]
+
+[node name="Locator Bar" parent="HUDLayer" groups=["HUD"] instance=ExtResource("21_ev85x")]
+visible = false
+
+[node name="UIAltSpeed" parent="HUDLayer" groups=["HUD"] instance=ExtResource("23_q4bkl")]
+AircraftNode = NodePath("../..")
+
+[node name="UIEnginePower" parent="HUDLayer" instance=ExtResource("25_ev85x")]
+offset_left = 735.0
+offset_top = 474.0
+offset_right = 799.0
+offset_bottom = 602.0
+
+[node name="Pause Menu" parent="HUDLayer" instance=ExtResource("22_b7pb1")]
+metadata/_edit_use_anchors_ = true
+
 [connection signal="update_interface" from="AircraftModule_Engine" to="Engine Trail_r" method="_on_aircraft_module_engine_update_interface"]
+[connection signal="update_interface" from="AircraftModule_Engine" to="Douglas A26" method="_on_aircraft_module_engine_update_interface"]
 [connection signal="update_interface" from="AircraftModule_LandingGear" to="Douglas A26" method="_on_LandingGear_update_interface"]
+
+[editable path="Douglas A26"]

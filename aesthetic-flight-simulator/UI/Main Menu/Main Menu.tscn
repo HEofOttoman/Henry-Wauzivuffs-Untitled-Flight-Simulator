@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://f6n4d05h4b5i" path="res://UI/Main Menu/main_menu.gd" id="1_o0nip"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="1_vf83f"]
-[ext_resource type="Texture2D" uid="uid://74l1x6bunnds" path="res://Images/Menu Picture.png" id="2_h3qnv"]
+[ext_resource type="Texture2D" uid="uid://bsesdi4bt4xlr" path="res://Images/Backgrounds/Promotional Image (Resized + Edge & Color Blended).png" id="2_h3qnv"]
 [ext_resource type="FontFile" uid="uid://bpfvut4r5e6vs" path="res://Fonts/Kalam/Kalam-Light.ttf" id="3_7mptw"]
 [ext_resource type="Texture2D" uid="uid://c4b1l2kd12nj0" path="res://Images/Graphics/Icons/github-mark/github-mark-white.svg" id="6_h3qnv"]
 [ext_resource type="Texture2D" uid="uid://byyos2q2nljs6" path="res://Images/Graphics/Icons/itch.io-logos/app-icon.svg" id="7_ypa8y"]
@@ -25,14 +25,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Menu Image (unused bro I cant make it look good)" type="TextureRect" parent="Main Menu"]
-modulate = Color(0.710757, 0.76334, 0.79994, 1)
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-texture = ExtResource("2_h3qnv")
-flip_h = true
 
 [node name="Background Color" type="TextureRect" parent="Main Menu"]
 layout_mode = 1
@@ -59,9 +51,9 @@ color = Color(0.158472, 0.158472, 0.158472, 1)
 [node name="VBoxContainer" type="VBoxContainer" parent="Main Menu"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0598959
+anchor_left = 0.0434028
 anchor_top = 0.441358
-anchor_right = 0.376736
+anchor_right = 0.360243
 anchor_bottom = 0.905864
 grow_horizontal = 2
 grow_vertical = 2
@@ -93,17 +85,16 @@ text = "Quit"
 [node name="Title" type="Label" parent="Main Menu"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0373264
+anchor_left = 0.0442708
 anchor_top = 0.0601852
-anchor_right = 0.811632
+anchor_right = 0.758681
 anchor_bottom = 0.21142
-offset_left = 21.0
-offset_right = 21.0
 grow_horizontal = 2
 theme = ExtResource("1_vf83f")
 theme_type_variation = &"HeaderLarge"
 text = "Untitled Flight Simulator"
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Subtitle" type="Label" parent="Main Menu"]
 layout_mode = 1
@@ -112,14 +103,25 @@ anchor_left = 0.0342882
 anchor_top = 0.214506
 anchor_right = 0.335503
 anchor_bottom = 0.314815
-offset_left = 29.5
-offset_right = 12.5
+offset_left = 16.5
+offset_right = -0.5
 grow_horizontal = 2
 theme = ExtResource("1_vf83f")
 theme_type_variation = &"HeaderMedium"
 theme_override_fonts/font = ExtResource("3_7mptw")
 text = "By Henry Wauzivuff"
 vertical_alignment = 1
+
+[node name="Main Menu Image" type="TextureRect" parent="Main Menu"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.371528
+anchor_top = 0.225309
+anchor_right = 1.01128
+anchor_bottom = 0.99537
+texture = ExtResource("2_h3qnv")
+metadata/_edit_use_anchors_ = true
 
 [node name="Repo Link" type="Button" parent="Main Menu"]
 layout_mode = 1

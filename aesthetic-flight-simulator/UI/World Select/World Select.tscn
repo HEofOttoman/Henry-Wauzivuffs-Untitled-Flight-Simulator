@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://clh8m5ca4xepk"]
+[gd_scene load_steps=13 format=3 uid="uid://clh8m5ca4xepk"]
 
 [ext_resource type="Script" uid="uid://cp1jyd07ba6dx" path="res://UI/World Select/world_select.gd" id="1_jfw2k"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="1_v2752"]
 [ext_resource type="Shader" uid="uid://c422an0ctkmmk" path="res://UI/Pause Menu/Pause Menu Blur.gdshader" id="2_dm76d"]
 [ext_resource type="StyleBox" uid="uid://db3wnmrpld7tf" path="res://UI/Background Panel Stylebox.tres" id="3_fnqvu"]
 [ext_resource type="FontFile" uid="uid://6ihy8g4s5x64" path="res://Fonts/Kalam/Kalam-Regular.ttf" id="4_vqw6r"]
-[ext_resource type="Texture2D" uid="uid://bftdel4k1dill" path="res://Images/Tutorial World Thumbnail.png" id="5_84ogh"]
-[ext_resource type="Texture2D" uid="uid://bxm5u2rap4uwr" path="res://Images/Cradle Mountain Thumbnail.png" id="6_b3ovy"]
+[ext_resource type="Texture2D" uid="uid://bftdel4k1dill" path="res://Images/Backgrounds/Tutorial World Thumbnail.png" id="5_84ogh"]
+[ext_resource type="Texture2D" uid="uid://bxm5u2rap4uwr" path="res://Images/Backgrounds/Cradle Mountain Thumbnail.png" id="6_b3ovy"]
+[ext_resource type="Texture2D" uid="uid://cewitqg4ww00d" path="res://Images/Backgrounds/Tasmania Thumbnail (placeholder).png" id="8_avh5m"]
 
 [sub_resource type="Gradient" id="Gradient_dm76d"]
 offsets = PackedFloat32Array(0, 0.986595)
@@ -195,9 +196,8 @@ horizontal_alignment = 1
 
 [node name="Thumbnail" type="TextureRect" parent="Tasmania Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("6_b3ovy")
+texture = ExtResource("8_avh5m")
 expand_mode = 4
-flip_h = true
 
 [node name="HSeparator" type="HSeparator" parent="Tasmania Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2

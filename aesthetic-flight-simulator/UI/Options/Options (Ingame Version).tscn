@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://cieyd22xf5ms3"]
+[gd_scene load_steps=10 format=3 uid="uid://cieyd22xf5ms3"]
 
 [ext_resource type="Shader" uid="uid://c422an0ctkmmk" path="res://UI/Pause Menu/Pause Menu Blur.gdshader" id="1_bw3oc"]
 [ext_resource type="Script" uid="uid://ci5ijqrxs4y6" path="res://UI/Options/options_(ingame_version).gd" id="1_vehyg"]
 [ext_resource type="Script" uid="uid://cbkybbadvvqnh" path="res://UI/Options/audio_options.gd" id="2_nmpgw"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="3_vehyg"]
 [ext_resource type="StyleBox" uid="uid://db3wnmrpld7tf" path="res://UI/Background Panel Stylebox.tres" id="4_tmkxc"]
+[ext_resource type="PackedScene" uid="uid://cuehueebttxb2" path="res://UI/Options/Video Options/Video Options.tscn" id="6_25kuh"]
+[ext_resource type="PackedScene" uid="uid://dsbna0jytyr62" path="res://UI/Options/Controls Menu/Controls Menu.tscn" id="7_7djrh"]
+[ext_resource type="PackedScene" uid="uid://bqaisvts1ayq2" path="res://UI/Options/Music Options/Music Options.tscn" id="8_kr4fn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mrify"]
 shader = ExtResource("1_bw3oc")
@@ -120,6 +123,44 @@ layout_mode = 2
 max_value = 1.0
 step = 0.05
 
+[node name="Buttons Section" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.586806
+anchor_top = 0.276235
+anchor_right = 0.821181
+anchor_bottom = 0.686728
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Subtitle" type="Label" parent="Buttons Section"]
+visible = false
+layout_mode = 2
+theme = ExtResource("3_vehyg")
+theme_type_variation = &"HeaderMedium"
+text = "Buttons"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Btn Controls" type="Button" parent="Buttons Section"]
+layout_mode = 2
+theme = ExtResource("3_vehyg")
+text = "Controls"
+
+[node name="Btn Music Options" type="Button" parent="Buttons Section"]
+layout_mode = 2
+theme = ExtResource("3_vehyg")
+text = "Music Settings"
+metadata/_edit_use_anchors_ = true
+
+[node name="Btn Video Options" type="Button" parent="Buttons Section"]
+layout_mode = 2
+theme = ExtResource("3_vehyg")
+text = "Video Settings"
+metadata/_edit_use_anchors_ = true
+
 [node name="Back Button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -134,10 +175,25 @@ theme_override_font_sizes/font_size = 15
 text = "Back to Menu"
 metadata/_edit_use_anchors_ = true
 
+[node name="VideoOptions" parent="." instance=ExtResource("6_25kuh")]
+visible = false
+layout_mode = 1
+
+[node name="Controls Menu" parent="." instance=ExtResource("7_7djrh")]
+visible = false
+layout_mode = 1
+
+[node name="MusicOptions" parent="." instance=ExtResource("8_kr4fn")]
+visible = false
+layout_mode = 1
+
 [connection signal="mouse_exited" from="Audio Options/Volume Section/Master Volume Slider" to="Audio Options" method="_on_master_volume_slider_mouse_exited"]
 [connection signal="value_changed" from="Audio Options/Volume Section/Master Volume Slider" to="Audio Options" method="_on_master_volume_slider_value_changed"]
 [connection signal="mouse_exited" from="Audio Options/Volume Section/Music Slider" to="Audio Options" method="_on_music_slider_mouse_exited"]
 [connection signal="value_changed" from="Audio Options/Volume Section/Music Slider" to="Audio Options" method="_on_music_slider_value_changed"]
 [connection signal="mouse_exited" from="Audio Options/Volume Section/SFX Slider" to="Audio Options" method="_on_sfx_slider_mouse_exited"]
 [connection signal="value_changed" from="Audio Options/Volume Section/SFX Slider" to="Audio Options" method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="Buttons Section/Btn Controls" to="." method="_on_btn_controls_pressed"]
+[connection signal="pressed" from="Buttons Section/Btn Music Options" to="." method="_on_btn_music_options_pressed"]
+[connection signal="pressed" from="Buttons Section/Btn Video Options" to="." method="_on_btn_video_options_pressed"]
 [connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]

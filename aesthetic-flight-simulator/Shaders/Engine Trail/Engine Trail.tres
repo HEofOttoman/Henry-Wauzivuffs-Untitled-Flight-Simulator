@@ -5,5 +5,6 @@
 [resource]
 blend_mode = 1
 shading_mode = 0
+albedo_color = Color(0.875341, 0.696167, 0.854457, 1)
 albedo_texture = ExtResource("1_wds3w")
 uv1_scale = Vector3(1, 1.033, 1)

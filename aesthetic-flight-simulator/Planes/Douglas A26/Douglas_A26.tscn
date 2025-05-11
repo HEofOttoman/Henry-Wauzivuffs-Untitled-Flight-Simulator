@@ -1,63 +1,22 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxuabe0q0v7ev"]
+[gd_scene load_steps=3 format=3 uid="uid://bxuabe0q0v7ev"]
 
 [ext_resource type="PackedScene" uid="uid://dq1fjh8mft5b1" path="res://Planes/Douglas A26/Douglas A26.blend" id="1_ovy3l"]
 [ext_resource type="Script" uid="uid://c5yjtvfqgi65j" path="res://Planes/Douglas A26/DA26_animplayer.gd" id="2_rtdl6"]
 
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_ym00q"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rtdl6"]
-animation = &"Deploy"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yux38"]
-animation = &"Propeller Spin"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wph22"]
-animation = &"Stow"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iyr2e"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tg8lj"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fnds7"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1y6t2"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_hgago"]
-states/BlendSpace1D/node = SubResource("AnimationNodeBlendSpace1D_ym00q")
-states/BlendSpace1D/position = Vector2(523, 33)
-states/Deploy/node = SubResource("AnimationNodeAnimation_rtdl6")
-states/Deploy/position = Vector2(687, 150)
-"states/Propeller Spin/node" = SubResource("AnimationNodeAnimation_yux38")
-"states/Propeller Spin/position" = Vector2(523, 100)
-states/Start/position = Vector2(199, 100)
-states/Stow/node = SubResource("AnimationNodeAnimation_wph22")
-states/Stow/position = Vector2(368, 150)
-transitions = ["Start", "BlendSpace1D", SubResource("AnimationNodeStateMachineTransition_iyr2e"), "Start", "Stow", SubResource("AnimationNodeStateMachineTransition_tg8lj"), "Stow", "Deploy", SubResource("AnimationNodeStateMachineTransition_fnds7"), "Start", "Propeller Spin", SubResource("AnimationNodeStateMachineTransition_1y6t2")]
-
 [node name="Douglas A26" instance=ExtResource("1_ovy3l")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 script = ExtResource("2_rtdl6")
 
 [node name="Propeller Right" parent="." index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.815849, 0.648022, 0.699604)
+transform = Transform3D(-0.946104, -0.323863, 0, 0.323863, -0.946104, 0, 0, 0, 1, -0.815849, 0.648022, 0.699604)
 
 [node name="Propeller Left" parent="." index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.815849, 0.648022, 0.699604)
+transform = Transform3D(-0.946104, -0.323863, 0, 0.323863, -0.946104, 0, 0, 0, 1, 0.815849, 0.648022, 0.699604)
 
 [node name="Front Wheels" parent="." index="7"]
-transform = Transform3D(0.0397336, 0, 0, 0, 0.0397336, -3.16419e-05, 0, 3.16418e-05, 0.0397337, 0, 0.551888, 0.683971)
+transform = Transform3D(0.0397336, 0, 0, 0, 0.0397336, 0, 0, 0, 0.0397337, 0, 0.551888, 0.683971)
 
 [node name="Wheels" parent="." index="8"]
-transform = Transform3D(0.0397336, 0, 0, 0, 0.0397336, -3.16419e-05, 0, 3.16418e-05, 0.0397337, 0, 0.523627, -0.35114)
+transform = Transform3D(0.0397336, 0, 0, 0, 0.0397336, 0, 0, 0, 0.0397337, 0, 0.523627, -0.35114)
 
-[node name="AnimationTree" type="AnimationTree" parent="." index="9"]
-tree_root = SubResource("AnimationNodeStateMachine_hgago")
-anim_player = NodePath("../AnimationPlayer")
-parameters/BlendSpace1D/blend_position = -0.0382903
-
-[node name="AnimationPlayer" parent="." index="10"]
+[node name="AnimationPlayer" parent="." index="9"]
 autoplay = "Propeller Spin"

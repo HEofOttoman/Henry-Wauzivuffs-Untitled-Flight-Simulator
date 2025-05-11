@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://dg3vbnm2f8mef"]
+[gd_scene load_steps=58 format=3 uid="uid://dg3vbnm2f8mef"]
 
 [ext_resource type="Environment" uid="uid://t1ni51qa0x5q" path="res://Worlds/Skybox.tres" id="1_s7s3w"]
 [ext_resource type="Script" uid="uid://i5jcj7ukvoen" path="res://addons/terrabrush/TerraBrush.cs" id="2_ylkho"]
@@ -39,13 +39,8 @@
 [ext_resource type="Texture2D" uid="uid://d1ovhxdv0q8gi" path="res://Worlds/Tutorial World/Terrain Data/Splatmap_-1_-1_1.res" id="37_q8nwy"]
 [ext_resource type="Texture2D" uid="uid://omq5anaphlf" path="res://Worlds/Tutorial World/Terrain Data/Water_-1_-1.res" id="38_i7qyl"]
 [ext_resource type="Script" uid="uid://nt172hqpx1j5" path="res://addons/terrabrush/Scripts/EditorResources/ZonesResource.cs" id="39_2n4yl"]
-[ext_resource type="Material" uid="uid://cnxrtp6ngxklc" path="res://Shaders/Water Shader 1.tres" id="40_4hfkl"]
+[ext_resource type="Material" uid="uid://ccp4eq6k1dvgm" path="res://Shaders/Water Shader 2.tres" id="40_s7s3w"]
 [ext_resource type="PackedScene" uid="uid://bhwoorpvl4ocu" path="res://Planes/D-A26_player.tscn" id="41_pialk"]
-[ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="42_m64jq"]
-[ext_resource type="Script" uid="uid://c61fw3bxcx20j" path="res://UI/Debug Menu/fps_counter.gd" id="43_75j43"]
-[ext_resource type="PackedScene" uid="uid://dhg4sb4ifrvh8" path="res://UI/Compass/Compass.tscn" id="44_kkd2r"]
-[ext_resource type="PackedScene" uid="uid://d1u6ooaf7acv2" path="res://UI/Locator Bar/Locator Bar.tscn" id="45_jsj8x"]
-[ext_resource type="PackedScene" uid="uid://3hhc2j6mntrp" path="res://UI/Pause Menu/Pause Menu.tscn" id="46_hv3st"]
 [ext_resource type="PackedScene" uid="uid://c1fvfyqusl37" path="res://UI/Tutorial Billboard/Welcome message.tscn" id="47_6vb7m"]
 
 [sub_resource type="Resource" id="Resource_lves4"]
@@ -160,7 +155,7 @@ Zones = [SubResource("Resource_jream"), SubResource("Resource_r6404"), SubResour
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_64hml"]
 lightmap_size_hint = Vector2i(12, 12)
-material = ExtResource("40_4hfkl")
+material = ExtResource("40_s7s3w")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ta6me"]
 size = Vector3(658.154, 697.971, 15.3667)
@@ -193,26 +188,6 @@ mesh = SubResource("PlaneMesh_64hml")
 
 [node name="Douglas A26" parent="." instance=ExtResource("41_pialk")]
 transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871557, 0, 0.0871557, 0.996195, 0.591257, 2.25781, -1)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="FPS Counter" type="Label" parent="CanvasLayer" groups=["HUD"]]
-anchors_preset = -1
-anchor_left = 0.00954861
-anchor_top = 0.0123457
-anchor_right = 0.105035
-anchor_bottom = 0.0864198
-theme = ExtResource("42_m64jq")
-theme_override_colors/font_color = Color(0.20871, 0.20871, 0.20871, 1)
-script = ExtResource("43_75j43")
-metadata/_edit_use_anchors_ = true
-
-[node name="UICompass" parent="CanvasLayer" groups=["HUD"] instance=ExtResource("44_kkd2r")]
-
-[node name="Control" parent="CanvasLayer" instance=ExtResource("45_jsj8x")]
-
-[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("46_hv3st")]
-metadata/_edit_use_anchors_ = true
 
 [node name="World Boundary" type="StaticBody3D" parent="."]
 

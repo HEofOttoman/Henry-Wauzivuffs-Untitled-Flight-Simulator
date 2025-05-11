@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpavhpg1h7qxa"
-path.s3tc="res://.godot/imported/hp_03-nrm_rgh.png-205764e41a028bb8d5d2e6ef66040771.s3tc.ctex"
+path.bptc="res://.godot/imported/hp_03-nrm_rgh.png-205764e41a028bb8d5d2e6ef66040771.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,12 +12,12 @@ metadata={
 [deps]
 
 source_file="res://Images/textures/handpainted-style-textures-3/1K_handpainted-style-textures-3/hp_03/hp_03-nrm_rgh.png"
-dest_files=["res://.godot/imported/hp_03-nrm_rgh.png-205764e41a028bb8d5d2e6ef66040771.s3tc.ctex"]
+dest_files=["res://.godot/imported/hp_03-nrm_rgh.png-205764e41a028bb8d5d2e6ef66040771.bptc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=2

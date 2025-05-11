@@ -76,15 +76,26 @@ theme_override_font_sizes/font_size = 15
 text = "Back"
 metadata/_edit_use_anchors_ = true
 
-[node name="Btn Music Options" type="CheckButton" parent="."]
+[node name="Btn Music Toggle" type="CheckButton" parent="."]
 layout_mode = 2
 anchor_left = 0.137153
-anchor_top = 0.308642
+anchor_top = 0.266975
 anchor_right = 0.473091
-anchor_bottom = 0.388889
+anchor_bottom = 0.347222
 theme = ExtResource("3_180j6")
 button_pressed = true
 text = "Play Music"
+metadata/_edit_use_anchors_ = true
+
+[node name="Btn Reverb" type="CheckButton" parent="."]
+layout_mode = 2
+anchor_left = 0.137153
+anchor_top = 0.365741
+anchor_right = 0.473091
+anchor_bottom = 0.445988
+theme = ExtResource("3_180j6")
+button_pressed = true
+text = "Reverb"
 metadata/_edit_use_anchors_ = true
 
 [node name="Music Options Section" type="VBoxContainer" parent="."]
@@ -121,5 +132,7 @@ theme = ExtResource("3_180j6")
 text = "Zu Tanze, Zu Sprunge - J.S. Bach"
 
 [connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="toggled" from="Btn Music Toggle" to="." method="_on_btn_music_toggle_toggled"]
+[connection signal="toggled" from="Btn Reverb" to="." method="_on_btn_reverb_toggled"]
 [connection signal="pressed" from="Music Options Section/Gran Vals1" to="." method="_on_gran_vals_1_pressed"]
 [connection signal="pressed" from="Music Options Section/Zu Tanze Zu Sprunge1" to="." method="_on_zu_tanze_zu_sprunge_1_pressed"]

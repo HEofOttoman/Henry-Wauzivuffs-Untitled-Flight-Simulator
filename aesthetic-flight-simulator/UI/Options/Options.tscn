@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://pycshnhsb53w"]
+[gd_scene load_steps=9 format=3 uid="uid://pycshnhsb53w"]
 
 [ext_resource type="Script" uid="uid://cd40kewb1nd2m" path="res://UI/Options/options_menu.gd" id="1_oqhua"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="1_uxtlu"]
 [ext_resource type="Shader" uid="uid://c422an0ctkmmk" path="res://UI/Pause Menu/Pause Menu Blur.gdshader" id="2_i3xpw"]
 [ext_resource type="Script" uid="uid://cbkybbadvvqnh" path="res://UI/Options/audio_options.gd" id="3_x2vek"]
+[ext_resource type="PackedScene" uid="uid://cuehueebttxb2" path="res://UI/Options/Video Options/Video Options.tscn" id="5_0irqw"]
+[ext_resource type="PackedScene" uid="uid://dsbna0jytyr62" path="res://UI/Options/Controls Menu/Controls Menu.tscn" id="6_87fjw"]
+[ext_resource type="PackedScene" uid="uid://bqaisvts1ayq2" path="res://UI/Options/Music Options/Music Options.tscn" id="7_xgmh7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kpwtp"]
 shader = ExtResource("2_i3xpw")
@@ -12,7 +15,7 @@ shader_parameter/lod = 3.451
 [node name="Options" type="CanvasLayer"]
 script = ExtResource("1_oqhua")
 
-[node name="Control" type="Control" parent="."]
+[node name="Options Menu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 
-[node name="Background Color" type="ColorRect" parent="Control"]
+[node name="Background Color" type="ColorRect" parent="Options Menu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,7 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.17, 0.17, 0.17, 1)
 
-[node name="Blur" type="ColorRect" parent="Control"]
+[node name="Blur" type="ColorRect" parent="Options Menu"]
 material = SubResource("ShaderMaterial_kpwtp")
 layout_mode = 1
 anchors_preset = 15
@@ -40,7 +43,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.17, 0.17, 0.17, 1)
 
-[node name="Controls Section background" type="ColorRect" parent="Control"]
+[node name="Controls Section background" type="ColorRect" parent="Options Menu"]
 layout_mode = 2
 anchor_left = 0.109375
 anchor_top = 0.0216049
@@ -52,7 +55,7 @@ size_flags_vertical = 3
 color = Color(0.156863, 0.156863, 0.156863, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Title" type="Label" parent="Control"]
+[node name="Title" type="Label" parent="Options Menu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.161458
@@ -66,7 +69,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Back Button" type="Button" parent="Control"]
+[node name="Back Button" type="Button" parent="Options Menu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.00520833
@@ -82,7 +85,7 @@ theme_override_font_sizes/font_size = 15
 text = "Back to Menu"
 metadata/_edit_use_anchors_ = true
 
-[node name="Controls Section" type="VBoxContainer" parent="Control"]
+[node name="Buttons Section" type="VBoxContainer" parent="Options Menu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.544271
@@ -93,7 +96,7 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Subtitle" type="Label" parent="Control/Controls Section"]
+[node name="Subtitle" type="Label" parent="Options Menu/Buttons Section"]
 visible = false
 layout_mode = 2
 theme = ExtResource("1_uxtlu")
@@ -102,25 +105,31 @@ text = "Buttons"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Btn Controls" type="Button" parent="Control/Controls Section"]
+[node name="Btn Controls" type="Button" parent="Options Menu/Buttons Section"]
 layout_mode = 2
 theme = ExtResource("1_uxtlu")
 text = "Controls"
 
-[node name="Btn Music Options" type="Button" parent="Control/Controls Section"]
+[node name="Btn Music Options" type="Button" parent="Options Menu/Buttons Section"]
 layout_mode = 2
 theme = ExtResource("1_uxtlu")
 text = "Music Settings"
 metadata/_edit_use_anchors_ = true
 
-[node name="Audio Options" type="Control" parent="Control"]
+[node name="Btn Video Options" type="Button" parent="Options Menu/Buttons Section"]
+layout_mode = 2
+theme = ExtResource("1_uxtlu")
+text = "Video Settings"
+metadata/_edit_use_anchors_ = true
+
+[node name="Audio Options" type="Control" parent="Options Menu"]
 anchors_preset = 0
 anchor_right = 0.0347222
 anchor_bottom = 0.0617284
 script = ExtResource("3_x2vek")
 metadata/_edit_use_anchors_ = true
 
-[node name="Volume Section" type="VBoxContainer" parent="Control/Audio Options"]
+[node name="Volume Section" type="VBoxContainer" parent="Options Menu/Audio Options"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 4.25
@@ -132,7 +141,7 @@ grow_vertical = 2
 size_flags_vertical = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="Subtitle" type="Label" parent="Control/Audio Options/Volume Section"]
+[node name="Subtitle" type="Label" parent="Options Menu/Audio Options/Volume Section"]
 layout_mode = 2
 theme = ExtResource("1_uxtlu")
 theme_type_variation = &"HeaderMedium"
@@ -140,44 +149,54 @@ text = "Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label Master Volume" type="Label" parent="Control/Audio Options/Volume Section"]
+[node name="Label Master Volume" type="Label" parent="Options Menu/Audio Options/Volume Section"]
 layout_mode = 2
 theme = ExtResource("1_uxtlu")
 text = "Master Volume"
 
-[node name="Master Volume Slider" type="HSlider" parent="Control/Audio Options/Volume Section"]
+[node name="Master Volume Slider" type="HSlider" parent="Options Menu/Audio Options/Volume Section"]
 layout_mode = 2
 theme = ExtResource("1_uxtlu")
 max_value = 1.0
 step = 0.05
 
-[node name="Label Music Volume" type="Label" parent="Control/Audio Options/Volume Section"]
+[node name="Label Music Volume" type="Label" parent="Options Menu/Audio Options/Volume Section"]
 layout_mode = 2
 theme = ExtResource("1_uxtlu")
 text = "Music"
 
-[node name="Music Slider" type="HSlider" parent="Control/Audio Options/Volume Section"]
+[node name="Music Slider" type="HSlider" parent="Options Menu/Audio Options/Volume Section"]
 layout_mode = 2
 max_value = 1.0
 step = 0.05
 
-[node name="Label SFX Volume" type="Label" parent="Control/Audio Options/Volume Section"]
+[node name="Label SFX Volume" type="Label" parent="Options Menu/Audio Options/Volume Section"]
 layout_mode = 2
 theme = ExtResource("1_uxtlu")
 text = "Sound Effects"
 
-[node name="SFX Slider" type="HSlider" parent="Control/Audio Options/Volume Section"]
+[node name="SFX Slider" type="HSlider" parent="Options Menu/Audio Options/Volume Section"]
 layout_mode = 2
 max_value = 1.0
 step = 0.05
 
-[connection signal="pressed" from="Control/Back Button" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="Control/Controls Section/Btn Controls" to="." method="_on_btn_controls_pressed"]
-[connection signal="pressed" from="Control/Controls Section/Btn Music Options" to="." method="_on_btn_music_options_pressed"]
-[connection signal="mouse_exited" from="Control/Audio Options/Volume Section/Master Volume Slider" to="." method="_on_master_volume_slider_mouse_exited"]
-[connection signal="mouse_exited" from="Control/Audio Options/Volume Section/Master Volume Slider" to="Control/Audio Options" method="_on_master_volume_slider_mouse_exited"]
-[connection signal="value_changed" from="Control/Audio Options/Volume Section/Master Volume Slider" to="Control/Audio Options" method="_on_master_volume_slider_value_changed"]
-[connection signal="mouse_exited" from="Control/Audio Options/Volume Section/Music Slider" to="Control/Audio Options" method="_on_music_slider_mouse_exited"]
-[connection signal="value_changed" from="Control/Audio Options/Volume Section/Music Slider" to="Control/Audio Options" method="_on_music_slider_value_changed"]
-[connection signal="mouse_exited" from="Control/Audio Options/Volume Section/SFX Slider" to="Control/Audio Options" method="_on_sfx_slider_mouse_exited"]
-[connection signal="value_changed" from="Control/Audio Options/Volume Section/SFX Slider" to="Control/Audio Options" method="_on_sfx_slider_value_changed"]
+[node name="VideoOptions" parent="." instance=ExtResource("5_0irqw")]
+visible = false
+
+[node name="Controls Menu" parent="." instance=ExtResource("6_87fjw")]
+visible = false
+
+[node name="MusicOptions" parent="." instance=ExtResource("7_xgmh7")]
+visible = false
+
+[connection signal="pressed" from="Options Menu/Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Options Menu/Buttons Section/Btn Controls" to="." method="_on_btn_controls_pressed"]
+[connection signal="pressed" from="Options Menu/Buttons Section/Btn Music Options" to="." method="_on_btn_music_options_pressed"]
+[connection signal="pressed" from="Options Menu/Buttons Section/Btn Video Options" to="." method="_on_btn_video_options_pressed"]
+[connection signal="mouse_exited" from="Options Menu/Audio Options/Volume Section/Master Volume Slider" to="." method="_on_master_volume_slider_mouse_exited"]
+[connection signal="mouse_exited" from="Options Menu/Audio Options/Volume Section/Master Volume Slider" to="Options Menu/Audio Options" method="_on_master_volume_slider_mouse_exited"]
+[connection signal="value_changed" from="Options Menu/Audio Options/Volume Section/Master Volume Slider" to="Options Menu/Audio Options" method="_on_master_volume_slider_value_changed"]
+[connection signal="mouse_exited" from="Options Menu/Audio Options/Volume Section/Music Slider" to="Options Menu/Audio Options" method="_on_music_slider_mouse_exited"]
+[connection signal="value_changed" from="Options Menu/Audio Options/Volume Section/Music Slider" to="Options Menu/Audio Options" method="_on_music_slider_value_changed"]
+[connection signal="mouse_exited" from="Options Menu/Audio Options/Volume Section/SFX Slider" to="Options Menu/Audio Options" method="_on_sfx_slider_mouse_exited"]
+[connection signal="value_changed" from="Options Menu/Audio Options/Volume Section/SFX Slider" to="Options Menu/Audio Options" method="_on_sfx_slider_value_changed"]

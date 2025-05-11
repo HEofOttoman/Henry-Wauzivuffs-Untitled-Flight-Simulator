@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://6ihy8g4s5x64" path="res://Fonts/Kalam/Kalam-Regular.ttf" id="1_5uoek"]
 [ext_resource type="FontFile" uid="uid://8xtppup27fq1" path="res://Fonts/Grechen_Fuemen/GrechenFuemen-Regular.ttf" id="1_iwqcg"]
+[ext_resource type="StyleBox" uid="uid://shtuc8vxsqsb" path="res://UI/General Button Stylebox.tres" id="2_ihvos"]
 [ext_resource type="StyleBox" uid="uid://db3wnmrpld7tf" path="res://UI/Background Panel Stylebox.tres" id="3_5byyn"]
 [ext_resource type="FontFile" uid="uid://bpfvut4r5e6vs" path="res://Fonts/Kalam/Kalam-Light.ttf" id="3_8xv6t"]
 
@@ -37,18 +38,6 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exfog"]
-bg_color = Color(0.197937, 0.197937, 0.197937, 1)
-border_width_left = 3
-border_width_top = 2
-border_width_right = 3
-border_width_bottom = 5
-border_color = Color(0.201527, 0.201527, 0.201527, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjs4d"]
 content_margin_left = 4.0
@@ -104,8 +93,9 @@ Button/font_sizes/font_size = 27
 Button/fonts/font = ExtResource("1_5uoek")
 Button/styles/focus = SubResource("StyleBoxFlat_qvpfq")
 Button/styles/hover = SubResource("StyleBoxFlat_cwger")
-Button/styles/normal = SubResource("StyleBoxFlat_exfog")
+Button/styles/normal = ExtResource("2_ihvos")
 Button/styles/pressed = SubResource("StyleBoxFlat_yjs4d")
+CheckButton/styles/normal = ExtResource("2_ihvos")
 HeaderLarge/colors/font_color = Color(0.851769, 0.851769, 0.851769, 1)
 HeaderLarge/font_sizes/font_size = 80
 HeaderLarge/fonts/font = ExtResource("1_iwqcg")

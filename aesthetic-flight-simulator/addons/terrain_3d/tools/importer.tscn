@@ -69,11 +69,16 @@ lod0_range = 128.0
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_ce8yv")])
 
 [node name="Importer" type="Terrain3D"]
+data_directory = "res://Worlds/Tasmania/T3D Terrain Data"
 material = SubResource("Terrain3DMaterial_34j6c")
 assets = SubResource("Terrain3DAssets_42p8u")
 mesh_lods = 8
 show_checkered = true
 top_level = true
 script = ExtResource("1_60b8f")
+height_file_name = "C:/Users/muiqb/Documents/HX's Projects/Aesthetic-Flight-Simulator/aesthetic-flight-simulator/Worlds/Tasmania/Height Data/S42E146.SRTMGL3.hgt/S42E146 (Normalized) (rgb16).png"
+import_position = Vector2i(0, -1024)
+import_scale = 100.0
+destination_directory = "res://Worlds/Tasmania/T3D Terrain Data"
 file_name_out = "Entirety of Tasmania Heightmap V1"
 metadata/_edit_lock_ = true

@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cqphqxb4cumv7" path="res://Images/Graphics/panel-004.png" id="5_w07on"]
 
 [sub_resource type="Gradient" id="Gradient_j4xvc"]
-offsets = PackedFloat32Array(0, 0.568365, 1)
+offsets = PackedFloat32Array(0, 0.530831, 0.991957)
 colors = PackedColorArray(0.156863, 0.156863, 0.156863, 1, 0.168627, 0.168627, 0.168627, 1, 0.156863, 0.156863, 0.156863, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_c73pl"]
@@ -60,7 +60,8 @@ label_settings = SubResource("LabelSettings_1jjsr")
 horizontal_alignment = 1
 
 [node name="Horizon" type="NinePatchRect" parent="Panel"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.0327103
 anchor_top = 0.164062
 anchor_right = 0.481309

@@ -6,7 +6,7 @@
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_rjofs")
 
-[node name="Control" type="Control" parent="."]
+[node name="Credits Menu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,7 +15,7 @@ offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="ColorRect" type="ColorRect" parent="Credits Menu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.180005, 0.180005, 0.180005, 1)
 
-[node name="Section Background" type="ColorRect" parent="Control"]
+[node name="Section Background" type="ColorRect" parent="Credits Menu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.109375
@@ -40,7 +40,7 @@ size_flags_vertical = 3
 color = Color(0.156863, 0.156863, 0.156863, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Title" type="Label" parent="Control"]
+[node name="Title" type="Label" parent="Credits Menu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0451389
@@ -55,43 +55,7 @@ text = "Credits"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Deprecated textbox with entire credits text" type="TextEdit" parent="Control"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.15625
-anchor_top = 0.166149
-anchor_right = 0.84375
-anchor_bottom = 0.947205
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_um854")
-text = "Made with Godot
-Main Developer - Henry Wauzivuff
-
-# Plugins
-Terrabrush - Spimort
-Simplified Flight Simulator: FBcosentino
-BOTW Cel Shader - Nekoto Arts
-
-# Assets
-Kenney
-Google Fonts
-Freestylized.com - Skybox 
-rubberduck - Handpainted Textures
-
-# Music
-Zu Tanze, Zu Sprunge - Johann Sebastian Bach
-Gran Vals - Joni Ikäläinen, Francisco Tárrega, CC0, via Wikimedia Commons
-
-# Honorable Mentions
-Kobedev (For his tutorials) 
-Spimort (For his help in troubleshooting Terrabrush)
-
-"
-metadata/_edit_use_anchors_ = true
-
-[node name="Back Button" type="Button" parent="Control"]
+[node name="Back Button" type="Button" parent="Credits Menu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.00607639
@@ -107,7 +71,7 @@ theme_override_font_sizes/font_size = 15
 text = "Back to Menu"
 metadata/_edit_use_anchors_ = true
 
-[node name="Credits Text" type="RichTextLabel" parent="Control"]
+[node name="Credits Text" type="RichTextLabel" parent="Credits Menu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.122396
@@ -124,7 +88,8 @@ Main Developer - Henry Wauzivuff
 [font_size=20]# Plugins[/font_size]
 Terrabrush - Spimort
 Simplified Flight Simulator: FBcosentino
-BOTW Cel Shader - Nekoto Arts
+Terrain3D - Tokisan Games
+
 
 [font_size=20]# Assets[/font_size]
 Kenney - UI Sounds and Icons
@@ -144,4 +109,4 @@ Spimort (For his help in troubleshooting Terrabrush)
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Control/Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Credits Menu/Back Button" to="." method="_on_back_button_pressed"]
