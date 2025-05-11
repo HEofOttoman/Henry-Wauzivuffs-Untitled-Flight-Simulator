@@ -1,0 +1,207 @@
+[gd_scene load_steps=9 format=3 uid="uid://jxxs21achvqq"]
+
+[ext_resource type="StyleBox" uid="uid://b2wcsxb4glvw1" path="res://UI/HUD/Instruments Panel.tres" id="1_o5mxi"]
+[ext_resource type="Script" uid="uid://b8uwa70m52qwe" path="res://UI/Compass/Compass.gd" id="2_vfl0g"]
+[ext_resource type="LabelSettings" uid="uid://cegulblpfxt8f" path="res://UI/HUD/Instrument Label.tres" id="3_gsnsd"]
+[ext_resource type="Texture2D" uid="uid://btekexp2jh7kq" path="res://Images/Graphics/panel_bg9.png" id="4_0qv41"]
+[ext_resource type="Texture2D" uid="uid://drit0el54v3vg" path="res://UI/Compass/scale.png" id="5_6g40t"]
+[ext_resource type="Texture2D" uid="uid://dnqa0tfctjnm8" path="res://UI/Compass/compass2.png" id="6_llneb"]
+[ext_resource type="FontFile" uid="uid://bpfvut4r5e6vs" path="res://Fonts/Kalam/Kalam-Light.ttf" id="7_2ypbg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yof8y"]
+font = ExtResource("7_2ypbg")
+font_size = 12
+
+[node name="Position Panel" type="Panel"]
+anchors_preset = -1
+anchor_left = 0.171007
+anchor_top = 0.765432
+anchor_right = 0.351563
+anchor_bottom = 0.976852
+offset_top = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_o5mxi")
+script = ExtResource("2_vfl0g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_bottom = 24.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 10
+text = "Position"
+label_settings = ExtResource("3_gsnsd")
+horizontal_alignment = 1
+
+[node name="Horizon" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0576923
+anchor_top = 0.160584
+anchor_right = 0.4375
+anchor_bottom = 0.941606
+texture = ExtResource("4_0qv41")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="InnerPanel" type="Control" parent="Horizon"]
+clip_contents = true
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+
+[node name="BG" type="ColorRect" parent="Horizon/InnerPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.509368, 0.672925, 0.863248, 1)
+
+[node name="CenterRef" type="Control" parent="Horizon/InnerPanel"]
+anchors_preset = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="Ground" type="ColorRect" parent="Horizon/InnerPanel/CenterRef"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_right = 72.0
+offset_bottom = 144.0
+grow_horizontal = 2
+color = Color(0.765082, 0.784505, 0.565571, 1)
+
+[node name="Scale" type="TextureRect" parent="Horizon/InnerPanel/CenterRef/Ground"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_top = -72.0
+offset_right = -20.0
+offset_bottom = 72.0
+texture = ExtResource("5_6g40t")
+expand_mode = 1
+
+[node name="Scale2" type="TextureRect" parent="Horizon/InnerPanel/CenterRef/Ground"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 32.0
+offset_top = 72.0
+offset_right = 44.0
+offset_bottom = 216.0
+rotation = 3.14159
+texture = ExtResource("5_6g40t")
+expand_mode = 1
+
+[node name="PlaneHorizon" type="ColorRect" parent="Horizon/InnerPanel/CenterRef"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -1.0
+offset_right = 24.0
+offset_bottom = 1.0
+
+[node name="Compass" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.495192
+anchor_top = 0.175182
+anchor_right = 0.9375
+anchor_bottom = 0.883212
+
+[node name="InnerPanel" type="Control" parent="Compass"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="Compass/InnerPanel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.0705882, 0.0705882, 0.0745098, 1)
+
+[node name="CenterRef" type="Control" parent="Compass/InnerPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Compass/InnerPanel/CenterRef"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_llneb")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="Compass/InnerPanel"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -2.0
+offset_top = 30.0
+offset_right = 2.0
+offset_bottom = 46.0
+
+[node name="ColorRect2" type="ColorRect" parent="Compass/InnerPanel"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1.0
+offset_right = 1.0
+offset_bottom = 30.0
+color = Color(1, 1, 1, 0.501961)
+
+[node name="Coordinates Label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.861
+anchor_right = 1.0
+anchor_bottom = 0.861
+offset_top = 0.0429916
+offset_bottom = 20.043
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 10
+text = "0, 0, 0"
+label_settings = SubResource("LabelSettings_yof8y")
+horizontal_alignment = 1

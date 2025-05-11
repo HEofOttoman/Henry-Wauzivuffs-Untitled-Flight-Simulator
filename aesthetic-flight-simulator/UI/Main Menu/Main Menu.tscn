@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://f6n4d05h4b5i" path="res://UI/Main Menu/main_menu.gd" id="1_o0nip"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="1_vf83f"]
-[ext_resource type="Texture2D" uid="uid://bsesdi4bt4xlr" path="res://Images/Backgrounds/Promotional Image (Resized + Edge & Color Blended).png" id="2_h3qnv"]
 [ext_resource type="FontFile" uid="uid://bpfvut4r5e6vs" path="res://Fonts/Kalam/Kalam-Light.ttf" id="3_7mptw"]
+[ext_resource type="Texture2D" uid="uid://cbha87uwemkup" path="res://Images/Backgrounds/Artwork/Main Menu Background v024469.png" id="4_h3qnv"]
 [ext_resource type="Texture2D" uid="uid://c4b1l2kd12nj0" path="res://Images/Graphics/Icons/github-mark/github-mark-white.svg" id="6_h3qnv"]
 [ext_resource type="Texture2D" uid="uid://byyos2q2nljs6" path="res://Images/Graphics/Icons/itch.io-logos/app-icon.svg" id="7_ypa8y"]
 
@@ -116,11 +116,11 @@ vertical_alignment = 1
 clip_contents = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.371528
-anchor_top = 0.225309
-anchor_right = 1.01128
-anchor_bottom = 0.99537
-texture = ExtResource("2_h3qnv")
+anchor_left = 0.362847
+anchor_top = 0.195988
+anchor_right = 1.00521
+anchor_bottom = 0.989198
+texture = ExtResource("4_h3qnv")
 metadata/_edit_use_anchors_ = true
 
 [node name="Repo Link" type="Button" parent="Main Menu"]

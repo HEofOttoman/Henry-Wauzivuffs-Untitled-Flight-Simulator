@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfw1n12g2frgp"
-path.s3tc="res://.godot/imported/Game Icon.png-25cc80541d159966ff0c425fb06b76a2.s3tc.ctex"
+uid="uid://t2qnhnfus1yn"
+path.s3tc="res://.godot/imported/Icon (Grey Background).png-790279845b33c3af3c54a756b966c962.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/Backgrounds/Game Icon.png"
-dest_files=["res://.godot/imported/Game Icon.png-25cc80541d159966ff0c425fb06b76a2.s3tc.ctex"]
+source_file="res://Images/Backgrounds/Artwork/Icon (Grey Background).png"
+dest_files=["res://.godot/imported/Icon (Grey Background).png-790279845b33c3af3c54a756b966c962.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,128 @@
+[gd_scene load_steps=7 format=3 uid="uid://c18kyqc8b6ycg"]
+
+[ext_resource type="StyleBox" uid="uid://b2wcsxb4glvw1" path="res://UI/HUD/Instruments Panel.tres" id="1_c1isg"]
+[ext_resource type="Script" uid="uid://wdkotebxirt3" path="res://UI/UI Altitude & Speed Reade Instrument/UIAltSpeed.gd" id="2_w7aon"]
+[ext_resource type="Texture2D" uid="uid://ba1q1fbp0drn8" path="res://Images/Graphics/back_bg9.png" id="3_iwkr8"]
+[ext_resource type="FontFile" uid="uid://bpfvut4r5e6vs" path="res://Fonts/Kalam/Kalam-Light.ttf" id="4_7upvr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y8j43"]
+font = ExtResource("4_7upvr")
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_sa42f"]
+font = ExtResource("4_7upvr")
+font_size = 15
+
+[node name="Speedometer" type="Panel"]
+anchors_preset = -1
+anchor_left = 0.0737847
+anchor_top = 0.765432
+anchor_right = 0.170139
+anchor_bottom = 0.976852
+offset_top = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_c1isg")
+script = ExtResource("2_w7aon")
+metadata/_edit_use_anchors_ = true
+
+[node name="Altitude" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 25.0
+offset_right = 103.0
+offset_bottom = 55.0
+texture = ExtResource("3_iwkr8")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="InnerPanel" type="Control" parent="Altitude"]
+clip_contents = true
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+
+[node name="BG" type="ColorRect" parent="Altitude/InnerPanel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.0705882, 0.0705882, 0.0745098, 1)
+
+[node name="ValueLabel" type="Label" parent="Altitude/InnerPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 60.0
+offset_right = -10.0
+offset_bottom = 84.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 10
+text = "Speed"
+label_settings = SubResource("LabelSettings_y8j43")
+horizontal_alignment = 1
+
+[node name="Speed" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 87.0
+offset_right = 103.0
+offset_bottom = 117.0
+texture = ExtResource("3_iwkr8")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="InnerPanel" type="Control" parent="Speed"]
+clip_contents = true
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+
+[node name="BG" type="ColorRect" parent="Speed/InnerPanel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.0705882, 0.0705882, 0.0745098, 1)
+
+[node name="ValueLabel" type="Label" parent="Speed/InnerPanel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.063
+anchor_right = 0.928
+offset_left = 0.00699997
+offset_right = -0.00800323
+offset_bottom = 24.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 10
+text = "Altitude"
+label_settings = SubResource("LabelSettings_sa42f")
+horizontal_alignment = 1

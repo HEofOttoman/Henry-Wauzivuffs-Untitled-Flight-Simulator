@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c17kco8sib7lq"
-path.s3tc="res://.godot/imported/Promotional Icon.png-7d5b2a34af99a6a870507ee5a42e804c.s3tc.ctex"
+uid="uid://534x6tf8hrum"
+path.s3tc="res://.godot/imported/Icon.png-af849ee69db8c717c6e817f31875de83.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/Backgrounds/Promotional Icon.png"
-dest_files=["res://.godot/imported/Promotional Icon.png-7d5b2a34af99a6a870507ee5a42e804c.s3tc.ctex"]
+source_file="res://Images/Backgrounds/Artwork/Icon.png"
+dest_files=["res://.godot/imported/Icon.png-af849ee69db8c717c6e817f31875de83.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://8w7rahn7rb7u"]
+
+[ext_resource type="Script" uid="uid://5oye4cgjxrh" path="res://UI/UI EnginePower/UIEnginePower.gd" id="1_3tye8"]
+[ext_resource type="StyleBox" uid="uid://b2wcsxb4glvw1" path="res://UI/HUD/Instruments Panel.tres" id="2_nk1tm"]
+[ext_resource type="LabelSettings" uid="uid://cegulblpfxt8f" path="res://UI/HUD/Instrument Label.tres" id="3_dfcc5"]
+
+[node name="EnginePower" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 416.0
+offset_top = 496.0
+offset_right = 480.0
+offset_bottom = 624.0
+script = ExtResource("1_3tye8")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.07
+offset_bottom = 0.0399933
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_nk1tm")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 12.0
+offset_right = 54.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 10
+text = "Engine"
+label_settings = ExtResource("3_dfcc5")
+horizontal_alignment = 1
+
+[node name="PowerBar" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 25.0
+offset_right = 34.0
+offset_bottom = 109.0
+color = Color(0, 0, 0, 1)
+
+[node name="Cursor" type="ColorRect" parent="Panel/PowerBar"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_top = 80.0
+offset_right = 16.0
+offset_bottom = 84.0
+
+[node name="OnlineBox" type="ColorRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -12.5
+offset_top = -22.0
+offset_right = 12.5
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(1, 0, 0, 1)

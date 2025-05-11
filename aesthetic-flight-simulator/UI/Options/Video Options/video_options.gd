@@ -18,7 +18,7 @@ func _on_btn_fullscreen_toggle_toggled(fullscreen_toggled):
 	print("Fullscreen toggled " + str(fullscreen_toggled))
 	
 	if fullscreen_toggled == true:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN, 0)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED, 0)
 		
 	elif fullscreen_toggled == false:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MINIMIZED, 0)

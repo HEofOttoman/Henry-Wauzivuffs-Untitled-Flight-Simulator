@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhg4sb4ifrvh8"]
+[gd_scene load_steps=10 format=3 uid="uid://dhg4sb4ifrvh8"]
 
 [ext_resource type="Script" uid="uid://b8uwa70m52qwe" path="res://UI/Compass/Compass.gd" id="1_wosox"]
 [ext_resource type="Texture2D" uid="uid://drit0el54v3vg" path="res://UI/Compass/scale.png" id="2_c73pl"]
@@ -7,14 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://btekexp2jh7kq" path="res://Images/Graphics/panel_bg9.png" id="3_r4u3e"]
 [ext_resource type="Theme" uid="uid://d0202sdp1iiuq" path="res://UI/Main Menu Theme.tres" id="4_7q0ua"]
 [ext_resource type="LabelSettings" uid="uid://lsoiq4hhnxvx" path="res://UI/General UI Labelsettings.tres" id="5_ejbju"]
-[ext_resource type="Texture2D" uid="uid://cqphqxb4cumv7" path="res://Images/Graphics/panel-004.png" id="5_w07on"]
-
-[sub_resource type="Gradient" id="Gradient_j4xvc"]
-offsets = PackedFloat32Array(0, 0.530831, 0.991957)
-colors = PackedColorArray(0.156863, 0.156863, 0.156863, 1, 0.168627, 0.168627, 0.168627, 1, 0.156863, 0.156863, 0.156863, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_c73pl"]
-gradient = SubResource("Gradient_j4xvc")
+[ext_resource type="StyleBox" uid="uid://b2wcsxb4glvw1" path="res://UI/HUD/Instruments Panel.tres" id="5_r4u3e"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1jjsr"]
 font = ExtResource("2_ejbju")
@@ -26,12 +19,14 @@ anchor_left = 0.793403
 anchor_top = 0.77
 anchor_right = 0.981
 anchor_bottom = 0.967593
-offset_top = 0.0401611
-offset_right = -0.111816
+offset_left = -843.0
+offset_top = 33.04
+offset_right = -843.112
+offset_bottom = 32.9999
 script = ExtResource("1_wosox")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="NinePatchRect" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = -0.195314
@@ -39,11 +34,7 @@ anchor_right = 0.990741
 anchor_bottom = 0.804686
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture1D_c73pl")
-patch_margin_left = 12
-patch_margin_top = 12
-patch_margin_right = 12
-patch_margin_bottom = 12
+theme_override_styles/panel = ExtResource("5_r4u3e")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Panel"]
@@ -106,7 +97,8 @@ offset_bottom = 144.0
 color = Color(0.765082, 0.784505, 0.565571, 1)
 
 [node name="Scale" type="TextureRect" parent="Panel/Horizon/InnerPanel/CenterRef/Ground"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -32.0
@@ -139,17 +131,13 @@ offset_top = -1.0
 offset_right = 24.0
 offset_bottom = 1.0
 
-[node name="Compass" type="NinePatchRect" parent="Panel"]
+[node name="Compass" type="Panel" parent="Panel"]
 layout_mode = 0
 anchor_left = 0.518692
 anchor_top = 0.164062
 anchor_right = 0.96729
 anchor_bottom = 0.914062
-texture = ExtResource("5_w07on")
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
+theme_override_styles/panel = ExtResource("5_r4u3e")
 metadata/_edit_use_anchors_ = true
 
 [node name="InnerPanel" type="Control" parent="Panel/Compass"]
@@ -207,7 +195,8 @@ offset_right = 2.0
 offset_bottom = 46.0
 
 [node name="ColorRect2" type="ColorRect" parent="Panel/Compass/InnerPanel"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -1.0
@@ -216,6 +205,7 @@ offset_bottom = 30.0
 color = Color(1, 1, 1, 0.501961)
 
 [node name="Coordinate Label" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.074

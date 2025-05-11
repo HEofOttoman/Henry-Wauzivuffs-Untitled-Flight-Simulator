@@ -14,7 +14,7 @@ config/name="Henry Wauzivuff's Untitled Flight Simulator"
 run/main_scene="res://UI/Main Menu/Main Menu.tscn"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 run/max_fps=100
-config/icon="uid://cfw1n12g2frgp"
+config/icon="uid://534x6tf8hrum"
 
 [autoload]
 

@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://6ihy8g4s5x64" path="res://Fonts/Kalam/Kalam-Regular.ttf" id="4_vqw6r"]
 [ext_resource type="Texture2D" uid="uid://bftdel4k1dill" path="res://Images/Backgrounds/Tutorial World Thumbnail.png" id="5_84ogh"]
 [ext_resource type="Texture2D" uid="uid://bxm5u2rap4uwr" path="res://Images/Backgrounds/Cradle Mountain Thumbnail.png" id="6_b3ovy"]
-[ext_resource type="Texture2D" uid="uid://cewitqg4ww00d" path="res://Images/Backgrounds/Tasmania Thumbnail (placeholder).png" id="8_avh5m"]
+[ext_resource type="Texture2D" uid="uid://cq06eft1g2jul" path="res://Images/Backgrounds/Tasmania Thumbnail.png" id="8_avh5m"]
 
 [sub_resource type="Gradient" id="Gradient_dm76d"]
 offsets = PackedFloat32Array(0, 0.986595)
@@ -81,20 +81,6 @@ theme = ExtResource("1_v2752")
 theme_type_variation = &"HeaderLarge"
 text = "Select World"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Tasmania" type="Button" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.37066
-anchor_top = 0.635802
-anchor_right = 0.62934
-anchor_bottom = 0.739197
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_v2752")
-text = "Tasmania (WIP)"
 metadata/_edit_use_anchors_ = true
 
 [node name="Tutorial Panel" type="PanelContainer" parent="."]

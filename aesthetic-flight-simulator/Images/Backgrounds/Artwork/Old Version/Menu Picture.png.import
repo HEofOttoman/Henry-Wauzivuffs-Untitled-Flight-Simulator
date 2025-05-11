@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsesdi4bt4xlr"
-path.s3tc="res://.godot/imported/Promotional Image (Resized + Edge & Color Blended).png-7852f590f5be036af71e3031c141ee11.s3tc.ctex"
+uid="uid://74l1x6bunnds"
+path.s3tc="res://.godot/imported/Menu Picture.png-3b28a00fe2b905d96d40bb867400a317.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/Backgrounds/Promotional Image (Resized + Edge & Color Blended).png"
-dest_files=["res://.godot/imported/Promotional Image (Resized + Edge & Color Blended).png-7852f590f5be036af71e3031c141ee11.s3tc.ctex"]
+source_file="res://Images/Backgrounds/Artwork/Old Version/Menu Picture.png"
+dest_files=["res://.godot/imported/Menu Picture.png-3b28a00fe2b905d96d40bb867400a317.s3tc.ctex"]
 
 [params]
 

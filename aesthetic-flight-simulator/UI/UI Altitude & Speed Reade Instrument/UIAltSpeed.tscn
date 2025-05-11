@@ -1,14 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmut2y2xaqj6x"]
+[gd_scene load_steps=4 format=3 uid="uid://bmut2y2xaqj6x"]
 
 [ext_resource type="Script" uid="uid://wdkotebxirt3" path="res://UI/UI Altitude & Speed Reade Instrument/UIAltSpeed.gd" id="1"]
+[ext_resource type="StyleBox" uid="uid://b2wcsxb4glvw1" path="res://UI/HUD/Instruments Panel.tres" id="2_r067b"]
 [ext_resource type="Texture2D" uid="uid://ba1q1fbp0drn8" path="res://Images/Graphics/back_bg9.png" id="3"]
-
-[sub_resource type="Gradient" id="Gradient_pwyen"]
-offsets = PackedFloat32Array(0, 0.63807, 1)
-colors = PackedColorArray(0.156863, 0.156863, 0.156863, 1, 0.168627, 0.168627, 0.168627, 1, 0.156863, 0.156863, 0.156863, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_r067b"]
-gradient = SubResource("Gradient_pwyen")
 
 [node name="UIAltSpeed" type="Control"]
 layout_mode = 3
@@ -19,15 +13,11 @@ anchor_bottom = 0.929013
 script = ExtResource("1")
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="NinePatchRect" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = SubResource("GradientTexture1D_r067b")
-patch_margin_left = 12
-patch_margin_top = 12
-patch_margin_right = 12
-patch_margin_bottom = 12
+theme_override_styles/panel = ExtResource("2_r067b")
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 1

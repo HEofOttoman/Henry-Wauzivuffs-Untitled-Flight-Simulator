@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://74l1x6bunnds"
-path.s3tc="res://.godot/imported/Menu Picture.png-d647a45f0bd5a67fd3428b945f72a1d1.s3tc.ctex"
+uid="uid://bi13s5b4jq27u"
+path.s3tc="res://.godot/imported/Main Menu Background V2 v2.png-b23fa2ef66ca3f22b71f01edf5669449.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Images/Backgrounds/Menu Picture.png"
-dest_files=["res://.godot/imported/Menu Picture.png-d647a45f0bd5a67fd3428b945f72a1d1.s3tc.ctex"]
+source_file="res://Images/Backgrounds/Artwork/Main Menu Background V2 v2.png"
+dest_files=["res://.godot/imported/Main Menu Background V2 v2.png-b23fa2ef66ca3f22b71f01edf5669449.s3tc.ctex"]
 
 [params]
 
