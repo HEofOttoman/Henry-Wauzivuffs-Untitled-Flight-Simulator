@@ -152,6 +152,7 @@ script = ExtResource("5_pixhv")
 
 [node name="AircraftModule_Engine" type="Node3D" parent="."]
 script = ExtResource("6_4oi3g")
+PowerFactor = 25.0
 EngineSoundLoop = ExtResource("7_wun2l")
 EngineSoundStart = ExtResource("8_xh781")
 EngineSoundStop = ExtResource("7_wun2l")

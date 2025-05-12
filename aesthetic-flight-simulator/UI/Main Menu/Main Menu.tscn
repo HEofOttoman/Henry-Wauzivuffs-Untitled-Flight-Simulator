@@ -92,34 +92,36 @@ anchor_bottom = 0.21142
 grow_horizontal = 2
 theme = ExtResource("1_vf83f")
 theme_type_variation = &"HeaderLarge"
-text = "Untitled Flight Simulator"
+text = "Tasmanian Flight Simulator"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Subtitle" type="Label" parent="Main Menu"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0342882
+anchor_left = 0.064625
 anchor_top = 0.214506
-anchor_right = 0.335503
-anchor_bottom = 0.314815
-offset_left = 16.5
+anchor_right = 0.351128
+anchor_bottom = 0.315
+offset_left = -0.447994
 offset_right = -0.5
+offset_bottom = -0.119888
 grow_horizontal = 2
 theme = ExtResource("1_vf83f")
 theme_type_variation = &"HeaderMedium"
 theme_override_fonts/font = ExtResource("3_7mptw")
 text = "By Henry Wauzivuff"
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Main Menu Image" type="TextureRect" parent="Main Menu"]
 clip_contents = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.362847
-anchor_top = 0.195988
+anchor_top = 0.208333
 anchor_right = 1.00521
-anchor_bottom = 0.989198
+anchor_bottom = 1.00154
 texture = ExtResource("4_h3qnv")
 metadata/_edit_use_anchors_ = true
 

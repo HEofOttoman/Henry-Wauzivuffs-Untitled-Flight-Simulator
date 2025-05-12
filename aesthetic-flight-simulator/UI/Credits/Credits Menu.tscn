@@ -82,20 +82,22 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_um854")
 bbcode_enabled = true
-text = "Made with Godot
-Main Developer - Henry Wauzivuff
+text = "Made by Henry Wauzivuff 
+with Godot 4.4
+
 
 [font_size=20]# Plugins[/font_size]
 Terrabrush - Spimort
-Simplified Flight Simulator: FBcosentino
+Simplified Flight Simulator - FBcosentino
 Terrain3D - Tokisan Games
 
 
 [font_size=20]# Assets[/font_size]
 Kenney - UI Sounds and Icons
 Google Fonts - Custom Fonts
-Freestylized.com - Skybox 
+Freestylized.com - Skybox & other textures
 rubberduck - Handpainted Textures
+AmbientCG.com - Textures
 
 [font_size=20]# Music[/font_size]
 Zu Tanze, Zu Sprunge - Johann Sebastian Bach

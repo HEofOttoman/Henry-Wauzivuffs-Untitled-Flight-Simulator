@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bu2hixfhu8ndm"]
+[gd_scene load_steps=4 format=3 uid="uid://bu2hixfhu8ndm"]
 
 [ext_resource type="Script" uid="uid://5oye4cgjxrh" path="res://UI/UI EnginePower/UIEnginePower.gd" id="2"]
 [ext_resource type="StyleBox" uid="uid://b2wcsxb4glvw1" path="res://UI/HUD/Instruments Panel.tres" id="2_g2pvn"]
+[ext_resource type="LabelSettings" uid="uid://cegulblpfxt8f" path="res://UI/HUD/Instrument Label.tres" id="3_kfod6"]
 
 [node name="UIEnginePower" type="Control"]
 layout_mode = 3
@@ -34,13 +35,16 @@ offset_right = 16.0
 offset_bottom = 84.0
 
 [node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 5.0
-offset_right = 54.0
-offset_bottom = 19.0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 11.0
+offset_top = -1.0
+offset_right = -11.0
+offset_bottom = 23.0
 theme_override_font_sizes/font_size = 10
 text = "Engine"
+label_settings = ExtResource("3_kfod6")
 horizontal_alignment = 1
 
 [node name="OnlineBox" type="ColorRect" parent="Panel"]

@@ -16,8 +16,6 @@ const RATIO_OF_SPECIFIC_HEATS = 1.4 # for dry air at 300K
 const SPEED_OF_SOUND = 343.0 # mach 1
 const EARTH_GRAVITY = 9.8 # for g-force calculation
 
-## My own code to fix the camera tripod while keeping it managed in the player scene
-#@export var OutsideCamera: Camera3D = 
 
 # Lift factor combines lift coefficient and wing area
 # Must be higher than DragFactor.z or the plane won't take off
