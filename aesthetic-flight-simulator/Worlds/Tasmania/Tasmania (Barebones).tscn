@@ -1,24 +1,22 @@
-[gd_scene load_steps=34 format=3 uid="uid://bdv0k01g8qo0p"]
+[gd_scene load_steps=31 format=3 uid="uid://bbli1cawfgtcf"]
 
-[ext_resource type="Environment" uid="uid://t1ni51qa0x5q" path="res://Worlds/Skybox.tres" id="1_741bv"]
-[ext_resource type="Material" uid="uid://ccp4eq6k1dvgm" path="res://Shaders/Water Shader 2.tres" id="2_ymuma"]
-[ext_resource type="Texture2D" uid="uid://c88j3oj0lf6om" path="res://demo/assets/textures/rock023_alb_ht.png" id="3_4y3oy"]
-[ext_resource type="Texture2D" uid="uid://ddprscrpsofah" path="res://demo/assets/textures/ground037_alb_ht.png" id="3_6feja"]
-[ext_resource type="PackedScene" uid="uid://bhwoorpvl4ocu" path="res://Planes/D-A26_player.tscn" id="3_urygu"]
-[ext_resource type="Texture2D" uid="uid://c1ots7w6i0i1q" path="res://demo/assets/textures/ground037_nrm_rgh.png" id="4_kv7m2"]
-[ext_resource type="Texture2D" uid="uid://c307hdmos4gtm" path="res://demo/assets/textures/rock023_nrm_rgh.png" id="6_fg0y8"]
-[ext_resource type="Texture2D" uid="uid://dqmqlme7i5fg7" path="res://Images/textures/handpainted-style-textures-3/1K_handpainted-style-textures-3/hp_03/hp_03-alb_ht.png" id="7_fg0y8"]
-[ext_resource type="Texture2D" uid="uid://bpavhpg1h7qxa" path="res://Images/textures/handpainted-style-textures-3/1K_handpainted-style-textures-3/hp_03/hp_03-nrm_rgh.png" id="8_khs8o"]
-[ext_resource type="Texture2D" uid="uid://cymqoathel18f" path="res://Images/textures/handpainted-style-textures-3/1K_handpainted-style-textures-3/hp_04/hp_04-alb_ht.png" id="9_gdass"]
-[ext_resource type="Texture2D" uid="uid://03ocqbg3k37w" path="res://Images/textures/handpainted-style-textures-3/1K_handpainted-style-textures-3/hp_04/hp_04-nrm_rgh.png" id="10_r7u8f"]
-[ext_resource type="Texture2D" uid="uid://b3deycvtkynaq" path="res://Images/textures/handpainted-style-textures-3/1K_handpainted-style-textures-3/hp_02/hp_02-alb_ht.png" id="11_mh18l"]
-[ext_resource type="Texture2D" uid="uid://dniy6p01ynffc" path="res://Images/textures/handpainted-style-textures-3/1K_handpainted-style-textures-3/hp_02/hp_02-nrm_rgh.png" id="12_erm07"]
-[ext_resource type="Texture2D" uid="uid://bpvcbgd3ohvdu" path="res://Images/textures/snow_004/Snow004_1K-PNG/1K-Snow004-alb_ht.png" id="13_6d0qa"]
-[ext_resource type="Texture2D" uid="uid://k07db4v3nd0d" path="res://Images/textures/snow_004/Snow004_1K-PNG/1k-Snow004-nrm_rgh.png" id="14_pil0s"]
-[ext_resource type="Texture2D" uid="uid://d3w7kvckn8jf6" path="res://Images/textures/faux_asphalt/ground_asphalt_synth_12.png" id="15_1ebsu"]
+[ext_resource type="Environment" uid="uid://t1ni51qa0x5q" path="res://Worlds/Skybox.tres" id="1_ppv4b"]
+[ext_resource type="Material" uid="uid://ccp4eq6k1dvgm" path="res://Shaders/Water Shader 2.tres" id="2_ueb4w"]
+[ext_resource type="Texture2D" uid="uid://b3deycvtkynaq" path="res://Images/textures/handpainted-style-textures-3/1K_handpainted-style-textures-3/hp_02/hp_02-alb_ht.png" id="3_2f52h"]
+[ext_resource type="Texture2D" uid="uid://dniy6p01ynffc" path="res://Images/textures/handpainted-style-textures-3/1K_handpainted-style-textures-3/hp_02/hp_02-nrm_rgh.png" id="4_gqm2v"]
+[ext_resource type="Texture2D" uid="uid://ddprscrpsofah" path="res://demo/assets/textures/ground037_alb_ht.png" id="5_cu100"]
+[ext_resource type="Texture2D" uid="uid://c1ots7w6i0i1q" path="res://demo/assets/textures/ground037_nrm_rgh.png" id="6_5iyth"]
+[ext_resource type="Texture2D" uid="uid://dqmqlme7i5fg7" path="res://Images/textures/handpainted-style-textures-3/1K_handpainted-style-textures-3/hp_03/hp_03-alb_ht.png" id="7_2esd3"]
+[ext_resource type="Texture2D" uid="uid://bpavhpg1h7qxa" path="res://Images/textures/handpainted-style-textures-3/1K_handpainted-style-textures-3/hp_03/hp_03-nrm_rgh.png" id="8_hqyjk"]
+[ext_resource type="Texture2D" uid="uid://cymqoathel18f" path="res://Images/textures/handpainted-style-textures-3/1K_handpainted-style-textures-3/hp_04/hp_04-alb_ht.png" id="9_jrjfk"]
+[ext_resource type="Texture2D" uid="uid://03ocqbg3k37w" path="res://Images/textures/handpainted-style-textures-3/1K_handpainted-style-textures-3/hp_04/hp_04-nrm_rgh.png" id="10_ogp13"]
+[ext_resource type="Texture2D" uid="uid://c88j3oj0lf6om" path="res://demo/assets/textures/rock023_alb_ht.png" id="11_bqi44"]
+[ext_resource type="Texture2D" uid="uid://c307hdmos4gtm" path="res://demo/assets/textures/rock023_nrm_rgh.png" id="12_skgkf"]
+[ext_resource type="Texture2D" uid="uid://bpvcbgd3ohvdu" path="res://Images/textures/snow_004/Snow004_1K-PNG/1K-Snow004-alb_ht.png" id="13_aywwd"]
+[ext_resource type="Texture2D" uid="uid://k07db4v3nd0d" path="res://Images/textures/snow_004/Snow004_1K-PNG/1k-Snow004-nrm_rgh.png" id="14_e7usm"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_uns8p"]
-material = ExtResource("2_ymuma")
+material = ExtResource("2_ueb4w")
 size = Vector2(6040, 4096)
 
 [sub_resource type="Gradient" id="Gradient_tdxba"]
@@ -92,48 +90,43 @@ lod0_range = 128.0
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_p60jh"]
 name = "Rock hp_02"
-albedo_texture = ExtResource("11_mh18l")
-normal_texture = ExtResource("12_erm07")
+albedo_texture = ExtResource("3_2f52h")
+normal_texture = ExtResource("4_gqm2v")
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_6feja"]
 name = "ground037_alb_ht"
 id = 1
-albedo_texture = ExtResource("3_6feja")
-normal_texture = ExtResource("4_kv7m2")
+albedo_texture = ExtResource("5_cu100")
+normal_texture = ExtResource("6_5iyth")
 uv_scale = 0.25
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_gdass"]
 name = "hp_03-alb_ht"
 id = 2
-albedo_texture = ExtResource("7_fg0y8")
-normal_texture = ExtResource("8_khs8o")
+albedo_texture = ExtResource("7_2esd3")
+normal_texture = ExtResource("8_hqyjk")
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_mh18l"]
 name = "hp_04-alb_ht"
 id = 3
-albedo_texture = ExtResource("9_gdass")
-normal_texture = ExtResource("10_r7u8f")
+albedo_texture = ExtResource("9_jrjfk")
+normal_texture = ExtResource("10_ogp13")
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_r7u8f"]
 name = "rock023_alb_ht"
 id = 4
-albedo_texture = ExtResource("3_4y3oy")
-normal_texture = ExtResource("6_fg0y8")
+albedo_texture = ExtResource("11_bqi44")
+normal_texture = ExtResource("12_skgkf")
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_mm8xr"]
 name = "Snow004_1K-PNG_Color"
 id = 5
-albedo_texture = ExtResource("13_6d0qa")
-normal_texture = ExtResource("14_pil0s")
+albedo_texture = ExtResource("13_aywwd")
+normal_texture = ExtResource("14_e7usm")
 
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_kv7m2"]
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6feja")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_p60jh"), SubResource("Terrain3DTextureAsset_6feja"), SubResource("Terrain3DTextureAsset_gdass"), SubResource("Terrain3DTextureAsset_mh18l"), SubResource("Terrain3DTextureAsset_r7u8f"), SubResource("Terrain3DTextureAsset_mm8xr")])
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_erm07"]
-albedo_texture = ExtResource("15_1ebsu")
-uv1_scale = Vector3(0.1, 0.1, 0.1)
-uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mh18l"]
 size = Vector3(5120, 1534, 15.367)
@@ -149,7 +142,7 @@ light_energy = 0.846
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_741bv")
+environment = ExtResource("1_ppv4b")
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 455, 2, 0)
@@ -162,15 +155,6 @@ assets = SubResource("Terrain3DAssets_kv7m2")
 show_contours = true
 top_level = true
 metadata/_edit_lock_ = true
-
-[node name="Runway" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 928.73, 11.3016, -477.977)
-use_collision = true
-size = Vector3(10, 1, 70)
-material = SubResource("StandardMaterial3D_erm07")
-
-[node name="Douglas A26" parent="." instance=ExtResource("3_urygu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 928.449, 11.8274, -448.657)
 
 [node name="World Boundary" type="StaticBody3D" parent="."]
 
