@@ -10,17 +10,17 @@ noise = SubResource("FastNoiseLite_ngs4u")
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_mm0ty"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qk6gb"]
+noise = SubResource("FastNoiseLite_mm0ty")
 seamless = true
 as_normal_map = true
-noise = SubResource("FastNoiseLite_mm0ty")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_b0aes"]
 noise_type = 3
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qo33p"]
+noise = SubResource("FastNoiseLite_b0aes")
 seamless = true
 as_normal_map = true
-noise = SubResource("FastNoiseLite_b0aes")
 
 [resource]
 render_priority = 0
