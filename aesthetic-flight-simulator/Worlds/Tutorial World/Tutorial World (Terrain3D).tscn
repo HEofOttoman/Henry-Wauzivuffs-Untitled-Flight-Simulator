@@ -30,9 +30,9 @@ domain_warp_fractal_lacunarity = 1.5
 domain_warp_fractal_gain = 1.0
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_u0hdb"]
-seamless = true
-color_ramp = SubResource("Gradient_42nk3")
 noise = SubResource("FastNoiseLite_qgwpp")
+color_ramp = SubResource("Gradient_42nk3")
+seamless = true
 
 [sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_i16xc"]
 _shader_parameters = {
@@ -41,7 +41,7 @@ _shader_parameters = {
 &"depth_blur": 0.0,
 &"enable_macro_variation": true,
 &"enable_projection": true,
-&"height_blending": true,
+&"flat_terrain_normals": false,
 &"macro_variation1": Color(1, 1, 1, 1),
 &"macro_variation2": Color(1, 1, 1, 1),
 &"macro_variation_slope": 0.333,
@@ -50,11 +50,8 @@ _shader_parameters = {
 &"noise1_offset": Vector2(0.5, 0.5),
 &"noise1_scale": 0.04,
 &"noise2_scale": 0.076,
-&"noise3_scale": 0.225,
 &"noise_texture": SubResource("NoiseTexture2D_u0hdb"),
-&"projection_angular_division": 2.0,
-&"projection_threshold": 0.8,
-&"world_space_normal_blend": true
+&"projection_threshold": 0.8
 }
 world_background = 0
 
@@ -136,6 +133,7 @@ script = ExtResource("5_xtlyg")
 metadata/_edit_use_anchors_ = true
 
 [node name="Locator Bar" parent="CanvasLayer" instance=ExtResource("6_at3t7")]
+anchors_preset = -1
 anchor_bottom = 0.91821
 
 [node name="World Boundary" type="StaticBody3D" parent="."]

@@ -211,7 +211,7 @@ script = ExtResource("1_ha5r6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_3knf6")
+&"": SubResource("AnimationLibrary_3knf6")
 }
 autoplay = "Propeller Rotate"
 
